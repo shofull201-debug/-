@@ -1,0 +1,56 @@
+{
+  "_comment": "追切タイムの評価基準（秒）。キーは 'トレセン|コース'。excellent/good/average/slow の4段階を線形補間して採点する。値は一般的な水準の目安。",
+  "standards": {
+    "栗東|坂路": {
+      "furlongs": 4,
+      "total": { "excellent": 51.5, "good": 52.8, "average": 54.0, "slow": 56.0 },
+      "last_1f": { "excellent": 12.2, "good": 12.7, "average": 13.2, "slow": 14.0 }
+    },
+    "美浦|坂路": {
+      "furlongs": 4,
+      "total": { "excellent": 52.0, "good": 53.3, "average": 54.8, "slow": 57.0 },
+      "last_1f": { "excellent": 12.3, "good": 12.8, "average": 13.3, "slow": 14.1 }
+    },
+    "栗東|W": {
+      "furlongs": 6,
+      "total": { "excellent": 79.5, "good": 81.0, "average": 82.8, "slow": 85.5 },
+      "last_1f": { "excellent": 11.7, "good": 12.2, "average": 12.8, "slow": 13.6 }
+    },
+    "美浦|W": {
+      "furlongs": 6,
+      "total": { "excellent": 80.0, "good": 81.5, "average": 83.3, "slow": 86.0 },
+      "last_1f": { "excellent": 11.8, "good": 12.3, "average": 12.9, "slow": 13.7 }
+    },
+    "美浦|P": {
+      "furlongs": 5,
+      "total": { "excellent": 64.5, "good": 66.0, "average": 67.5, "slow": 70.0 },
+      "last_1f": { "excellent": 11.6, "good": 12.1, "average": 12.7, "slow": 13.5 }
+    },
+    "栗東|P": {
+      "furlongs": 5,
+      "total": { "excellent": 64.5, "good": 66.0, "average": 67.5, "slow": 70.0 },
+      "last_1f": { "excellent": 11.6, "good": 12.1, "average": 12.7, "slow": 13.5 }
+    },
+    "その他|坂路": {
+      "furlongs": 4,
+      "total": { "excellent": 52.0, "good": 53.5, "average": 55.0, "slow": 57.0 },
+      "last_1f": { "excellent": 12.3, "good": 12.8, "average": 13.4, "slow": 14.2 }
+    },
+    "その他|W": {
+      "furlongs": 6,
+      "total": { "excellent": 80.0, "good": 81.5, "average": 83.5, "slow": 86.0 },
+      "last_1f": { "excellent": 11.8, "good": 12.3, "average": 13.0, "slow": 13.8 }
+    }
+  },
+  "intensity_bonus": {
+    "馬なり": 5,
+    "G前仕掛け": 2,
+    "強め": 0,
+    "一杯": -3
+  },
+  "partner_bonus": {
+    "先着": 5,
+    "同入": 2,
+    "遅れ": -6
+  }
+}

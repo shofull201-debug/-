@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "keiba-predictor"
+version = "0.1.0"
+description = "競馬予想システム — 血統・追切・西田式スピード指数による総合評価"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[project.scripts]
+keiba = "keiba.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+keiba = ["data/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
