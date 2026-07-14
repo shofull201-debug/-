@@ -71,7 +71,7 @@ class TestPrecompute:
         precomp = precompute(dataset)
         assert len(precomp) == 3
         assert len(precomp[0].deviations) == 6
-        assert set(precomp[0].deviations[0]) == {"speed", "pedigree", "workout"}
+        assert set(precomp[0].deviations[0]) == {"speed", "pedigree", "workout", "going"}
 
     def test_workout_inactive_without_data(self):
         precomp = precompute(make_dataset())

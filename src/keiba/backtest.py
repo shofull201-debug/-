@@ -13,10 +13,11 @@ from __future__ import annotations
 from dataclasses import dataclass
 from statistics import pstdev
 
+from .going_aptitude import is_wet
 from .models import HorseEntry
 from .predictor import _to_deviation, evaluate_horse
 
-FACTORS = ("speed", "workout", "pedigree")
+FACTORS = ("speed", "workout", "pedigree", "going")
 
 
 @dataclass
@@ -45,6 +46,11 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
         dev_speed = _to_deviation([r["speed"] for r in raws])
         dev_ped = _to_deviation([r["pedigree"]["score"] for r in raws])
         dev_work = _to_deviation([r["workout"]["score"] for r in raws])
+        # 道悪適性は当日が良以外のレースでのみ差別化要素になる（良なら全馬50=中立）
+        if is_wet(info.get("going", "良")):
+            dev_going = _to_deviation([r["going_aptitude"]["score"] for r in raws])
+        else:
+            dev_going = [50.0] * len(raws)
 
         finish = [h.get("result", {}).get("finish_position") for h in race_data["horses"]]
         odds = [h.get("result", {}).get("odds") for h in race_data["horses"]]
@@ -52,8 +58,8 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
         out.append(
             PrecompRace(
                 deviations=[
-                    {"speed": s, "pedigree": p, "workout": w}
-                    for s, p, w in zip(dev_speed, dev_ped, dev_work)
+                    {"speed": s, "pedigree": p, "workout": w, "going": g}
+                    for s, p, w, g in zip(dev_speed, dev_ped, dev_work, dev_going)
                 ],
                 finish=finish,
                 odds=odds,

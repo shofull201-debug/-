@@ -13,6 +13,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from statistics import mean, pstdev
 
+from .going_aptitude import going_aptitude_score, is_wet
 from .models import HorseEntry, RaceCard
 from .pedigree import pedigree_score
 from .speed_index import aggregate_speed_score
@@ -20,6 +21,10 @@ from .workout import workout_score
 
 # デフォルトの重み（スピード指数を主軸に、追切・血統で補正）
 DEFAULT_WEIGHTS = {"speed": 0.5, "workout": 0.3, "pedigree": 0.2}
+
+# 当日馬場が良以外のとき、道悪適性を第4の要素として自動追加する重み
+# （他の重みと合算後に正規化されるため、渋るほど道悪適性の比重が上がる）
+WET_FACTOR_WEIGHTS = {"稍重": 0.15, "重": 0.25, "不良": 0.30}
 
 # 上位馬に付ける印
 MARKS = ("◎", "○", "▲", "△", "△")
@@ -38,6 +43,7 @@ class HorseResult:
     speed_indices: list[float]         # 各走の生指数（直近順）
     pedigree: dict                     # 血統スコア内訳
     workout: dict                      # 追切スコア内訳
+    going_aptitude: dict | None = None  # 道悪適性の内訳（良馬場のときは None）
     deviations: dict[str, float] = field(default_factory=dict)  # 各要素の偏差値
 
 
@@ -62,6 +68,7 @@ def evaluate_horse(horse: HorseEntry, surface: str, distance: int) -> dict:
         "speed_indices": indices,
         "pedigree": ped,
         "workout": work,
+        "going_aptitude": going_aptitude_score(horse),
     }
 
 
@@ -70,10 +77,18 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
     w = dict(DEFAULT_WEIGHTS)
     if weights:
         w.update(weights)
+
+    # 道悪なら道悪適性を第4の要素として追加（明示指定があればそちらを優先）
+    race = card.race
+    wet = is_wet(race.going)
+    if wet:
+        w.setdefault("going", WET_FACTOR_WEIGHTS[race.going])
+    else:
+        w["going"] = 0.0
+
     total_w = sum(w.values())
     w = {k: v / total_w for k, v in w.items()}
 
-    race = card.race
     raws = [evaluate_horse(h, race.surface, race.distance) for h in card.horses]
 
     # 過去走が無い馬（新馬など）のスピード指数はメンバー平均で補完する
@@ -84,10 +99,25 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
     dev_speed = _to_deviation(speeds)
     dev_ped = _to_deviation([r["pedigree"]["score"] for r in raws])
     dev_work = _to_deviation([r["workout"]["score"] for r in raws])
+    dev_going = _to_deviation([r["going_aptitude"]["score"] for r in raws])
 
     results = []
-    for horse, raw, ds, dp, dw in zip(card.horses, raws, dev_speed, dev_ped, dev_work):
-        total = ds * w["speed"] + dp * w["pedigree"] + dw * w["workout"]
+    for horse, raw, ds, dp, dw, dg in zip(
+        card.horses, raws, dev_speed, dev_ped, dev_work, dev_going
+    ):
+        total = (
+            ds * w["speed"]
+            + dp * w["pedigree"]
+            + dw * w["workout"]
+            + dg * w.get("going", 0.0)
+        )
+        deviations = {
+            "speed": round(ds, 1),
+            "pedigree": round(dp, 1),
+            "workout": round(dw, 1),
+        }
+        if wet:
+            deviations["going"] = round(dg, 1)
         results.append(
             HorseResult(
                 name=horse.name,
@@ -99,11 +129,8 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
                 speed_indices=[round(v, 1) for v in raw["speed_indices"]],
                 pedigree=raw["pedigree"],
                 workout=raw["workout"],
-                deviations={
-                    "speed": round(ds, 1),
-                    "pedigree": round(dp, 1),
-                    "workout": round(dw, 1),
-                },
+                going_aptitude=raw["going_aptitude"] if wet else None,
+                deviations=deviations,
             )
         )
 
