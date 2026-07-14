@@ -204,6 +204,26 @@ keiba predict race.json --weights-file weights.json --variants track_variants.js
 - `--min-races`（デフォルト2）未満しかレースが無い日は信頼性が低いためスキップ
 - **基準タイムを再構築した場合は馬場指数も算出し直してください**（乖離の基準が変わるため）
 
+### JRA公式サイトからの取得（scrape-jra）
+
+JRA公式の成績ページ（`jra.go.jp/datafile/seiseki/...`）からもレース結果を取得できます。
+
+```bash
+# URLから直接取得（Shift_JIS・全角文字・「2,500メートル」表記に対応）
+keiba scrape-jra https://www.jra.go.jp/datafile/seiseki/g1/arima/result/arima2025.html -o jra_results.json
+
+# ブラウザで保存したHTMLファイルも処理可能（アクセス制限環境向け）
+keiba scrape-jra ~/Downloads/arima2025.html -o jra_results.json
+
+# 取得結果は基準タイム・馬場指数の構築にそのまま使える
+keiba build-base-times jra_results.json
+keiba build-variants jra_results.json
+```
+
+JRAの成績ページには各馬の走破タイム・着順・人気が載っているため
+基準タイム/馬場指数の材料になります（単勝オッズ列は無いため回収率検証には
+netkeiba版 `keiba scrape` を使用）。
+
 ### スクレイピングに関する注意
 
 - **netkeiba の利用規約を確認のうえ、個人利用の範囲で自己責任で使用してください。**

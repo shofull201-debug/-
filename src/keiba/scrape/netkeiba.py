@@ -42,8 +42,24 @@ def _require_bs4():
         ) from e
 
 
+def detect_encoding(raw: bytes, default: str = "euc-jp") -> str:
+    """HTML バイト列から charset 宣言を探してエンコーディングを判定する。"""
+    head = raw[:4096].decode("ascii", errors="ignore").lower()
+    m = re.search(r'charset\s*=\s*["\']?([\w+-]+)', head)
+    if not m:
+        return default
+    enc = m.group(1)
+    if enc in ("shift_jis", "shift-jis", "sjis", "x-sjis", "windows-31j", "ms932"):
+        return "cp932"  # Shift_JIS の上位互換で機種依存文字も扱える
+    return enc
+
+
 class NetkeibaClient:
-    """キャッシュとレート制限つきの HTTP クライアント。"""
+    """キャッシュとレート制限つきの HTTP クライアント。
+
+    netkeiba 以外のサイト（JRA 公式など）にも使える。文字コードは
+    ページの charset 宣言から自動判定する（無ければ EUC-JP）。
+    """
 
     def __init__(self, cache_dir: str | Path = "data/cache", wait_sec: float = 1.5):
         self.cache_dir = Path(cache_dir)
@@ -69,7 +85,7 @@ class NetkeibaClient:
             raw = resp.read()
         self._last_fetch = time.time()
 
-        html = raw.decode("euc-jp", errors="replace")
+        html = raw.decode(detect_encoding(raw), errors="replace")
         cache.write_text(html, encoding="utf-8")
         return html
 

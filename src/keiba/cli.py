@@ -139,6 +139,42 @@ def cmd_scrape(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_scrape_jra(args: argparse.Namespace) -> int:
+    """JRA 公式の成績ページからレース結果を取得してデータセット形式で保存する。
+
+    引数にはURLのほか、保存済みHTMLファイルのパスも指定できる
+    （アクセス制限のある環境でブラウザ保存したページを処理する用途）。
+    """
+    import os
+
+    from .scrape.jra import parse_jra_result_page, to_dataset_race
+    from .scrape.netkeiba import NetkeibaClient, detect_encoding
+
+    client = NetkeibaClient(cache_dir=args.cache_dir, wait_sec=args.wait)
+    races = []
+    for source in args.sources:
+        if os.path.exists(source):
+            raw = open(source, "rb").read()
+            html = raw.decode(detect_encoding(raw, default="cp932"), errors="replace")
+        else:
+            html = client.get(source)
+        parsed = parse_jra_result_page(html, source)
+        if parsed is None:
+            print(f"パース失敗（成績表が見つかりません）: {source}")
+            continue
+        races.append(to_dataset_race(parsed))
+        print(
+            f"取得: {parsed.date} {parsed.course} {parsed.surface}{parsed.distance}m"
+            f" {parsed.race_class} {parsed.name} 馬場:{parsed.going} {len(parsed.rows)}頭"
+        )
+
+    with open(args.output, "w", encoding="utf-8") as f:
+        json.dump({"races": races}, f, ensure_ascii=False, indent=1)
+    print(f"{len(races)} レースを {args.output} に保存しました")
+    print("※ build-base-times / build-variants の入力として使えます")
+    return 0
+
+
 def cmd_optimize(args: argparse.Namespace) -> int:
     from .backtest import FACTORS, active_factors, evaluate_weights, grid_search, precompute
     from .predictor import DEFAULT_WEIGHTS
@@ -319,6 +355,17 @@ def main(argv: list[str] | None = None) -> int:
     p_scrape.add_argument("--wait", type=float, default=1.5, help="リクエスト間隔（秒）")
     p_scrape.add_argument("--cache-dir", default="data/cache", help="HTML キャッシュディレクトリ")
     p_scrape.set_defaults(func=cmd_scrape)
+
+    p_jra = sub.add_parser("scrape-jra", help="JRA公式の成績ページからレース結果を取得")
+    p_jra.add_argument(
+        "sources",
+        nargs="+",
+        help="成績ページのURL または 保存済みHTMLファイルのパス（複数指定可）",
+    )
+    p_jra.add_argument("-o", "--output", default="jra_results.json")
+    p_jra.add_argument("--wait", type=float, default=1.5, help="リクエスト間隔（秒）")
+    p_jra.add_argument("--cache-dir", default="data/cache", help="HTML キャッシュディレクトリ")
+    p_jra.set_defaults(func=cmd_scrape_jra)
 
     p_opt = sub.add_parser("optimize", help="データセットで重みをグリッドサーチ最適化")
     p_opt.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
