@@ -1,0 +1,237 @@
+{
+  "_comment": "七夕賞2026 レースカード。Web検索で収集したレース前時点のデータ。タイムの一部は勝ちタイム+着差(不明時は0.15秒×着順差)による推定値。詳細は各馬の_notesを参照。",
+  "race": {
+    "name": "七夕賞 (G3)",
+    "date": "2026-07-12",
+    "course": "福島",
+    "surface": "芝",
+    "distance": 2000,
+    "going": "稍重",
+    "race_class": "G3"
+  },
+  "horses": [
+    {
+      "name": "ボーンディスウェイ",
+      "horse_number": 1,
+      "sire": "ハーツクライ",
+      "dam_sire": "Platini",
+      "weight_carried": 56.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "近走の確実な情報を取得できず(新潟大賞典2026の出走有無・着順とも未確定、中山金杯2026は不出走を確認)。過去走なし扱い=スピード指数はメンバー平均で補完"
+    },
+    {
+      "name": "コントラポスト",
+      "horse_number": 2,
+      "sire": "ルーラーシップ",
+      "dam_sire": "フジキセキ",
+      "weight_carried": 56.0,
+      "past_races": [
+        { "date": "2026-06-13", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 106.4, "weight_carried": 56.0, "finish_position": 5, "field_size": 13, "race_class": "OP" },
+        { "date": "2025-12-21", "course": "中山", "surface": "芝", "distance": 1800, "going": "重", "time_sec": 107.8, "weight_carried": 56.0, "finish_position": 5, "field_size": 16, "race_class": "L" },
+        { "date": "2025-09-06", "course": "中山", "surface": "芝", "distance": 1600, "going": "良", "time_sec": 91.5, "weight_carried": 56.0, "finish_position": 3, "field_size": 16, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "ジューンS5着=勝ち1:46.0と10着1:46.7の中間で推定。ディセンバーS5着(重・勝ち1:47.4)=4着1:47.7直後で推定。京成杯AH3着=勝ち1:31.3+推定0.2秒。斤量は推定含む"
+    },
+    {
+      "name": "ショウナンマグマ",
+      "horse_number": 3,
+      "sire": "ザファクター",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        { "date": "2025-12-21", "course": "中山", "surface": "芝", "distance": 1800, "going": "重", "time_sec": 107.7, "weight_carried": 56.0, "finish_position": 4, "field_size": 16, "race_class": "L" },
+        { "date": "2025-12-06", "course": "阪神", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 105.1, "weight_carried": 56.0, "finish_position": 12, "field_size": 16, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "ディセンバーS4着1:47.7(重)、鳴尾記念12着1:45.1(勝ち1:43.7から1.4差)は確認済み。2026年の4走(全て2桁着順)は詳細を特定できず未収録=実態より過大評価の可能性。調教C評価"
+    },
+    {
+      "name": "カラマティアノス",
+      "horse_number": 4,
+      "sire": "レイデオロ",
+      "dam_sire": "ハーツクライ",
+      "weight_carried": 58.0,
+      "past_races": [
+        { "date": "2026-05-09", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 105.6, "weight_carried": 58.0, "finish_position": 6, "field_size": 17, "race_class": "G3" },
+        { "date": "2026-03-01", "course": "中山", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 105.4, "weight_carried": 57.0, "finish_position": 2, "field_size": 14, "race_class": "G2" },
+        { "date": "2026-01-04", "course": "中山", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 120.3, "weight_carried": 57.0, "finish_position": 1, "field_size": 14, "race_class": "G3" }
+      ],
+      "workouts": [
+        { "date": "2026-07-05", "facility": "美浦", "course": "W", "furlongs": 6, "total_time": 82.0, "last_1f": 11.2, "intensity": "強め", "partner_result": "先着" }
+      ],
+      "_notes": "エプソムC6着=勝ち1:45.3+0.3差で推定。中山記念2着=勝ち1:45.1+1馬身3/4で推定。中山金杯1着2:00.3は確定。中山記念・金杯の斤量は推定(57)"
+    },
+    {
+      "name": "オーロラエックス",
+      "horse_number": 5,
+      "sire": "サトノダイヤモンド",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        { "date": "2026-05-24", "course": "京都", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 104.3, "weight_carried": 55.0, "finish_position": 6, "field_size": 13, "race_class": "L" }
+      ],
+      "workouts": [],
+      "_notes": "都大路S6着=4着メリオーレム1:44.0+0.3秒で推定(勝ちタイム未取得)。白富士S9着・エリザベス女王杯16着(推定)は勝ちタイム不明のため未収録。調教C評価"
+    },
+    {
+      "name": "マイネルモーント",
+      "horse_number": 6,
+      "sire": "ゴールドシップ",
+      "dam_sire": "ロージズインメイ",
+      "weight_carried": 56.0,
+      "past_races": [
+        { "date": "2026-05-09", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 107.0, "weight_carried": 57.0, "finish_position": 12, "field_size": 17, "race_class": "G3" },
+        { "date": "2026-04-12", "course": "福島", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 118.9, "weight_carried": 56.0, "finish_position": 4, "field_size": 15, "race_class": "L" },
+        { "date": "2026-03-01", "course": "中山", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 105.6, "weight_carried": 56.0, "finish_position": 4, "field_size": 14, "race_class": "G2" },
+        { "date": "2026-01-04", "course": "中山", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 121.4, "weight_carried": 56.0, "finish_position": 8, "field_size": 14, "race_class": "G3" },
+        { "date": "2025-02-01", "course": "東京", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 119.3, "weight_carried": 56.0, "finish_position": 2, "field_size": 13, "race_class": "L" }
+      ],
+      "workouts": [],
+      "_notes": "全て着順からの推定タイム(0.15秒×着順差)。エプソムC12着57kg・福島民報杯4着(勝ちサヴォーナ1:58.4)・中山記念4着(3着105.45の直後)・中山金杯8着・白富士S2025 2着(勝ち1:59.1)。追い切りは併せ馬B評価(時計未取得)"
+    },
+    {
+      "name": "メリオーレム",
+      "horse_number": 7,
+      "sire": "シュヴァルグラン",
+      "dam_sire": "Starspangledbanner",
+      "weight_carried": 55.0,
+      "past_races": [
+        { "date": "2026-06-13", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 106.7, "weight_carried": 56.0, "finish_position": 10, "field_size": 13, "race_class": "OP" },
+        { "date": "2026-05-24", "course": "京都", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 104.0, "weight_carried": 56.0, "finish_position": 4, "field_size": 13, "race_class": "L" },
+        { "date": "2025-12-13", "course": "中京", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 118.1, "weight_carried": 56.0, "finish_position": 5, "field_size": 18, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "3走ともタイム確認済み(ジューンS1:46.7/都大路S1:44.0/中日新聞杯1:58.1)。過去の斤量は推定。調教は単走中心で強調しづらいとの評"
+    },
+    {
+      "name": "クリスマスパレード",
+      "horse_number": 8,
+      "sire": "キタサンブラック",
+      "dam_sire": "Blame",
+      "weight_carried": 55.0,
+      "past_races": [
+        { "date": "2026-03-28", "course": "中山", "surface": "芝", "distance": 2500, "going": "良", "time_sec": 152.8, "weight_carried": 55.0, "finish_position": 15, "field_size": 15, "race_class": "G2" },
+        { "date": "2026-01-24", "course": "小倉", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 120.4, "weight_carried": 55.0, "finish_position": 16, "field_size": 16, "race_class": "G3" },
+        { "date": "2025-08-03", "course": "札幌", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 107.2, "weight_carried": 57.0, "finish_position": 9, "field_size": 14, "race_class": "G3" },
+        { "date": "2025-05-18", "course": "東京", "surface": "芝", "distance": 1600, "going": "良", "time_sec": 93.3, "weight_carried": 56.0, "finish_position": 9, "field_size": 18, "race_class": "G1" }
+      ],
+      "workouts": [],
+      "_notes": "全て推定タイム(勝ちタイム+0.15秒×着順差)。日経賞15着(勝ち2:30.7)/小倉牝馬S16着(勝ち1:58.1)/クイーンS9着・出遅れ(勝ち1:46.0)/VM着順は6〜9着と情報混在のため9着採用(勝ち1:32.1)。紫苑S2024レコード勝ち以降8連敗中"
+    },
+    {
+      "name": "オニャンコポン",
+      "horse_number": 9,
+      "sire": "エイシンフラッシュ",
+      "dam_sire": "ヴィクトワールピサ",
+      "weight_carried": 54.0,
+      "past_races": [
+        { "date": "2026-05-09", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 107.4, "weight_carried": 57.0, "finish_position": 15, "field_size": 17, "race_class": "G3" },
+        { "date": "2026-03-29", "course": "阪神", "surface": "芝", "distance": 1600, "going": "良", "time_sec": 93.5, "weight_carried": 58.0, "finish_position": 11, "field_size": 16, "race_class": "L" },
+        { "date": "2025-12-13", "course": "中京", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 119.0, "weight_carried": 57.0, "finish_position": 10, "field_size": 18, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "全て推定タイム。エプソムC15着(出遅れ・外々ロス大、勝ち1:45.3)/六甲S11着58kg(勝ち1:32.0)/中日新聞杯10着(勝ち1:57.6)。2025年七夕賞3着(11人気)の実績あるが5走圏外"
+    },
+    {
+      "name": "センツブラッド",
+      "horse_number": 10,
+      "sire": "ルーラーシップ",
+      "dam_sire": "ハービンジャー",
+      "weight_carried": 56.0,
+      "past_races": [
+        { "date": "2026-05-09", "course": "東京", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 105.9, "weight_carried": 56.0, "finish_position": 10, "field_size": 17, "race_class": "G3" },
+        { "date": "2025-12-06", "course": "阪神", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 104.1, "weight_carried": 56.0, "finish_position": 2, "field_size": 16, "race_class": "G3" },
+        { "date": "2025-06-29", "course": "福島", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 107.0, "weight_carried": 54.0, "finish_position": 2, "field_size": 16, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "エプソムC10着1:45.9確認済み。鳴尾記念2着=勝ち1:43.7+2馬身推定1:44.1。ラジオNIKKEI賞2着=勝ち1:46.9+半馬身推定。福島[1.2.0.0]。追い切りは併せ馬で反応良好との評(時計未取得)"
+    },
+    {
+      "name": "アスクナイスショー",
+      "horse_number": 11,
+      "sire": "シルバーステート",
+      "dam_sire": "アドマイヤムーン",
+      "weight_carried": 55.0,
+      "past_races": [
+        { "date": "2026-03-28", "course": "中山", "surface": "芝", "distance": 2500, "going": "良", "time_sec": 152.1, "weight_carried": 56.0, "finish_position": 10, "field_size": 15, "race_class": "G2" },
+        { "date": "2026-01-10", "course": "中山", "surface": "芝", "distance": 2200, "going": "良", "time_sec": 130.7, "weight_carried": 56.0, "finish_position": 1, "field_size": 13, "race_class": "3勝" }
+      ],
+      "workouts": [
+        { "date": "2026-07-08", "facility": "美浦", "course": "W", "furlongs": 6, "total_time": 83.5, "last_1f": 11.3, "intensity": "馬なり", "partner_result": "同入" },
+        { "date": "2026-07-02", "facility": "美浦", "course": "W", "furlongs": 6, "total_time": 82.7, "last_1f": 11.6, "intensity": "強め", "partner_result": null }
+      ],
+      "_notes": "日経賞10着=勝ち2:30.7+0.15×9で推定。迎春S(3勝)は2:10.7逃げ切り確定。2025年1月の2勝クラス勝ちは距離不明で未収録。最終追いA評価との報"
+    },
+    {
+      "name": "リカンカブール",
+      "horse_number": 12,
+      "sire": "シルバーステート",
+      "dam_sire": "ゾファニー",
+      "weight_carried": 57.0,
+      "past_races": [
+        { "date": "2026-02-22", "course": "小倉", "surface": "芝", "distance": 1800, "going": "良", "time_sec": 106.0, "weight_carried": 57.0, "finish_position": 6, "field_size": 16, "race_class": "G3" },
+        { "date": "2026-01-04", "course": "中山", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 121.1, "weight_carried": 56.5, "finish_position": 6, "field_size": 14, "race_class": "G3" }
+      ],
+      "workouts": [],
+      "_notes": "両走とも推定タイム(小倉大賞典6着=勝ち1:45.2+0.75/中山金杯6着=勝ち2:00.3+0.75)。2024年中山金杯勝ち馬・その後去勢。約4カ月半の休み明け・初ブリンカー。追い切りは坂路単走B評価(時計未取得)"
+    },
+    {
+      "name": "バトルボーン",
+      "horse_number": 13,
+      "sire": "シルバーステート",
+      "dam_sire": "ジャングルポケット",
+      "weight_carried": 57.0,
+      "past_races": [
+        { "date": "2026-05-10", "course": "東京", "surface": "芝", "distance": 2400, "going": "良", "time_sec": 143.2, "weight_carried": 58.0, "finish_position": 3, "field_size": 14, "race_class": "L" }
+      ],
+      "workouts": [],
+      "_notes": "メトロポリタンS3着=勝ち2:23.1+0.1差で推定。復帰初戦の小倉日経賞3着(2026-02-08)は勝ちタイム未取得のため未収録。骨折による1年超の休養から復帰。最終追いS評価との報(時計未取得)"
+    },
+    {
+      "name": "オールナット",
+      "horse_number": 14,
+      "sire": "サトノダイヤモンド",
+      "dam_sire": "フレンチデピュティ",
+      "weight_carried": 57.5,
+      "past_races": [
+        { "date": "2026-01-18", "course": "京都", "surface": "芝", "distance": 2400, "going": "良", "time_sec": 147.5, "weight_carried": 57.0, "finish_position": 13, "field_size": 15, "race_class": "G2" },
+        { "date": "2025-09-13", "course": "阪神", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 118.0, "weight_carried": 56.0, "finish_position": 1, "field_size": 12, "race_class": "G3" },
+        { "date": "2025-05-17", "course": "新潟", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 121.3, "weight_carried": 56.0, "finish_position": 6, "field_size": 16, "race_class": "G3" }
+      ],
+      "workouts": [
+        { "date": "2026-07-01", "facility": "栗東", "course": "坂路", "furlongs": 4, "total_time": 53.2, "last_1f": 12.0, "intensity": "強め", "partner_result": null }
+      ],
+      "_notes": "チャレンジC1着1:58.0確定。日経新春杯13着(鼻出血・勝ち2:25.7+推定1.8秒)から半年休養明け。新潟大賞典2025 6着=勝ち2:00.5+推定0.75秒"
+    },
+    {
+      "name": "ヤマニンブークリエ",
+      "horse_number": 15,
+      "sire": "キタサンブラック",
+      "dam_sire": null,
+      "weight_carried": 56.0,
+      "past_races": [
+        { "date": "2026-05-16", "course": "新潟", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 119.3, "weight_carried": 56.0, "finish_position": 5, "field_size": 16, "race_class": "G3" },
+        { "date": "2025-09-15", "course": "中山", "surface": "芝", "distance": 2200, "going": "良", "time_sec": 131.0, "weight_carried": 56.0, "finish_position": 2, "field_size": 14, "race_class": "G2" }
+      ],
+      "workouts": [],
+      "_notes": "新潟大賞典5着1:59.3(勝ち1:58.9と整合)。セントライト記念2着=勝ち2:10.8+推定0.2秒。ネオムターフC(サウジ)5着2:07.2は基準タイム未整備のため未収録。菊花賞は着順不明で未収録。調教はメンバー唯一のA評価(時計未取得)"
+    },
+    {
+      "name": "サヴォーナ",
+      "horse_number": 16,
+      "sire": "キズナ",
+      "dam_sire": "スニッツェル",
+      "weight_carried": 58.0,
+      "past_races": [
+        { "date": "2026-04-12", "course": "福島", "surface": "芝", "distance": 2000, "going": "良", "time_sec": 118.4, "weight_carried": 58.0, "finish_position": 1, "field_size": 15, "race_class": "L" },
+        { "date": "2024-11-03", "course": "東京", "surface": "芝", "distance": 2500, "going": "良", "time_sec": 150.1, "weight_carried": 57.5, "finish_position": 8, "field_size": 15, "race_class": "G2" },
+        { "date": "2024-04-28", "course": "京都", "surface": "芝", "distance": 3200, "going": "良", "time_sec": 194.9, "weight_carried": 58.0, "finish_position": 6, "field_size": 17, "race_class": "G1" },
+        { "date": "2024-03-17", "course": "阪神", "surface": "芝", "distance": 3000, "going": "良", "time_sec": 188.1, "weight_carried": 57.0, "finish_position": 6, "field_size": 16, "race_class": "G2" }
+      ],
+      "workouts": [],
+      "_notes": "福島民報杯1:58.4(58kg)は1年5カ月休養明けの快勝で確定。アル共8着=勝ち2:29.0+推定1.05秒。天皇賞春3:14.9/阪神大賞典3:08.1は検索スニペット由来。坂路追い(終い12.3)は全体時計未取得のため未収録"
+    }
+  ]
+}
