@@ -45,11 +45,18 @@ class TestSingleWorkout:
         assert score == 50.0
 
     def test_furlong_scaling(self):
-        # 5F しか計時していないコース追いも 1F 換算で比較される
+        # 5F しか計時していないコース追いは序盤1F(16.5秒)を加算して6F換算される
         w6 = make_workout(facility="美浦", course="W", furlongs=6, total_time=81.0, last_1f=12.0)
-        w5 = make_workout(facility="美浦", course="W", furlongs=5, total_time=67.5, last_1f=12.0)
-        # 67.5 / 5F = 13.5s/F → 6F 換算 81.0 なので同等の評価になる
+        w5 = make_workout(facility="美浦", course="W", furlongs=5, total_time=64.5, last_1f=12.0)
+        # 64.5 + 16.5 = 81.0 なので同等の評価になる
         assert abs(score_single_workout(w6) - score_single_workout(w5)) < 1.0
+
+    def test_furlong_scaling_not_linear(self):
+        # 線形スケール(×6/5)だと5F計時が過大評価されることの回帰テスト:
+        # 5F 66.8 は線形なら 80.2(excellent級)だが、換算後は 83.3(average級)
+        w5 = make_workout(facility="美浦", course="W", furlongs=5, total_time=66.8, last_1f=12.9)
+        w6 = make_workout(facility="美浦", course="W", furlongs=6, total_time=83.3, last_1f=12.9)
+        assert abs(score_single_workout(w5) - score_single_workout(w6)) < 1.0
 
 
 class TestWorkoutScore:

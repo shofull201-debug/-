@@ -19,6 +19,12 @@ LATEST_WEIGHT = 0.7
 # 4段階評価に対応する点数
 GRADE_POINTS = {"excellent": 90.0, "good": 75.0, "average": 60.0, "slow": 40.0}
 
+# コース追いの序盤1Fあたりの想定タイム（秒）。計測ハロン数が基準表と異なる場合、
+# 序盤の流し分をこのペースで加減算して基準のハロン数に換算する。
+# （実際の6F追いはラスト重視で出だしが16秒台のため、線形スケールでは
+#  4F・5F計時の追い切りを過大評価してしまう）
+WARMUP_PACE = 16.5
+
 
 @lru_cache(maxsize=1)
 def _load_standards() -> dict:
@@ -59,10 +65,10 @@ def score_single_workout(w: Workout) -> float:
     if standard is None:
         return 50.0
 
-    # 計測ハロン数が基準と違う場合は 1F あたりで換算して比較する
+    # 計測ハロン数が基準と違う場合は、差分を序盤の流しペースで加減算して換算する
     total = w.total_time
     if w.furlongs != standard["furlongs"] and w.furlongs > 0:
-        total = w.total_time * standard["furlongs"] / w.furlongs
+        total = w.total_time + (standard["furlongs"] - w.furlongs) * WARMUP_PACE
 
     time_pts = _time_to_points(total, standard["total"])
     last1f_pts = _time_to_points(w.last_1f, standard["last_1f"])
