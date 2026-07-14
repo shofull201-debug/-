@@ -3,9 +3,12 @@
 使い方:
     keiba predict data/sample_race.json
     keiba predict race.json --weights speed=0.5,workout=0.3,pedigree=0.2
+    keiba predict race.json --weights-file weights.json
     keiba speed-index --course 東京 --surface 芝 --distance 1600 \
         --time 93.5 --weight 57 --going 良 --race-class 2勝
-    keiba build-base-times results.csv -o my_base_times.json
+    keiba scrape --start 2026-04-01 --end 2026-06-30 -o dataset.json
+    keiba optimize dataset.json -o weights.json
+    keiba build-base-times dataset.json -o base_times.json
 """
 
 from __future__ import annotations
@@ -38,7 +41,12 @@ def cmd_predict(args: argparse.Namespace) -> int:
     with open(args.race_file, encoding="utf-8") as f:
         card = RaceCard.from_dict(json.load(f))
 
-    results = predict(card, weights=args.weights)
+    weights = args.weights
+    if args.weights_file:
+        with open(args.weights_file, encoding="utf-8") as f:
+            weights = json.load(f)
+
+    results = predict(card, weights=weights)
 
     race = card.race
     print(f"\n=== {race.name or '予想'} ===")
@@ -98,10 +106,90 @@ def cmd_speed_index(args: argparse.Namespace) -> int:
     return 0
 
 
-def cmd_build_base_times(args: argparse.Namespace) -> int:
-    """過去レース結果 CSV から基準タイム表を再構築する。
+def cmd_scrape(args: argparse.Namespace) -> int:
+    from .scrape.dataset import build_dataset, save_dataset
+    from .scrape.netkeiba import NetkeibaClient
 
-    CSV ヘッダー: course,surface,distance,race_class,going,time_sec
+    client = NetkeibaClient(cache_dir=args.cache_dir, wait_sec=args.wait)
+    dataset = build_dataset(
+        client,
+        start=args.start,
+        end=args.end,
+        surface=args.surface,
+        max_races=args.max_races,
+        min_past_races=args.min_past_races,
+    )
+    save_dataset(dataset, args.output)
+    print(f"{len(dataset['races'])} レースを {args.output} に保存しました")
+    return 0
+
+
+def cmd_optimize(args: argparse.Namespace) -> int:
+    from .backtest import FACTORS, active_factors, evaluate_weights, grid_search, precompute
+    from .predictor import DEFAULT_WEIGHTS
+
+    with open(args.dataset, encoding="utf-8") as f:
+        dataset = json.load(f)
+
+    print(f"データセット: {len(dataset['races'])} レース")
+    precomp = precompute(dataset)
+
+    factors = active_factors(precomp)
+    excluded = [f for f in FACTORS if f not in factors]
+    if excluded:
+        print(f"※ データに変化が無いため最適化から除外: {', '.join(excluded)}（重み 0 固定）")
+
+    baseline = evaluate_weights(precomp, DEFAULT_WEIGHTS)
+    print(
+        f"\n現行デフォルト重み {DEFAULT_WEIGHTS}:"
+        f" ◎勝率 {baseline['win_rate']:.1%} / ◎複勝率 {baseline['place_rate']:.1%}"
+        f" / 単勝回収率 {baseline['roi']:.1f}%"
+    )
+
+    results = grid_search(precomp, step=args.step, objective=args.objective)
+
+    print(f"\n=== 最適化結果（目的関数: {args.objective}、上位10件）===")
+    print(f"{'speed':>6} {'workout':>8} {'pedigree':>9} {'◎勝率':>7} {'◎複勝率':>8} {'回収率':>7} {'印3頭中':>7}")
+    for r in results[:10]:
+        w = r["weights"]
+        print(
+            f"{w['speed']:>6.2f} {w['workout']:>8.2f} {w['pedigree']:>9.2f}"
+            f" {r['win_rate']:>7.1%} {r['place_rate']:>8.1%} {r['roi']:>6.1f}% {r['top3_hit']:>7.2f}"
+        )
+
+    best = results[0]
+    print(f"\n最適重み: {best['weights']}")
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(best["weights"], f, ensure_ascii=False, indent=2)
+        print(f"{args.output} に保存しました（keiba predict --weights-file {args.output} で使用）")
+    return 0
+
+
+def _result_rows_from_dataset(dataset: dict):
+    """データセット JSON から基準タイム集計用の行を取り出す。"""
+    for race_data in dataset["races"]:
+        info = race_data["race"]
+        for horse in race_data["horses"]:
+            result = horse.get("result", {})
+            if result.get("time_sec") and result.get("finish_position"):
+                yield {
+                    "course": info["course"],
+                    "surface": info["surface"],
+                    "distance": info["distance"],
+                    "race_class": info["race_class"],
+                    "going": info["going"],
+                    "time_sec": result["time_sec"],
+                }
+
+
+def cmd_build_base_times(args: argparse.Namespace) -> int:
+    """レース結果から基準タイム表を再構築する。
+
+    入力は 2 形式:
+    - CSV（ヘッダー: course,surface,distance,race_class,going,time_sec）
+    - keiba scrape が出力したデータセット JSON
+
     良馬場のレースのみ集計し、クラス補正を戻して 1勝クラス相当に正規化した
     平均タイムを基準タイムとする。
     """
@@ -110,14 +198,20 @@ def cmd_build_base_times(args: argparse.Namespace) -> int:
     offsets = _load_base_times()["class_offsets"]
     buckets: dict[str, list[float]] = defaultdict(list)
 
-    with open(args.results_csv, encoding="utf-8", newline="") as f:
-        for row in csv.DictReader(f):
-            if row.get("going", "良") != "良":
-                continue
-            distance = int(row["distance"])
-            offset = offsets.get(row.get("race_class", "1勝"), 0.0) * (distance / 1600)
-            normalized = float(row["time_sec"]) - offset
-            buckets[f"{row['course']}|{row['surface']}|{distance}"].append(normalized)
+    if args.results_file.endswith(".json"):
+        with open(args.results_file, encoding="utf-8") as f:
+            rows = _result_rows_from_dataset(json.load(f))
+    else:
+        f = open(args.results_file, encoding="utf-8", newline="")
+        rows = csv.DictReader(f)
+
+    for row in rows:
+        if row.get("going", "良") != "良":
+            continue
+        distance = int(row["distance"])
+        offset = offsets.get(row.get("race_class", "1勝"), 0.0) * (distance / 1600)
+        normalized = float(row["time_sec"]) - offset
+        buckets[f"{row['course']}|{row['surface']}|{distance}"].append(normalized)
 
     base_times = {
         key: round(sum(times) / len(times), 1)
@@ -132,6 +226,7 @@ def cmd_build_base_times(args: argparse.Namespace) -> int:
     with open(args.output, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
     print(f"{len(base_times)} 条件の基準タイムを {args.output} に書き出しました")
+    print("※ src/keiba/data/base_times.json を置き換えると予想に反映されます")
     return 0
 
 
@@ -150,11 +245,12 @@ def main(argv: list[str] | None = None) -> int:
         default=None,
         help="重み指定（例: speed=0.5,workout=0.3,pedigree=0.2）",
     )
+    p_predict.add_argument("--weights-file", default=None, help="keiba optimize が出力した重み JSON")
     p_predict.add_argument("--json", action="store_true", help="JSON 形式で出力")
     p_predict.set_defaults(func=cmd_predict)
 
     p_index = sub.add_parser("speed-index", help="単発でスピード指数を計算")
-    p_index.add_argument("--course", required=True, help="競馬場名（例: 東京）")
+    p_index.add_argument("--course", required=True, help="競馬場名（例: 東京)")
     p_index.add_argument("--surface", required=True, choices=["芝", "ダ"])
     p_index.add_argument("--distance", type=int, required=True)
     p_index.add_argument("--time", type=float, required=True, help="走破タイム（秒）")
@@ -164,8 +260,34 @@ def main(argv: list[str] | None = None) -> int:
     p_index.add_argument("--track-variant", type=float, default=None, help="馬場指数（実測値）")
     p_index.set_defaults(func=cmd_speed_index)
 
-    p_build = sub.add_parser("build-base-times", help="レース結果 CSV から基準タイム表を構築")
-    p_build.add_argument("results_csv", help="CSV: course,surface,distance,race_class,going,time_sec")
+    p_scrape = sub.add_parser("scrape", help="netkeiba からバックテスト用データセットを構築")
+    p_scrape.add_argument("--start", required=True, help="開始日 YYYY-MM-DD")
+    p_scrape.add_argument("--end", required=True, help="終了日 YYYY-MM-DD")
+    p_scrape.add_argument("-o", "--output", default="dataset.json")
+    p_scrape.add_argument("--surface", choices=["芝", "ダ"], default=None, help="コース種別で絞り込み")
+    p_scrape.add_argument("--max-races", type=int, default=None, help="取得レース数の上限")
+    p_scrape.add_argument("--min-past-races", type=int, default=2, help="必要な過去走数の下限")
+    p_scrape.add_argument("--wait", type=float, default=1.5, help="リクエスト間隔（秒）")
+    p_scrape.add_argument("--cache-dir", default="data/cache", help="HTML キャッシュディレクトリ")
+    p_scrape.set_defaults(func=cmd_scrape)
+
+    p_opt = sub.add_parser("optimize", help="データセットで重みをグリッドサーチ最適化")
+    p_opt.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
+    p_opt.add_argument(
+        "--objective",
+        choices=["place_rate", "win_rate", "roi", "top3_hit"],
+        default="place_rate",
+        help="最適化の目的関数（デフォルト: ◎複勝率）",
+    )
+    p_opt.add_argument("--step", type=float, default=0.05, help="グリッドの刻み幅")
+    p_opt.add_argument("-o", "--output", default=None, help="最適重みの保存先 JSON")
+    p_opt.set_defaults(func=cmd_optimize)
+
+    p_build = sub.add_parser("build-base-times", help="レース結果から基準タイム表を構築")
+    p_build.add_argument(
+        "results_file",
+        help="CSV（course,surface,distance,race_class,going,time_sec）または scrape のデータセット JSON",
+    )
     p_build.add_argument("-o", "--output", default="base_times.json")
     p_build.add_argument("--min-samples", type=int, default=5, help="採用する最小サンプル数")
     p_build.set_defaults(func=cmd_build_base_times)

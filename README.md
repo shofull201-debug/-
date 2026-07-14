@@ -1,7 +1,8 @@
 # 競馬予想システム
 
 血統・追切・過去5走の西田式スピード指数の3要素で出走馬を総合評価する予想システムです。
-Python 標準ライブラリのみで動作します（外部依存なし）。
+予想エンジン本体は Python 標準ライブラリのみで動作します
+（netkeiba からのデータ取得のみ beautifulsoup4 が必要）。
 
 ## 評価の仕組み
 
@@ -133,13 +134,75 @@ for r in predict(card):
     print(r.mark, r.name, r.total, r.speed_indices)
 ```
 
+## netkeiba からのデータ取得と重みの最適化
+
+実データで基準タイムの再構築と重みの最適化ができます。
+
+```bash
+pip install -e ".[scrape]"   # beautifulsoup4 を追加インストール
+
+# 1. netkeiba (db.netkeiba.com) から期間内のレース結果・出走馬の過去走・血統を収集
+keiba scrape --start 2026-04-01 --end 2026-06-30 -o dataset.json
+#   --surface 芝            芝レースのみに絞る
+#   --max-races 200         レース数の上限
+#   --wait 1.5              リクエスト間隔（秒）。短くしすぎないこと
+
+# 2. 収集した結果から基準タイム表を再構築（同梱の目安値を実データで置き換え）
+keiba build-base-times dataset.json -o base_times.json
+cp base_times.json src/keiba/data/base_times.json
+
+# 3. 重みをグリッドサーチで最適化（◎の複勝率/勝率/回収率でバックテスト）
+keiba optimize dataset.json --objective place_rate -o weights.json
+
+# 4. 最適化された重みで予想
+keiba predict race.json --weights-file weights.json
+```
+
+`keiba optimize` の出力例:
+
+```
+データセット: 20 レース
+※ データに変化が無いため最適化から除外: workout（重み 0 固定）
+
+現行デフォルト重み {'speed': 0.5, 'workout': 0.3, 'pedigree': 0.2}: ◎勝率 50.0% / ◎複勝率 100.0% / 単勝回収率 250.0%
+
+=== 最適化結果（目的関数: place_rate、上位10件）===
+ speed  workout  pedigree     ◎勝率    ◎複勝率    回収率   印3頭中
+  0.90     0.00      0.10  100.0%   100.0%  500.0%    3.00
+  ...
+最適重み: {'speed': 0.9, 'workout': 0.0, 'pedigree': 0.1}
+```
+
+### スクレイピングに関する注意
+
+- **netkeiba の利用規約を確認のうえ、個人利用の範囲で自己責任で使用してください。**
+- デフォルトで 1.5 秒/リクエストのウェイトが入り、取得済みページは
+  `data/cache/` にキャッシュされて再取得しません（中断しても再開が速い）。
+- 馬ページは 1 頭 1 回しか取得しないため、リクエスト数の目安は
+  「開催日数 + レース数 + ユニーク出走頭数」です。
+  1 開催週の取得でも数百リクエスト（20〜30 分程度）かかります。
+- 追切（調教）データは netkeiba ではプレミアム会員向けのため取得対象外です。
+  そのためスクレイピングデータでの最適化では workout の重みは 0 に固定され、
+  スピード指数と血統の比率が最適化されます。追切は予想時に手入力で活用してください。
+
+### バックテストの指標
+
+| 指標 | 意味 |
+|---|---|
+| `win_rate` | ◎（総合1位）が1着になった率 |
+| `place_rate` | ◎が3着以内に入った率（デフォルトの目的関数） |
+| `roi` | ◎に単勝100円を賭け続けた場合の回収率（%） |
+| `top3_hit` | 印上位3頭のうち3着以内に入った頭数の平均 |
+
+過去走データはレース当日より前の走歴だけを使う（リーク防止）よう構築されます。
+
 ## データのカスタマイズ
 
 同梱の基準値は**あくまで目安**です。精度を上げるには自分のデータで調整してください。
 
 | ファイル | 内容 | 調整方法 |
 |---|---|---|
-| `src/keiba/data/base_times.json` | 基準タイム・クラス補正 | `keiba build-base-times` で実データから再構築 |
+| `src/keiba/data/base_times.json` | 基準タイム・クラス補正 | `keiba scrape` + `keiba build-base-times` で実データから再構築 |
 | `src/keiba/data/sire_aptitude.json` | 種牡馬の芝ダ・距離適性 | 産駒成績を見て 0〜10 で追記 |
 | `src/keiba/data/workout_standards.json` | 追切の水準タイム | トレセン・コースごとに追記 |
 
@@ -154,5 +217,5 @@ python -m pytest tests/ -v
 
 - 馬場指数の自動算出（同日レース結果からの逆算）
 - 枠順・脚質・展開の評価要素追加
-- netkeiba 等からのデータ取り込みスクリプト
-- 過去レースでのバックテスト（回収率検証）と重みの最適化
+- 種牡馬適性の実データからの自動算出（産駒成績の集計）
+- グリッドサーチをロジスティック回帰等の学習ベース最適化に置き換え
