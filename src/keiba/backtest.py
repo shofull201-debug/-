@@ -28,12 +28,18 @@ class PrecompRace:
     odds: list[float | None]             # 単勝オッズ
 
 
-def precompute(dataset: dict) -> list[PrecompRace]:
-    """データセット全レースの偏差値・結果を前計算する。"""
+def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
+    """データセット全レースの偏差値・結果を前計算する。
+
+    variants に track_variant.VariantTable を渡すと、各出走馬の過去走に
+    同日レースから算出した馬場指数を適用してからスピード指数を計算する。
+    """
     out: list[PrecompRace] = []
     for race_data in dataset["races"]:
         info = race_data["race"]
         horses = [HorseEntry.from_dict(h) for h in race_data["horses"]]
+        if variants is not None:
+            variants.apply_to_horses(horses)
         raws = [evaluate_horse(h, info["surface"], info["distance"]) for h in horses]
 
         dev_speed = _to_deviation([r["speed"] for r in raws])

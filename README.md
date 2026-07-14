@@ -151,11 +151,14 @@ keiba scrape --start 2026-04-01 --end 2026-06-30 -o dataset.json
 keiba build-base-times dataset.json -o base_times.json
 cp base_times.json src/keiba/data/base_times.json
 
-# 3. 重みをグリッドサーチで最適化（◎の複勝率/勝率/回収率でバックテスト）
-keiba optimize dataset.json --objective place_rate -o weights.json
+# 3. 同日レース結果から馬場指数表を算出（基準タイム差し替え後に実行すること）
+keiba build-variants dataset.json -o track_variants.json
 
-# 4. 最適化された重みで予想
-keiba predict race.json --weights-file weights.json
+# 4. 重みをグリッドサーチで最適化（◎の複勝率/勝率/回収率でバックテスト）
+keiba optimize dataset.json --variants track_variants.json -o weights.json
+
+# 5. 最適化された重み + 馬場指数で予想
+keiba predict race.json --weights-file weights.json --variants track_variants.json
 ```
 
 `keiba optimize` の出力例:
@@ -172,6 +175,21 @@ keiba predict race.json --weights-file weights.json
   ...
 最適重み: {'speed': 0.9, 'workout': 0.0, 'pedigree': 0.1}
 ```
+
+### 馬場指数の自動算出（build-variants）
+
+同日・同競馬場・同コース種別（芝/ダ）の全レースについて
+「走破タイムと基準タイムの乖離」を指数ポイントに換算し、
+**レースごとの平均 → 日単位の中央値**（外れ値のハイレベル戦に強い）で
+その日の馬場の速さを推定します。
+
+- 時計のかかる馬場 → プラス、高速馬場 → マイナスの補正値
+- 過去走の `track_variant` が未設定の走にだけ適用されます
+  （手入力の実測値があればそちらが優先）
+- 適用された走は、馬場状態（良/稍重/重/不良）からの概算補正の代わりに
+  この実測ベースの補正でスピード指数が計算されます
+- `--min-races`（デフォルト2）未満しかレースが無い日は信頼性が低いためスキップ
+- **基準タイムを再構築した場合は馬場指数も算出し直してください**（乖離の基準が変わるため）
 
 ### スクレイピングに関する注意
 
@@ -215,7 +233,6 @@ python -m pytest tests/ -v
 
 ## 今後の拡張候補
 
-- 馬場指数の自動算出（同日レース結果からの逆算）
 - 枠順・脚質・展開の評価要素追加
 - 種牡馬適性の実データからの自動算出（産駒成績の集計）
 - グリッドサーチをロジスティック回帰等の学習ベース最適化に置き換え

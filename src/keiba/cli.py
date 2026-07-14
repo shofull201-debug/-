@@ -7,8 +7,10 @@
     keiba speed-index --course 東京 --surface 芝 --distance 1600 \
         --time 93.5 --weight 57 --going 良 --race-class 2勝
     keiba scrape --start 2026-04-01 --end 2026-06-30 -o dataset.json
-    keiba optimize dataset.json -o weights.json
+    keiba build-variants dataset.json -o track_variants.json
+    keiba optimize dataset.json --variants track_variants.json -o weights.json
     keiba build-base-times dataset.json -o base_times.json
+    keiba predict race.json --variants track_variants.json
 """
 
 from __future__ import annotations
@@ -45,6 +47,12 @@ def cmd_predict(args: argparse.Namespace) -> int:
     if args.weights_file:
         with open(args.weights_file, encoding="utf-8") as f:
             weights = json.load(f)
+
+    if args.variants:
+        from .track_variant import VariantTable
+
+        applied = VariantTable.load(args.variants).apply_to_card(card)
+        print(f"馬場指数を過去走 {applied} 件に適用しました")
 
     results = predict(card, weights=weights)
 
@@ -132,7 +140,15 @@ def cmd_optimize(args: argparse.Namespace) -> int:
         dataset = json.load(f)
 
     print(f"データセット: {len(dataset['races'])} レース")
-    precomp = precompute(dataset)
+
+    variants = None
+    if args.variants:
+        from .track_variant import VariantTable
+
+        variants = VariantTable.load(args.variants)
+        print(f"馬場指数表を適用: {len(variants.table)} 日分")
+
+    precomp = precompute(dataset, variants=variants)
 
     factors = active_factors(precomp)
     excluded = [f for f in FACTORS if f not in factors]
@@ -167,13 +183,15 @@ def cmd_optimize(args: argparse.Namespace) -> int:
 
 
 def _result_rows_from_dataset(dataset: dict):
-    """データセット JSON から基準タイム集計用の行を取り出す。"""
+    """データセット JSON から走破タイムの行データを取り出す。"""
     for race_data in dataset["races"]:
         info = race_data["race"]
         for horse in race_data["horses"]:
             result = horse.get("result", {})
             if result.get("time_sec") and result.get("finish_position"):
                 yield {
+                    "race_id": info.get("race_id"),
+                    "date": info.get("date", ""),
                     "course": info["course"],
                     "surface": info["surface"],
                     "distance": info["distance"],
@@ -181,6 +199,27 @@ def _result_rows_from_dataset(dataset: dict):
                     "going": info["going"],
                     "time_sec": result["time_sec"],
                 }
+
+
+def cmd_build_variants(args: argparse.Namespace) -> int:
+    """データセットから同日レースの馬場指数表を算出する。"""
+    from .track_variant import VariantTable, compute_variants
+
+    with open(args.dataset, encoding="utf-8") as f:
+        dataset = json.load(f)
+
+    variants = compute_variants(
+        _result_rows_from_dataset(dataset),
+        min_races=args.min_races,
+        clamp=args.clamp,
+    )
+    VariantTable(variants).save(args.output)
+    print(f"{len(variants)} 日分の馬場指数を {args.output} に書き出しました")
+    if variants:
+        values = sorted(variants.values())
+        print(f"  範囲: {values[0]:+.1f} 〜 {values[-1]:+.1f} / 中央値: {values[len(values) // 2]:+.1f}")
+    print("※ keiba predict / optimize の --variants オプションで適用できます")
+    return 0
 
 
 def cmd_build_base_times(args: argparse.Namespace) -> int:
@@ -246,6 +285,9 @@ def main(argv: list[str] | None = None) -> int:
         help="重み指定（例: speed=0.5,workout=0.3,pedigree=0.2）",
     )
     p_predict.add_argument("--weights-file", default=None, help="keiba optimize が出力した重み JSON")
+    p_predict.add_argument(
+        "--variants", default=None, help="keiba build-variants が出力した馬場指数表 JSON"
+    )
     p_predict.add_argument("--json", action="store_true", help="JSON 形式で出力")
     p_predict.set_defaults(func=cmd_predict)
 
@@ -280,8 +322,18 @@ def main(argv: list[str] | None = None) -> int:
         help="最適化の目的関数（デフォルト: ◎複勝率）",
     )
     p_opt.add_argument("--step", type=float, default=0.05, help="グリッドの刻み幅")
+    p_opt.add_argument(
+        "--variants", default=None, help="keiba build-variants が出力した馬場指数表 JSON"
+    )
     p_opt.add_argument("-o", "--output", default=None, help="最適重みの保存先 JSON")
     p_opt.set_defaults(func=cmd_optimize)
+
+    p_var = sub.add_parser("build-variants", help="データセットから同日レースの馬場指数表を算出")
+    p_var.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
+    p_var.add_argument("-o", "--output", default="track_variants.json")
+    p_var.add_argument("--min-races", type=int, default=2, help="1日として採用する最小レース数")
+    p_var.add_argument("--clamp", type=float, default=40.0, help="馬場指数の上下限（指数ポイント）")
+    p_var.set_defaults(func=cmd_build_variants)
 
     p_build = sub.add_parser("build-base-times", help="レース結果から基準タイム表を構築")
     p_build.add_argument(
