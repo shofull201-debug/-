@@ -31,6 +31,7 @@ class PastRace:
     field_size: int           # 出走頭数
     race_class: str           # クラス（RACE_CLASSES のいずれか）
     track_variant: float | None = None  # その日の馬場指数（指数ポイント）。不明なら None
+    position_4c: int | None = None      # 4コーナー通過順位（脚質推定用）。不明なら None
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "PastRace":
@@ -47,6 +48,9 @@ class PastRace:
             race_class=d.get("race_class", "1勝"),
             track_variant=(
                 float(d["track_variant"]) if d.get("track_variant") is not None else None
+            ),
+            position_4c=(
+                int(d["position_4c"]) if d.get("position_4c") is not None else None
             ),
         )
 
@@ -91,6 +95,7 @@ class HorseEntry:
     dam_sire: str | None = None        # 母父
     weight_carried: float = 56.0       # 今回の斤量
     horse_number: int | None = None    # 馬番
+    running_style: str | None = None   # 脚質（逃げ/先行/差し/追込）。None なら過去走から推定
     past_races: list[PastRace] = field(default_factory=list)
     workouts: list[Workout] = field(default_factory=list)
 
@@ -107,6 +112,7 @@ class HorseEntry:
             dam_sire=d.get("dam_sire"),
             weight_carried=float(d.get("weight_carried", 56.0)),
             horse_number=d.get("horse_number"),
+            running_style=d.get("running_style"),
             past_races=past[:5],  # 過去 5 走まで
             workouts=works,
         )

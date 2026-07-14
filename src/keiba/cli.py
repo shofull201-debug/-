@@ -31,9 +31,9 @@ def _parse_weights(text: str) -> dict[str, float]:
     for part in text.split(","):
         key, _, value = part.partition("=")
         key = key.strip()
-        if key not in ("speed", "workout", "pedigree", "going"):
+        if key not in ("speed", "workout", "pedigree", "going", "style"):
             raise argparse.ArgumentTypeError(
-                f"不明な重みキー: {key}（speed / workout / pedigree / going のいずれか）"
+                f"不明な重みキー: {key}（speed / workout / pedigree / going / style のいずれか）"
             )
         weights[key] = float(value)
     return weights
@@ -73,6 +73,7 @@ def cmd_predict(args: argparse.Namespace) -> int:
                 "speed_indices": r.speed_indices,
                 "pedigree": r.pedigree,
                 "workout": r.workout,
+                "style": r.style,
                 "going_aptitude": r.going_aptitude,
             }
             for r in results
@@ -81,23 +82,32 @@ def cmd_predict(args: argparse.Namespace) -> int:
         return 0
 
     wet = results and "going" in results[0].deviations
+    # 脚質が1頭でも判明しているときだけ脚質列を表示する
+    styled = any(r.style and r.style.get("style") for r in results)
     going_col = f" {'道偏':>5}" if wet else ""
-    header = f"{'印':<2} {'馬番':>3} {'馬名':<12} {'総合':>6} {'速偏':>5} {'調偏':>5} {'血偏':>5}{going_col}  過去5走指数(直近→)"
+    style_col = f" {'脚偏':>5} {'脚質':<3}" if styled else ""
+    header = f"{'印':<2} {'馬番':>3} {'馬名':<12} {'総合':>6} {'速偏':>5} {'調偏':>5} {'血偏':>5}{going_col}{style_col}  過去5走指数(直近→)"
     print(header)
     print("-" * len(header))
     for r in results:
         num = str(r.horse_number) if r.horse_number is not None else "-"
         indices = " ".join(f"{v:.0f}" for v in r.speed_indices) or "（初出走）"
         going_val = f" {r.deviations['going']:>5.1f}" if wet else ""
+        style_val = ""
+        if styled:
+            style_name = (r.style or {}).get("style") or "－"
+            style_val = f" {r.deviations['style']:>5.1f} {style_name:<3}"
         print(
             f"{r.mark or '　':<2} {num:>3} {r.name:<12} {r.total:>6.1f}"
             f" {r.deviations['speed']:>5.1f} {r.deviations['workout']:>5.1f}"
-            f" {r.deviations['pedigree']:>5.1f}{going_val}  {indices}"
+            f" {r.deviations['pedigree']:>5.1f}{going_val}{style_val}  {indices}"
         )
 
     legend = "\n凡例: 総合=偏差値の加重合成 / 速偏=スピード指数偏差値 / 調偏=追切偏差値 / 血偏=血統偏差値"
     if wet:
         legend += " / 道偏=道悪適性偏差値"
+    if styled:
+        legend += " / 脚偏=脚質×コース形態偏差値"
     print(legend)
     return 0
 

@@ -16,11 +16,12 @@ from statistics import mean, pstdev
 from .going_aptitude import going_aptitude_score, is_wet
 from .models import HorseEntry, RaceCard
 from .pedigree import pedigree_score
+from .running_style import style_fit_score
 from .speed_index import aggregate_speed_score
 from .workout import workout_score
 
-# デフォルトの重み（スピード指数を主軸に、追切・血統で補正）
-DEFAULT_WEIGHTS = {"speed": 0.5, "workout": 0.3, "pedigree": 0.2}
+# デフォルトの重み（スピード指数を主軸に、追切・血統・脚質で補正）
+DEFAULT_WEIGHTS = {"speed": 0.5, "workout": 0.3, "pedigree": 0.2, "style": 0.1}
 
 # 当日馬場が良以外のとき、道悪適性を第4の要素として自動追加する重み
 # （他の重みと合算後に正規化されるため、渋るほど道悪適性の比重が上がる）
@@ -43,6 +44,7 @@ class HorseResult:
     speed_indices: list[float]         # 各走の生指数（直近順）
     pedigree: dict                     # 血統スコア内訳
     workout: dict                      # 追切スコア内訳
+    style: dict | None = None          # 脚質×コース形態の内訳
     going_aptitude: dict | None = None  # 道悪適性の内訳（良馬場のときは None）
     deviations: dict[str, float] = field(default_factory=dict)  # 各要素の偏差値
 
@@ -58,8 +60,10 @@ def _to_deviation(values: list[float]) -> list[float]:
     return [50.0 + (v - mu) / sigma * 10 for v in values]
 
 
-def evaluate_horse(horse: HorseEntry, surface: str, distance: int) -> dict:
-    """1 頭の 3 要素の生スコアを算出する。"""
+def evaluate_horse(
+    horse: HorseEntry, surface: str, distance: int, course: str = ""
+) -> dict:
+    """1 頭の各要素の生スコアを算出する。"""
     speed, indices = aggregate_speed_score(horse.past_races, surface, distance)
     ped = pedigree_score(horse.sire, horse.dam_sire, surface, distance)
     work = workout_score(horse.workouts)
@@ -68,6 +72,7 @@ def evaluate_horse(horse: HorseEntry, surface: str, distance: int) -> dict:
         "speed_indices": indices,
         "pedigree": ped,
         "workout": work,
+        "style": style_fit_score(horse, course, surface, distance),
         "going_aptitude": going_aptitude_score(horse),
     }
 
@@ -89,7 +94,10 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
     total_w = sum(w.values())
     w = {k: v / total_w for k, v in w.items()}
 
-    raws = [evaluate_horse(h, race.surface, race.distance) for h in card.horses]
+    raws = [
+        evaluate_horse(h, race.surface, race.distance, course=race.course)
+        for h in card.horses
+    ]
 
     # 過去走が無い馬（新馬など）のスピード指数はメンバー平均で補完する
     known_speeds = [r["speed"] for r in raws if r["speed_indices"]]
@@ -100,21 +108,24 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
     dev_ped = _to_deviation([r["pedigree"]["score"] for r in raws])
     dev_work = _to_deviation([r["workout"]["score"] for r in raws])
     dev_going = _to_deviation([r["going_aptitude"]["score"] for r in raws])
+    dev_style = _to_deviation([r["style"]["score"] for r in raws])
 
     results = []
-    for horse, raw, ds, dp, dw, dg in zip(
-        card.horses, raws, dev_speed, dev_ped, dev_work, dev_going
+    for horse, raw, ds, dp, dw, dg, dst in zip(
+        card.horses, raws, dev_speed, dev_ped, dev_work, dev_going, dev_style
     ):
         total = (
             ds * w["speed"]
             + dp * w["pedigree"]
             + dw * w["workout"]
             + dg * w.get("going", 0.0)
+            + dst * w.get("style", 0.0)
         )
         deviations = {
             "speed": round(ds, 1),
             "pedigree": round(dp, 1),
             "workout": round(dw, 1),
+            "style": round(dst, 1),
         }
         if wet:
             deviations["going"] = round(dg, 1)
@@ -129,6 +140,7 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
                 speed_indices=[round(v, 1) for v in raw["speed_indices"]],
                 pedigree=raw["pedigree"],
                 workout=raw["workout"],
+                style=raw["style"],
                 going_aptitude=raw["going_aptitude"] if wet else None,
                 deviations=deviations,
             )

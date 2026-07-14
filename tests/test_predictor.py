@@ -43,8 +43,12 @@ class TestPredict:
 
     def test_custom_weights_change_ranking_inputs(self):
         card = load_sample()
-        speed_only = predict(card, weights={"speed": 1.0, "workout": 0.0, "pedigree": 0.0})
-        workout_only = predict(card, weights={"speed": 0.0, "workout": 1.0, "pedigree": 0.0})
+        speed_only = predict(
+            card, weights={"speed": 1.0, "workout": 0.0, "pedigree": 0.0, "style": 0.0}
+        )
+        workout_only = predict(
+            card, weights={"speed": 0.0, "workout": 1.0, "pedigree": 0.0, "style": 0.0}
+        )
         # 重み 1.0 の要素の偏差値がそのまま総合点になる
         for r in speed_only:
             assert abs(r.total - r.deviations["speed"]) < 0.11

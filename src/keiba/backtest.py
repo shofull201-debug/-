@@ -17,7 +17,7 @@ from .going_aptitude import is_wet
 from .models import HorseEntry
 from .predictor import _to_deviation, evaluate_horse
 
-FACTORS = ("speed", "workout", "pedigree", "going")
+FACTORS = ("speed", "workout", "pedigree", "going", "style")
 
 
 @dataclass
@@ -41,7 +41,11 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
         horses = [HorseEntry.from_dict(h) for h in race_data["horses"]]
         if variants is not None:
             variants.apply_to_horses(horses)
-        raws = [evaluate_horse(h, info["surface"], info["distance"]) for h in horses]
+        course = info.get("course", "")
+        raws = [
+            evaluate_horse(h, info["surface"], info["distance"], course=course)
+            for h in horses
+        ]
 
         dev_speed = _to_deviation([r["speed"] for r in raws])
         dev_ped = _to_deviation([r["pedigree"]["score"] for r in raws])
@@ -51,6 +55,7 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
             dev_going = _to_deviation([r["going_aptitude"]["score"] for r in raws])
         else:
             dev_going = [50.0] * len(raws)
+        dev_style = _to_deviation([r["style"]["score"] for r in raws])
 
         finish = [h.get("result", {}).get("finish_position") for h in race_data["horses"]]
         odds = [h.get("result", {}).get("odds") for h in race_data["horses"]]
@@ -58,8 +63,10 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
         out.append(
             PrecompRace(
                 deviations=[
-                    {"speed": s, "pedigree": p, "workout": w, "going": g}
-                    for s, p, w, g in zip(dev_speed, dev_ped, dev_work, dev_going)
+                    {"speed": s, "pedigree": p, "workout": w, "going": g, "style": st}
+                    for s, p, w, g, st in zip(
+                        dev_speed, dev_ped, dev_work, dev_going, dev_style
+                    )
                 ],
                 finish=finish,
                 odds=odds,
