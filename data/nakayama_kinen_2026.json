@@ -1,0 +1,620 @@
+{
+  "_comment": "中山記念2026 レースカード(バックテスト用・レース前データのみ)。タイム推定規則: 実測>勝ちタイム+実着差>勝ちタイム+0.15秒×(着順-1)。勝ちタイム不明の走は除外。天皇賞秋2025勝ち1:58.6/皐月賞2025勝ち1:57.0/中山金杯2026勝ち2:00.3/鳴尾記念2025勝ち1:43.7/中日新聞杯2025勝ち1:57.6/七夕賞2025勝ち2:00.5/チャレンジC2025勝ち1:58.0/京成杯AH2025勝ち1:31.3等を基準。追い切りの美浦2/25は大雨・重馬場(評価は補正なし=注意)",
+  "race": {
+    "name": "中山記念 (G2)",
+    "date": "2026-03-01",
+    "course": "中山",
+    "surface": "芝",
+    "distance": 1800,
+    "going": "良",
+    "race_class": "G2"
+  },
+  "horses": [
+    {
+      "name": "セイウンハーデス",
+      "horse_number": 1,
+      "sire": "シルバーステート",
+      "dam_sire": "マンハッタンカフェ",
+      "weight_carried": 57.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2025-11-02",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.5,
+          "weight_carried": 58.0,
+          "finish_position": 7,
+          "field_size": 17,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-06-08",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 103.9,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-26",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 50.2,
+          "last_1f": 12.3,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "オニャンコポン",
+      "horse_number": 2,
+      "sire": "エイシンフラッシュ",
+      "dam_sire": "ヴィクトワールピサ",
+      "weight_carried": 57.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2025-12-13",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.0,
+          "weight_carried": 57.0,
+          "finish_position": 10,
+          "field_size": 18,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-12-06",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 104.8,
+          "weight_carried": 57.0,
+          "finish_position": 8,
+          "field_size": 14,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-09-13",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.8,
+          "weight_carried": 57.0,
+          "finish_position": 6,
+          "field_size": 12,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-07-13",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.8,
+          "weight_carried": 54.0,
+          "finish_position": 3,
+          "field_size": 16,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.3,
+          "last_1f": 11.8,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "マジックサンズ",
+      "horse_number": 3,
+      "sire": "キズナ",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 56.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2025-04-20",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 117.6,
+          "weight_carried": 57.0,
+          "finish_position": 6,
+          "field_size": 18,
+          "race_class": "G1"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.1,
+          "last_1f": 12.6,
+          "intensity": "馬なり",
+          "partner_result": "先着"
+        },
+        {
+          "date": "2026-02-18",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.5,
+          "last_1f": 11.1,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "スパークリシャール",
+      "horse_number": 4,
+      "sire": "スワーヴリチャード",
+      "dam_sire": "シンボリクリスエス",
+      "weight_carried": 57.0,
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 85.6,
+          "last_1f": 12.1,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-02-21",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.4,
+          "last_1f": 11.7,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "レーベンスティール",
+      "horse_number": 5,
+      "sire": "リアルスティール",
+      "dam_sire": "トウカイテイオー",
+      "weight_carried": 58.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2025-11-02",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.7,
+          "weight_carried": 58.0,
+          "finish_position": 8,
+          "field_size": 17,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-10-05",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 104.0,
+          "weight_carried": 58.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-18",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 82.0,
+          "last_1f": 11.6,
+          "intensity": "馬なり",
+          "partner_result": "同入"
+        }
+      ]
+    },
+    {
+      "name": "チェルヴィニア",
+      "horse_number": 6,
+      "sire": "ハービンジャー",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 55.0,
+      "running_style": "差し",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 84.0,
+          "last_1f": 11.6,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "マイネルモーント",
+      "horse_number": 7,
+      "sire": "ゴールドシップ",
+      "dam_sire": "ロージズインメイ",
+      "weight_carried": 57.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-01-04",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 121.4,
+          "weight_carried": 56.0,
+          "finish_position": 8,
+          "field_size": 14,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-02-01",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 56.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 5,
+          "total_time": 68.0,
+          "last_1f": 12.1,
+          "intensity": "強め",
+          "partner_result": "同入"
+        }
+      ]
+    },
+    {
+      "name": "ショウナンマグマ",
+      "horse_number": 8,
+      "sire": "ザファクター",
+      "dam_sire": "ステイゴールド",
+      "weight_carried": 57.0,
+      "running_style": "逃げ",
+      "past_races": [
+        {
+          "date": "2025-12-21",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "重",
+          "time_sec": 107.7,
+          "weight_carried": 56.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "L"
+        },
+        {
+          "date": "2025-12-06",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 105.1,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.6,
+          "last_1f": 14.2,
+          "intensity": "強め",
+          "partner_result": null
+        },
+        {
+          "date": "2026-02-18",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.5,
+          "last_1f": 12.7,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "カラマティアノス",
+      "horse_number": 9,
+      "sire": "レイデオロ",
+      "dam_sire": "ハーツクライ",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-01-04",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.3,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-09-06",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.7,
+          "weight_carried": 56.0,
+          "finish_position": 10,
+          "field_size": 16,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-04-20",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.4,
+          "weight_carried": 57.0,
+          "finish_position": 10,
+          "field_size": 18,
+          "race_class": "G1"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 5,
+          "total_time": 67.3,
+          "last_1f": 11.8,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "エコロヴァルツ",
+      "horse_number": 10,
+      "sire": "ブラックタイド",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 57.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2025-11-02",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.1,
+          "weight_carried": 58.0,
+          "finish_position": 11,
+          "field_size": 17,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-03-02",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 104.8,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 14,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.9,
+          "last_1f": 12.8,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-02-18",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.5,
+          "last_1f": 11.1,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "サイルーン",
+      "horse_number": 11,
+      "sire": "ディープインパクト",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 57.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2025-03-16",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "重",
+          "time_sec": 97.2,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "L"
+        }
+      ],
+      "workouts": []
+    },
+    {
+      "name": "サンストックトン",
+      "horse_number": 12,
+      "sire": "ワールドエース",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 57.0,
+      "past_races": [
+        {
+          "date": "2025-12-06",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 104.6,
+          "weight_carried": 57.0,
+          "finish_position": 7,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 5,
+          "total_time": 66.2,
+          "last_1f": 12.0,
+          "intensity": "強め",
+          "partner_result": "遅れ"
+        },
+        {
+          "date": "2026-02-18",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.5,
+          "last_1f": 12.3,
+          "intensity": "強め",
+          "partner_result": "同入"
+        }
+      ]
+    },
+    {
+      "name": "ニシノエージェント",
+      "horse_number": 13,
+      "sire": "イスラボニータ",
+      "dam_sire": "ノヴェリスト",
+      "weight_carried": 56.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-01-04",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 122.3,
+          "weight_carried": 56.0,
+          "finish_position": 14,
+          "field_size": 14,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-04-20",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.8,
+          "weight_carried": 57.0,
+          "finish_position": 13,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-01-19",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.9,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": []
+    },
+    {
+      "name": "シャンパンカラー",
+      "horse_number": 14,
+      "sire": "ドゥラメンテ",
+      "dam_sire": null,
+      "weight_carried": 58.0,
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-02-25",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.3,
+          "last_1f": 12.9,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    }
+  ]
+}

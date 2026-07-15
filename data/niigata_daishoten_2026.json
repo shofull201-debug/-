@@ -1,0 +1,685 @@
+{
+  "_comment": "新潟大賞典2026 レースカード(バックテスト用・レース前データのみ)。タイム基準: 金鯱賞2026勝ち1:58.1/中山金杯2026勝ち2:00.3/ディセンバーS2025勝ち1:47.4(重)/福島民報杯2026勝ち1:58.4/七夕賞2025勝ち2:00.5/エプソムC2025勝ち1:43.9(稍重)/新潟大賞典2025勝ち2:00.5/エリ女2025勝ち2:11.0/VM2025勝ち1:32.1/菊花賞2025勝ち3:04.0(稍重)等。シンハナーダの前走(1:58.6勝ち)は開催場・日付未特定のため course=不明/日付は仮置き",
+  "race": {
+    "name": "新潟大賞典 (G3)",
+    "date": "2026-05-16",
+    "course": "新潟",
+    "surface": "芝",
+    "distance": 2000,
+    "going": "良",
+    "race_class": "G3"
+  },
+  "horses": [
+    {
+      "name": "ホールネス",
+      "horse_number": 1,
+      "sire": "Lope de Vega",
+      "dam_sire": "Golan",
+      "weight_carried": 55.0,
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 7,
+          "total_time": 99.6,
+          "last_1f": 12.2,
+          "intensity": "馬なり",
+          "partner_result": "遅れ"
+        }
+      ]
+    },
+    {
+      "name": "ラインベック",
+      "horse_number": 2,
+      "sire": "ディープインパクト",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 56.0,
+          "finish_position": 9,
+          "field_size": 15,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "P",
+          "furlongs": 6,
+          "total_time": 83.9,
+          "last_1f": 12.1,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-07",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 7,
+          "total_time": 98.0,
+          "last_1f": 11.5,
+          "intensity": "強め",
+          "partner_result": "遅れ"
+        }
+      ]
+    },
+    {
+      "name": "グランディア",
+      "horse_number": 3,
+      "sire": "ハービンジャー",
+      "dam_sire": "サンデーサイレンス",
+      "weight_carried": 57.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-01-04",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.6,
+          "weight_carried": 56.0,
+          "finish_position": 3,
+          "field_size": 14,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-12-21",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "重",
+          "time_sec": 107.5,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 16,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 4,
+          "total_time": 56.0,
+          "last_1f": 11.3,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-07",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.3,
+          "last_1f": 10.9,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "アンゴラブラック",
+      "horse_number": 4,
+      "sire": "キズナ",
+      "dam_sire": "ルーラーシップ",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-01-04",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.3,
+          "weight_carried": 55.0,
+          "finish_position": 2,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 5,
+          "total_time": 65.0,
+          "last_1f": 11.2,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-06",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.4,
+          "last_1f": 11.3,
+          "intensity": "馬なり",
+          "partner_result": "先着"
+        }
+      ]
+    },
+    {
+      "name": "グランドカリナン",
+      "horse_number": 5,
+      "sire": "リアルインパクト",
+      "dam_sire": "マンハッタンカフェ",
+      "weight_carried": 54.0,
+      "past_races": [
+        {
+          "date": "2025-05-17",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 121.0,
+          "weight_carried": 56.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": []
+    },
+    {
+      "name": "ドゥラドーレス",
+      "horse_number": 6,
+      "sire": "ドゥラメンテ",
+      "dam_sire": "ハービンジャー",
+      "weight_carried": 58.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.7,
+          "weight_carried": 58.0,
+          "finish_position": 5,
+          "field_size": 15,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-07-13",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.7,
+          "weight_carried": 57.5,
+          "finish_position": 2,
+          "field_size": 16,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-06-08",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 104.1,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 14,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.7,
+          "last_1f": 12.1,
+          "intensity": "強め",
+          "partner_result": "同入"
+        },
+        {
+          "date": "2026-05-07",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 7,
+          "total_time": 96.6,
+          "last_1f": 11.0,
+          "intensity": "G前仕掛け",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "トーセンリョウ",
+      "horse_number": 7,
+      "sire": "ディープインパクト",
+      "dam_sire": "Hawk Wing",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-02-22",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.9,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 16,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.2,
+          "last_1f": 12.4,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "ヤマニンブークリエ",
+      "horse_number": 8,
+      "sire": "キタサンブラック",
+      "dam_sire": "チチカステナンゴ",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2025-10-26",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 3000,
+          "going": "稍重",
+          "time_sec": 186.3,
+          "weight_carried": 57.0,
+          "finish_position": 16,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-09-15",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 130.9,
+          "weight_carried": 56.0,
+          "finish_position": 2,
+          "field_size": 14,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-06-21",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2400,
+          "going": "良",
+          "time_sec": 145.4,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 12,
+          "race_class": "2勝"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "P",
+          "furlongs": 6,
+          "total_time": 79.4,
+          "last_1f": 11.3,
+          "intensity": "強め",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-07",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.9,
+          "last_1f": 11.5,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "フクノブルーレイク",
+      "horse_number": 9,
+      "sire": "ウインブライト",
+      "dam_sire": null,
+      "weight_carried": 53.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-05-03",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.3,
+          "weight_carried": 58.0,
+          "finish_position": 5,
+          "field_size": 14,
+          "race_class": "3勝"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 5,
+          "total_time": 67.4,
+          "last_1f": 11.4,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "サフィラ",
+      "horse_number": 10,
+      "sire": "ハーツクライ",
+      "dam_sire": "Lomitas",
+      "weight_carried": 56.0,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 55.0,
+          "finish_position": 9,
+          "field_size": 15,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-11-16",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 131.9,
+          "weight_carried": 56.0,
+          "finish_position": 7,
+          "field_size": 16,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-05-18",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 93.9,
+          "weight_carried": 56.0,
+          "finish_position": 13,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-04-12",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.8,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 15,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.7,
+          "last_1f": 12.4,
+          "intensity": "馬なり",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-06",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 79.7,
+          "last_1f": 11.6,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "バレエマスター",
+      "horse_number": 11,
+      "sire": "スピルバーグ",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "running_style": "追込",
+      "past_races": [
+        {
+          "date": "2026-04-12",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 55.0,
+          "finish_position": 7,
+          "field_size": 15,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 52.1,
+          "last_1f": 12.1,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "セキトバイースト",
+      "horse_number": 12,
+      "sire": "デクラレーションオブウォー",
+      "dam_sire": "Footstepsinthesand",
+      "weight_carried": 56.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.6,
+          "weight_carried": 55.0,
+          "finish_position": 11,
+          "field_size": 15,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 85.5,
+          "last_1f": 11.2,
+          "intensity": "馬なり",
+          "partner_result": "先着"
+        },
+        {
+          "date": "2026-05-06",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.5,
+          "last_1f": 11.2,
+          "intensity": "一杯",
+          "partner_result": "先着"
+        }
+      ]
+    },
+    {
+      "name": "シュトルーヴェ",
+      "horse_number": 13,
+      "sire": "キングカメハメハ",
+      "dam_sire": "ディープインパクト",
+      "weight_carried": 59.0,
+      "running_style": "追込",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 4,
+          "total_time": 51.0,
+          "last_1f": 12.0,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "シンハナーダ",
+      "horse_number": 14,
+      "sire": "レイデオロ",
+      "dam_sire": "ディープインパクト",
+      "weight_carried": 56.0,
+      "running_style": "追込",
+      "past_races": [
+        {
+          "date": "2026-04-01",
+          "course": "不明",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.6,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "OP"
+        },
+        {
+          "date": "2025-12-13",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.1,
+          "weight_carried": 55.0,
+          "finish_position": 4,
+          "field_size": 18,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.0,
+          "last_1f": 11.4,
+          "intensity": "馬なり",
+          "partner_result": null
+        }
+      ]
+    },
+    {
+      "name": "シュガークン",
+      "horse_number": 15,
+      "sire": "ドゥラメンテ",
+      "dam_sire": "サクラバクシンオー",
+      "weight_carried": 58.0,
+      "running_style": "先行",
+      "past_races": [
+        {
+          "date": "2024-05-26",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2400,
+          "going": "良",
+          "time_sec": 145.2,
+          "weight_carried": 57.0,
+          "finish_position": 7,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2024-04-27",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2400,
+          "going": "良",
+          "time_sec": 144.2,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-05-13",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.5,
+          "last_1f": 12.3,
+          "intensity": "強め",
+          "partner_result": null
+        },
+        {
+          "date": "2026-05-07",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 79.7,
+          "last_1f": 11.1,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ]
+    }
+  ]
+}
