@@ -50,6 +50,7 @@ def build_dataset(
     surface: str | None = None,
     max_races: int | None = None,
     min_past_races: int = 2,
+    results_only: bool = False,
     log: Callable[[str], None] = print,
 ) -> dict:
     """期間内の JRA レースを取得し、各出走馬の過去 5 走・血統つきデータセットを作る。
@@ -57,6 +58,10 @@ def build_dataset(
     - surface: "芝" / "ダ" で絞り込み（None なら両方）
     - min_past_races: 過去走がこの数未満の馬はスキップ（新馬戦対策）
     - 馬ページはキャッシュされるため、同じ馬が何度出走していても取得は 1 回
+    - results_only=True の場合は馬ページを取得せず、レース結果
+      （全馬の走破タイム・斤量・着順・オッズ）だけを収集する。
+      リクエスト数が「開催日数 + レース数」だけで済むため大量収集向き。
+      出力は build-base-times / build-variants にそのまま使える。
     """
     horse_cache: dict[str, ParsedHorse] = {}
     races_out: list[dict] = []
@@ -76,6 +81,41 @@ def build_dataset(
             if parsed is None or not parsed.date:
                 continue
             if surface and parsed.surface != surface:
+                continue
+
+            if results_only:
+                races_out.append(
+                    {
+                        "race": {
+                            "race_id": parsed.race_id,
+                            "name": parsed.name,
+                            "date": parsed.date,
+                            "course": parsed.course,
+                            "surface": parsed.surface,
+                            "distance": parsed.distance,
+                            "going": parsed.going,
+                            "race_class": parsed.race_class,
+                        },
+                        "horses": [
+                            {
+                                "name": row.name,
+                                "horse_number": row.horse_number,
+                                "horse_id": row.horse_id,
+                                "sire": "",
+                                "weight_carried": row.weight_carried,
+                                "past_races": [],
+                                "workouts": [],
+                                "result": {
+                                    "finish_position": row.finish_position,
+                                    "time_sec": row.time_sec,
+                                    "odds": row.odds,
+                                    "popularity": row.popularity,
+                                },
+                            }
+                            for row in parsed.rows
+                        ],
+                    }
+                )
                 continue
 
             horses = []

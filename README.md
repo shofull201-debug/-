@@ -203,6 +203,27 @@ keiba predict race.json --weights-file weights.json --variants track_variants.js
 最適重み: {'speed': 0.9, 'workout': 0.0, 'pedigree': 0.1}
 ```
 
+### 年間全レースの走破タイム収集（--results-only）
+
+基準タイム・馬場指数の材料として「全レースの走破タイム・斤量・オッズ」だけを
+集めたい場合は、馬ページの取得を省く高速モードを使います。
+
+```bash
+# 2026年前半の中央競馬 全レース結果を収集
+# リクエスト数 = 開催日数(約195日分の日付確認) + レース数(約1,700)
+# 1.5秒間隔で 約50分。キャッシュされるため中断・再開可能
+keiba scrape --results-only --start 2026-01-01 --end 2026-07-14 -o results_2026.json
+
+# 手持ちの過去データ(CSV)と合わせて基準タイムを構築
+keiba build-base-times results_2026.json -o base_times.json
+keiba build-variants results_2026.json -o track_variants_2026.json
+```
+
+手持ちの過去年データ（〜2025年）は CSV
+（ヘッダー: `course,surface,distance,race_class,going,time_sec`）にすれば
+`keiba build-base-times results.csv` で同じように取り込めます。
+複数年を合算する場合はデータセット JSON の `races` 配列を連結してください。
+
 ### 馬場指数の自動算出（build-variants）
 
 同日・同競馬場・同コース種別（芝/ダ）の全レースについて

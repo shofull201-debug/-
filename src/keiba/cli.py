@@ -143,9 +143,12 @@ def cmd_scrape(args: argparse.Namespace) -> int:
         surface=args.surface,
         max_races=args.max_races,
         min_past_races=args.min_past_races,
+        results_only=args.results_only,
     )
     save_dataset(dataset, args.output)
     print(f"{len(dataset['races'])} レースを {args.output} に保存しました")
+    if args.results_only:
+        print("※ 結果のみモード: build-base-times / build-variants の入力に使えます")
     return 0
 
 
@@ -362,6 +365,11 @@ def main(argv: list[str] | None = None) -> int:
     p_scrape.add_argument("--surface", choices=["芝", "ダ"], default=None, help="コース種別で絞り込み")
     p_scrape.add_argument("--max-races", type=int, default=None, help="取得レース数の上限")
     p_scrape.add_argument("--min-past-races", type=int, default=2, help="必要な過去走数の下限")
+    p_scrape.add_argument(
+        "--results-only",
+        action="store_true",
+        help="馬ページを取得せずレース結果(全馬のタイム・斤量・オッズ)のみ収集。大量収集向き",
+    )
     p_scrape.add_argument("--wait", type=float, default=1.5, help="リクエスト間隔（秒）")
     p_scrape.add_argument("--cache-dir", default="data/cache", help="HTML キャッシュディレクトリ")
     p_scrape.set_defaults(func=cmd_scrape)
