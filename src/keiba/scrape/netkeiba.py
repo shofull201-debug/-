@@ -282,6 +282,43 @@ def parse_race_page(html: str, race_id: str = "") -> ParsedRace | None:
     )
 
 
+def parse_payouts(html: str) -> dict:
+    """レース結果ページの払戻表から単勝・複勝の払戻額を抽出する。
+
+    戻り値: {"win": {馬番: 払戻円}, "place": {馬番: 払戻円}}
+    （回収率シミュレーション用。馬連等の連系は現状対象外）
+    """
+    BeautifulSoup = _require_bs4()
+    soup = BeautifulSoup(html, "html.parser")
+    payouts: dict[str, dict[int, int]] = {"win": {}, "place": {}}
+
+    for table in soup.select("table.pay_table_01"):
+        for tr in table.find_all("tr"):
+            th = tr.find("th")
+            if th is None:
+                continue
+            label = th.get_text(strip=True)
+            key = {"単勝": "win", "複勝": "place"}.get(label)
+            if key is None:
+                continue
+            tds = tr.find_all("td")
+            if len(tds) < 2:
+                continue
+            # <br> 区切りで複数馬(複勝は最大3頭)が入る
+            numbers = [
+                _to_int(s.strip())
+                for s in tds[0].get_text("\n", strip=True).split("\n")
+            ]
+            monies = [
+                _to_int(s.strip().replace(",", "").replace("円", ""))
+                for s in tds[1].get_text("\n", strip=True).split("\n")
+            ]
+            for num, money in zip(numbers, monies):
+                if num is not None and money is not None:
+                    payouts[key][num] = money
+    return payouts
+
+
 # ---- 開催日のレース ID 一覧 ---------------------------------------------------
 
 def race_list_url(yyyymmdd: str) -> str:

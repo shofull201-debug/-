@@ -221,12 +221,16 @@ def cmd_optimize(args: argparse.Namespace) -> int:
     results = grid_search(precomp, step=args.step, objective=args.objective)
 
     print(f"\n=== 最適化結果（目的関数: {args.objective}、上位10件）===")
-    print(f"{'speed':>6} {'workout':>8} {'pedigree':>9} {'◎勝率':>7} {'◎複勝率':>8} {'回収率':>7} {'印3頭中':>7}")
+    print(
+        f"{'speed':>6} {'workout':>8} {'pedigree':>9} {'◎勝率':>7} {'◎複勝率':>8}"
+        f" {'単回収':>7} {'複回収':>7} {'印3頭中':>7}"
+    )
     for r in results[:10]:
         w = r["weights"]
         print(
             f"{w['speed']:>6.2f} {w['workout']:>8.2f} {w['pedigree']:>9.2f}"
-            f" {r['win_rate']:>7.1%} {r['place_rate']:>8.1%} {r['roi']:>6.1f}% {r['top3_hit']:>7.2f}"
+            f" {r['win_rate']:>7.1%} {r['place_rate']:>8.1%} {r['roi']:>6.1f}%"
+            f" {r['place_roi']:>6.1f}% {r['top3_hit']:>7.2f}"
         )
 
     best = results[0]
@@ -234,6 +238,78 @@ def cmd_optimize(args: argparse.Namespace) -> int:
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             json.dump(best["weights"], f, ensure_ascii=False, indent=2)
+        print(f"{args.output} に保存しました（keiba predict --weights-file {args.output} で使用）")
+    return 0
+
+
+def cmd_fit(args: argparse.Namespace) -> int:
+    """ロジスティック回帰で「3着以内」を予測し、係数から重みを学習する。
+
+    グリッドサーチ(optimize)と違い、要素間の相対的な寄与を連続値で推定する。
+    学習した重みは通常の weights.json として保存され、予想時に
+    scikit-learn は不要（--weights-file で読むだけ）。
+    """
+    try:
+        from sklearn.linear_model import LogisticRegression
+    except ImportError:
+        print("keiba fit には scikit-learn が必要です: pip install scikit-learn")
+        return 1
+
+    from .backtest import FACTORS, active_factors, evaluate_weights, precompute
+    from .predictor import DEFAULT_WEIGHTS
+
+    with open(args.dataset, encoding="utf-8") as f:
+        dataset = json.load(f)
+
+    variants = None
+    if args.variants:
+        from .track_variant import VariantTable
+
+        variants = VariantTable.load(args.variants)
+
+    precomp = precompute(dataset, variants=variants)
+    factors = active_factors(precomp)
+    print(f"データセット: {len(dataset['races'])} レース / 学習対象要素: {', '.join(factors)}")
+
+    X, y = [], []
+    for race in precomp:
+        for i, dev in enumerate(race.deviations):
+            if race.finish[i] is None:
+                continue
+            X.append([dev[f] for f in factors])
+            y.append(1 if race.finish[i] <= 3 else 0)
+
+    model = LogisticRegression(max_iter=1000)
+    model.fit(X, y)
+
+    raw = dict(zip(factors, model.coef_[0]))
+    print("回帰係数(偏差値1ポイントあたりの3着内オッズ対数変化):")
+    for f in factors:
+        print(f"  {f:>10}: {raw[f]:+.4f}")
+
+    # 負の係数は「効いていない/逆効果」なので重み0に落とし、正の係数を正規化
+    positive = {f: max(0.0, float(c)) for f, c in raw.items()}
+    total = sum(positive.values())
+    if total <= 0:
+        print("全要素の係数が非正のため重みを学習できませんでした")
+        return 1
+    weights = {f: round(positive.get(f, 0.0) / total, 3) for f in FACTORS}
+
+    fitted = evaluate_weights(precomp, weights)
+    baseline = evaluate_weights(precomp, DEFAULT_WEIGHTS)
+    print(f"\n学習した重み: {weights}")
+    print(
+        f"  学習重み  : ◎勝率 {fitted['win_rate']:.1%} / ◎複勝率 {fitted['place_rate']:.1%}"
+        f" / 単勝回収率 {fitted['roi']:.1f}% / 複勝回収率 {fitted['place_roi']:.1f}%"
+    )
+    print(
+        f"  デフォルト: ◎勝率 {baseline['win_rate']:.1%} / ◎複勝率 {baseline['place_rate']:.1%}"
+        f" / 単勝回収率 {baseline['roi']:.1f}% / 複勝回収率 {baseline['place_roi']:.1f}%"
+    )
+
+    if args.output:
+        with open(args.output, "w", encoding="utf-8") as f:
+            json.dump(weights, f, ensure_ascii=False, indent=2)
         print(f"{args.output} に保存しました（keiba predict --weights-file {args.output} で使用）")
     return 0
 
@@ -389,7 +465,7 @@ def main(argv: list[str] | None = None) -> int:
     p_opt.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
     p_opt.add_argument(
         "--objective",
-        choices=["place_rate", "win_rate", "roi", "top3_hit"],
+        choices=["place_rate", "win_rate", "roi", "place_roi", "top3_hit"],
         default="place_rate",
         help="最適化の目的関数（デフォルト: ◎複勝率）",
     )
@@ -399,6 +475,14 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_opt.add_argument("-o", "--output", default=None, help="最適重みの保存先 JSON")
     p_opt.set_defaults(func=cmd_optimize)
+
+    p_fit = sub.add_parser("fit", help="ロジスティック回帰で重みを学習(要scikit-learn)")
+    p_fit.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
+    p_fit.add_argument(
+        "--variants", default=None, help="keiba build-variants が出力した馬場指数表 JSON"
+    )
+    p_fit.add_argument("-o", "--output", default=None, help="学習した重みの保存先 JSON")
+    p_fit.set_defaults(func=cmd_fit)
 
     p_var = sub.add_parser("build-variants", help="データセットから同日レースの馬場指数表を算出")
     p_var.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")

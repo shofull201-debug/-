@@ -12,6 +12,7 @@ license = { text = "MIT" }
 
 [project.optional-dependencies]
 scrape = ["beautifulsoup4>=4.12"]
+ml = ["scikit-learn>=1.3"]
 
 [project.scripts]
 keiba = "keiba.cli:main"

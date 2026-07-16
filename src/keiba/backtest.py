@@ -24,9 +24,11 @@ FACTORS = ("speed", "workout", "pedigree", "going", "style")
 class PrecompRace:
     """1 レース分の前計算結果。"""
 
-    deviations: list[dict[str, float]]   # 馬ごとの {speed, workout, pedigree} 偏差値
+    deviations: list[dict[str, float]]   # 馬ごとの各要素の偏差値
     finish: list[int | None]             # 実際の着順
     odds: list[float | None]             # 単勝オッズ
+    win_pay: list[int | None] = None     # 単勝払戻(円)。無ければ None
+    place_pay: list[int | None] = None   # 複勝払戻(円)。無ければ None
 
 
 def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
@@ -60,6 +62,14 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
         finish = [h.get("result", {}).get("finish_position") for h in race_data["horses"]]
         odds = [h.get("result", {}).get("odds") for h in race_data["horses"]]
 
+        # 払戻(scrape --results-only で収集)。JSON経由だとキーが文字列になるので吸収
+        payouts = race_data.get("payouts") or {}
+        win_map = {int(k): v for k, v in (payouts.get("win") or {}).items()}
+        place_map = {int(k): v for k, v in (payouts.get("place") or {}).items()}
+        numbers = [h.get("horse_number") for h in race_data["horses"]]
+        win_pay = [win_map.get(n) if n is not None else None for n in numbers]
+        place_pay = [place_map.get(n) if n is not None else None for n in numbers]
+
         out.append(
             PrecompRace(
                 deviations=[
@@ -70,6 +80,8 @@ def precompute(dataset: dict, variants=None) -> list[PrecompRace]:
                 ],
                 finish=finish,
                 odds=odds,
+                win_pay=win_pay,
+                place_pay=place_pay,
             )
         )
     return out
@@ -95,11 +107,15 @@ def evaluate_weights(precomp: list[PrecompRace], weights: dict[str, float]) -> d
     - win_rate:   ◎（総合 1 位）が 1 着になった率
     - place_rate: ◎が 3 着以内に入った率
     - roi:        ◎に単勝 100 円を賭け続けた場合の回収率（%）
+    - place_roi:  ◎に複勝 100 円を賭け続けた場合の回収率（%）
+                  （払戻データがあるレースのみで計算。無ければ 0.0）
     - top3_hit:   印上位 3 頭のうち 3 着以内に入った頭数の平均
     """
     n = wins = places = 0
     returns = 0.0
     top3_hits = 0
+    n_place_pay = 0
+    returns_place = 0.0
 
     for race in precomp:
         scored = [
@@ -115,19 +131,31 @@ def evaluate_weights(precomp: list[PrecompRace], weights: dict[str, float]) -> d
         honmei = scored[0][1]
         if race.finish[honmei] == 1:
             wins += 1
-            if race.odds[honmei]:
+            if race.win_pay and race.win_pay[honmei]:
+                returns += race.win_pay[honmei]
+            elif race.odds[honmei]:
                 returns += race.odds[honmei] * 100
         if race.finish[honmei] <= 3:
             places += 1
         top3_hits += sum(1 for _, i in scored[:3] if race.finish[i] <= 3)
 
+        # 複勝回収率(払戻データのあるレースのみ)
+        if race.place_pay and any(p is not None for p in race.place_pay):
+            n_place_pay += 1
+            if race.finish[honmei] <= 3 and race.place_pay[honmei]:
+                returns_place += race.place_pay[honmei]
+
     if n == 0:
-        return {"races": 0, "win_rate": 0.0, "place_rate": 0.0, "roi": 0.0, "top3_hit": 0.0}
+        return {
+            "races": 0, "win_rate": 0.0, "place_rate": 0.0,
+            "roi": 0.0, "place_roi": 0.0, "top3_hit": 0.0,
+        }
     return {
         "races": n,
         "win_rate": round(wins / n, 4),
         "place_rate": round(places / n, 4),
         "roi": round(returns / (n * 100) * 100, 1),
+        "place_roi": round(returns_place / (n_place_pay * 100) * 100, 1) if n_place_pay else 0.0,
         "top3_hit": round(top3_hits / n, 3),
     }
 

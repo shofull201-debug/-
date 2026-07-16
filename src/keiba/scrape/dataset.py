@@ -28,6 +28,7 @@ from .netkeiba import (
     ParsedHorse,
     horse_url,
     parse_horse_page,
+    parse_payouts,
     parse_race_ids,
     parse_race_page,
     race_list_url,
@@ -77,7 +78,8 @@ def build_dataset(
                 log(f"上限 {max_races} レースに到達")
                 return {"races": races_out}
 
-            parsed = parse_race_page(client.get(race_url(race_id)), race_id)
+            race_html = client.get(race_url(race_id))
+            parsed = parse_race_page(race_html, race_id)
             if parsed is None or not parsed.date:
                 continue
             if surface and parsed.surface != surface:
@@ -86,6 +88,7 @@ def build_dataset(
             if results_only:
                 races_out.append(
                     {
+                        "payouts": parse_payouts(race_html),
                         "race": {
                             "race_id": parsed.race_id,
                             "name": parsed.name,
