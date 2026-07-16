@@ -144,6 +144,7 @@ def cmd_scrape(args: argparse.Namespace) -> int:
         max_races=args.max_races,
         min_past_races=args.min_past_races,
         results_only=args.results_only,
+        checkpoint_path=args.output,  # 開催日ごとに途中保存
     )
     save_dataset(dataset, args.output)
     print(f"{len(dataset['races'])} レースを {args.output} に保存しました")
@@ -192,9 +193,9 @@ def cmd_optimize(args: argparse.Namespace) -> int:
     from .backtest import FACTORS, active_factors, evaluate_weights, grid_search, precompute
     from .predictor import DEFAULT_WEIGHTS
 
-    with open(args.dataset, encoding="utf-8") as f:
-        dataset = json.load(f)
+    from .scrape.dataset import load_dataset
 
+    dataset = load_dataset(args.dataset)
     print(f"データセット: {len(dataset['races'])} レース")
 
     variants = None
@@ -258,8 +259,9 @@ def cmd_fit(args: argparse.Namespace) -> int:
     from .backtest import FACTORS, active_factors, evaluate_weights, precompute
     from .predictor import DEFAULT_WEIGHTS
 
-    with open(args.dataset, encoding="utf-8") as f:
-        dataset = json.load(f)
+    from .scrape.dataset import load_dataset
+
+    dataset = load_dataset(args.dataset)
 
     variants = None
     if args.variants:
@@ -335,10 +337,10 @@ def _result_rows_from_dataset(dataset: dict):
 
 def cmd_build_variants(args: argparse.Namespace) -> int:
     """データセットから同日レースの馬場指数表を算出する。"""
+    from .scrape.dataset import load_dataset
     from .track_variant import VariantTable, compute_variants
 
-    with open(args.dataset, encoding="utf-8") as f:
-        dataset = json.load(f)
+    dataset = load_dataset(args.dataset)
 
     variants = compute_variants(
         _result_rows_from_dataset(dataset),
@@ -369,9 +371,10 @@ def cmd_build_base_times(args: argparse.Namespace) -> int:
     offsets = _load_base_times()["class_offsets"]
     buckets: dict[str, list[float]] = defaultdict(list)
 
-    if args.results_file.endswith(".json"):
-        with open(args.results_file, encoding="utf-8") as f:
-            rows = _result_rows_from_dataset(json.load(f))
+    if args.results_file.endswith((".json", ".json.gz", ".gz")):
+        from .scrape.dataset import load_dataset
+
+        rows = _result_rows_from_dataset(load_dataset(args.results_file))
     else:
         f = open(args.results_file, encoding="utf-8", newline="")
         rows = csv.DictReader(f)

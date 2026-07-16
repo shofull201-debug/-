@@ -85,3 +85,17 @@ class TestFullMode:
         assert any("/horse/" in u for u in client.requested)
         # 出走頭数5未満のレースは除外されるので races は空
         assert dataset["races"] == []
+
+
+class TestGzipRoundtrip:
+    def test_save_and_load_gz(self, tmp_path):
+        from keiba.scrape.dataset import load_dataset, save_dataset
+
+        dataset = {"races": [{"race": {"course": "東京"}, "horses": []}]}
+        path = tmp_path / "results.json.gz"
+        save_dataset(dataset, path)
+        assert load_dataset(path) == dataset
+        # 素のJSONも従来どおり
+        plain = tmp_path / "results.json"
+        save_dataset(dataset, plain)
+        assert load_dataset(plain) == dataset
