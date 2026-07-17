@@ -1,0 +1,113 @@
+{
+  "_comment": "阿武隈S2026(2026-07-18・福島芝1800・3勝クラス・ハンデ・16頭)。検索で馬名・詳細を特定できた8頭のみの部分カード(残り8頭は出馬表スニペットの略称のみでフルネーム特定不可)。追い切り時計は3勝クラスのため取得不可。走破タイム実測は2頭のみ",
+  "race": {
+    "name": "阿武隈S (3勝クラス)",
+    "date": "2026-07-18",
+    "course": "福島",
+    "surface": "芝",
+    "distance": 1800,
+    "going": "良",
+    "race_class": "3勝"
+  },
+  "horses": [
+    {
+      "name": "ウインオーディン",
+      "sire": "エピファネイア",
+      "dam_sire": "フジキセキ",
+      "weight_carried": 56.0,
+      "past_races": [
+        {
+          "date": "2025-11-30",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 117.8,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "3勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "ウェルカムS2着1:57.8実測。2026-02-22東京芝2000の11着は勝ちタイム未取得で除外。トップハンデ"
+    },
+    {
+      "name": "コスモアンソロジー",
+      "sire": "ダノンバラード",
+      "dam_sire": "Shamardal",
+      "weight_carried": 56.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "近走タイム取得不可(逢坂山特別4着など)。トップハンデ=近走で勝ち上がりの可能性"
+    },
+    {
+      "name": "フォルラニーニ",
+      "sire": "エピファネイア",
+      "dam_sire": "ステイゴールド",
+      "weight_carried": 56.0,
+      "past_races": [
+        {
+          "date": "2026-05-24",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.1,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "2勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "前走国分寺特別(東京芝1800)1着1:46.1実測・レーン騎乗。母父ステイゴールド=福島芝1800好相性の血統との傾向記事あり"
+    },
+    {
+      "name": "ホウオウスーペリア",
+      "sire": "スクリーンヒーロー",
+      "dam_sire": null,
+      "weight_carried": 56.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "美浦S6着(稍重58kg)は勝ちタイム未取得で除外。放牧明け"
+    },
+    {
+      "name": "グラニット",
+      "sire": "ダノンバラード",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "running_style": "逃げ",
+      "past_races": [],
+      "workouts": [],
+      "_notes": "新春S12着は勝ちタイム未取得で除外。脚質=逃げ(サウジRC逃げ2着など一般知識)。28戦2勝"
+    },
+    {
+      "name": "ワイドアラジン",
+      "sire": "ダイワメジャー",
+      "dam_sire": "ウォーエンブレム",
+      "weight_carried": 55.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "昨年阿武隈S2着=当該コース実績(タイム未取得で数値化できず)。前走から1年の休み明けの可能性"
+    },
+    {
+      "name": "テリオスサラ",
+      "sire": "ロジャーバローズ",
+      "dam_sire": "Shamardal",
+      "weight_carried": 53.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "近3走タイム未取得(2026-02東京1800で1勝あり)。軽ハンデ53kg。追い切り注目馬(坂路好時計)の報あるが時計未取得"
+    },
+    {
+      "name": "アマイ",
+      "sire": "ダノンバラード",
+      "dam_sire": "タイキシャトル",
+      "weight_carried": 54.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "斤量未確認(54.0仮)。美浦S7着は勝ちタイム未取得で除外。牝馬・35戦3勝"
+    }
+  ]
+}
