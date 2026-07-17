@@ -1,0 +1,461 @@
+{
+  "_comment": "小倉記念2026(2026-07-19・小倉芝2000・G3ハンデ)。特別登録19頭(フルゲート18のため1頭除外の可能性、枠順未確定=馬番なし)。ハンデは東スポ/umanity報道の確定値、ケイズレーヴのみ未確認(57.0仮置き)。タイムは実測>勝ちタイム+着差>0.15秒×着順差で推定、勝ちタイム不明の走は除外。追い切りは1週前(7/8)時点、最終追いは7/15実施のため未反映",
+  "race": {
+    "name": "小倉記念 (G3)",
+    "date": "2026-07-19",
+    "course": "小倉",
+    "surface": "芝",
+    "distance": 2000,
+    "going": "良",
+    "race_class": "G3"
+  },
+  "horses": [
+    {
+      "name": "ウエストナウ",
+      "sire": "キズナ",
+      "dam_sire": "Frankel",
+      "weight_carried": 57.5,
+      "past_races": [
+        {
+          "date": "2026-05-10",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2400,
+          "going": "良",
+          "time_sec": 143.1,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "L"
+        },
+        {
+          "date": "2025-11-15",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.9,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-07-08",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 84.8,
+          "last_1f": 11.2,
+          "intensity": "強め",
+          "partner_result": "先着"
+        }
+      ],
+      "_notes": "メトロポリタンS・アンドロメダSともに勝ちタイム実測。中間の走歴(転厩を挟む)は未確認"
+    },
+    {
+      "name": "エヒト",
+      "sire": "ルーラーシップ",
+      "dam_sire": null,
+      "weight_carried": 58.0,
+      "past_races": [
+        {
+          "date": "2026-03-28",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2500,
+          "going": "良",
+          "time_sec": 151.2,
+          "weight_carried": 57.5,
+          "finish_position": 4,
+          "field_size": 15,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [],
+      "_notes": "トップハンデ58.0。9歳・2023小倉記念勝ち馬。日経賞4着=勝ち2:30.7+0.15×3で推定。AJCC3着・天皇賞春は勝ちタイム/着順未取得で除外"
+    },
+    {
+      "name": "カエルム",
+      "sire": "",
+      "dam_sire": "キングカメハメハ",
+      "weight_carried": 52.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "父・過去走とも検索で確認できず=全要素ほぼ中立評価"
+    },
+    {
+      "name": "カネフラ",
+      "sire": "グランデッツァ",
+      "dam_sire": null,
+      "weight_carried": 53.0,
+      "past_races": [
+        {
+          "date": "2026-02-08",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.0,
+          "weight_carried": 55.0,
+          "finish_position": 5,
+          "field_size": 14,
+          "race_class": "OP"
+        }
+      ],
+      "workouts": [],
+      "_notes": "小倉日経賞5着=勝ちレーゼドラマ1:59.4+0.6で推定。大阪-ハンブルクC7着は勝ちタイム未取得で除外"
+    },
+    {
+      "name": "ガイアメンテ",
+      "sire": "ドゥラメンテ",
+      "dam_sire": null,
+      "weight_carried": 57.0,
+      "past_races": [
+        {
+          "date": "2026-05-24",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 103.4,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "L"
+        },
+        {
+          "date": "2026-04-12",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.75,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 15,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-07-08",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.9,
+          "last_1f": 10.9,
+          "intensity": "強め",
+          "partner_result": "先着"
+        }
+      ],
+      "_notes": "都大路S1:43.4レコード勝ち(実測)、福島民報杯2着=サヴォーナ1:58.4+1馬身3/4推定。1週前CWで川田騎乗テーオーソラネルに2馬身半先着・ラスト10.9"
+    },
+    {
+      "name": "ケイズレーヴ",
+      "sire": "ブリックスアンドモルタル",
+      "dam_sire": null,
+      "weight_carried": 57.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "名古屋所属4歳・19戦9勝(オグリキャップ記念1着)。地方戦のタイムは基準未整備のため未収録。斤量未確認(57.0仮置き)"
+    },
+    {
+      "name": "コパノサントス",
+      "sire": "イスラボニータ",
+      "dam_sire": "ハービンジャー",
+      "weight_carried": 53.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "過去走詳細を確認できず"
+    },
+    {
+      "name": "サフィラ",
+      "sire": "ハーツクライ",
+      "dam_sire": "Lomitas",
+      "weight_carried": 55.5,
+      "running_style": "差し",
+      "past_races": [
+        {
+          "date": "2026-05-16",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.7,
+          "weight_carried": 56.0,
+          "finish_position": 13,
+          "field_size": 15,
+          "race_class": "G3"
+        },
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 55.0,
+          "finish_position": 9,
+          "field_size": 15,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-11-16",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 131.9,
+          "weight_carried": 56.0,
+          "finish_position": 7,
+          "field_size": 16,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-05-18",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 93.9,
+          "weight_carried": 56.0,
+          "finish_position": 13,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-04-12",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.8,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 15,
+          "race_class": "G2"
+        }
+      ],
+      "workouts": [],
+      "_notes": "新潟大賞典13着・金鯱賞9着等は0.15秒×着順差の推定。阪神牝馬S1着1:32.8実測。7/9小倉入り済み・師「これだけ時計が出ていれば十分」(時計未取得)"
+    },
+    {
+      "name": "ジョバンニ",
+      "sire": "エピファネイア",
+      "dam_sire": "Footstepsinthesand",
+      "weight_carried": 57.5,
+      "past_races": [
+        {
+          "date": "2026-03-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.1,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 15,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-04-20",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 117.5,
+          "weight_carried": 57.0,
+          "finish_position": 4,
+          "field_size": 18,
+          "race_class": "G1"
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-07-08",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 82.4,
+          "last_1f": 11.5,
+          "intensity": "強め",
+          "partner_result": null
+        }
+      ],
+      "_notes": "金鯱賞ハナ差2着=勝ち1:58.1とほぼ同タイム、皐月賞4着=ミュージアムマイル1:57.0+0.45推定。QE2世C(香港)5着は海外のため除外。神戸新聞杯3着・ホープフルS2着は勝ちタイム未取得で除外。想定人気上位"
+    },
+    {
+      "name": "ジーティーアダマン",
+      "sire": "ルーラーシップ",
+      "dam_sire": "マンハッタンカフェ",
+      "weight_carried": 57.0,
+      "past_races": [
+        {
+          "date": "2026-05-24",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 103.7,
+          "weight_carried": 57.0,
+          "finish_position": 3,
+          "field_size": 13,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [],
+      "_notes": "都大路S3着=ガイアメンテのレコード1:43.4+0.3推定(1番人気で3着)。難波S(3勝)1着は勝ちタイム未取得で除外。7戦3勝の上がり馬"
+    },
+    {
+      "name": "ゼンダンハヤブサ",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 52.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "血統・過去走とも確認できず=ほぼ中立評価"
+    },
+    {
+      "name": "タガノアビー",
+      "sire": "アニマルキングダム",
+      "dam_sire": "アイルハヴアナー",
+      "weight_carried": 54.0,
+      "past_races": [
+        {
+          "date": "2026-05-23",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.4,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 13,
+          "race_class": "3勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "シドニーT1着1:59.4実測(3/4馬身差)。オークス2025 3着は勝ちタイム未取得で除外。アニマルキングダム(米)は種牡馬データ未登録=血統は中立寄り"
+    },
+    {
+      "name": "テーオーソラネル",
+      "sire": "シルバーステート",
+      "dam_sire": "キングヘイロー",
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2023-11-18",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.6,
+          "weight_carried": 57.0,
+          "finish_position": 4,
+          "field_size": 14,
+          "race_class": "L"
+        }
+      ],
+      "workouts": [],
+      "_notes": "長期休み明け。直近走を特定できずアンドロメダS2023(4着1:59.6)のみ収録=鮮度面の割引を指数に反映できない点に注意。1週前はガイアメンテに2馬身半遅れ"
+    },
+    {
+      "name": "トータルクラリティ",
+      "sire": "バゴ",
+      "dam_sire": "スペシャルウィーク",
+      "weight_carried": 53.0,
+      "running_style": "逃げ",
+      "past_races": [],
+      "workouts": [],
+      "_notes": "セン3歳(去勢明け)。新潟2歳S2024勝ち馬。前走大阪-ハンブルクC12着は勝ちタイム未取得で除外。師「スタートが決まれば逃げてもいい」→脚質=逃げ。7/9小倉入り"
+    },
+    {
+      "name": "ナムラエイハブ",
+      "sire": "リアルスティール",
+      "dam_sire": "エンパイアメーカー",
+      "weight_carried": 56.0,
+      "past_races": [
+        {
+          "date": "2026-06-13",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.2,
+          "weight_carried": 56.0,
+          "finish_position": 9,
+          "field_size": 13,
+          "race_class": "OP"
+        }
+      ],
+      "workouts": [],
+      "_notes": "ジューンS9着=勝ち1:46.0+0.15×8で推定(初ブリンカー逆効果の可能性との評)。師「障害練習で体がパンプアップ、すごくいい状態」"
+    },
+    {
+      "name": "ナヴォーナ",
+      "sire": "ロードカナロア",
+      "dam_sire": "Soldier Hollow",
+      "weight_carried": 52.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "前走博多S(3勝)10着・馬体12kg減は勝ちタイム未取得で除外"
+    },
+    {
+      "name": "ノーランサンライズ",
+      "sire": "キタサンブラック",
+      "dam_sire": "クロフネ",
+      "weight_carried": 50.0,
+      "past_races": [
+        {
+          "date": "2026-05-16",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.7,
+          "weight_carried": 52.0,
+          "finish_position": 13,
+          "field_size": 15,
+          "race_class": "G3"
+        }
+      ],
+      "workouts": [],
+      "_notes": "最軽量50kg。新潟大賞典13着=推定(直線で進路を塞がれる不利あり)"
+    },
+    {
+      "name": "マイネルメモリー",
+      "sire": "ゴールドシップ",
+      "dam_sire": "スターオブコジーン",
+      "weight_carried": 54.0,
+      "past_races": [],
+      "workouts": [],
+      "_notes": "前走メトロポリタンSは着順情報が6着/8着で混在し確定できず未収録。師「夏場に強く体調はいい」"
+    },
+    {
+      "name": "レーゼドラマ",
+      "sire": "キズナ",
+      "dam_sire": "Burning Roma",
+      "weight_carried": 55.5,
+      "running_style": "逃げ",
+      "past_races": [
+        {
+          "date": "2026-02-08",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.4,
+          "weight_carried": 54.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "OP"
+        }
+      ],
+      "workouts": [],
+      "_notes": "小倉日経賞1:59.4逃げ切り(実測・当該コース勝ち)。福島牝馬S6着・フラワーC1着は勝ちタイム未取得で除外。師「気持ちが切れている雰囲気」とやや不安コメント"
+    }
+  ]
+}
