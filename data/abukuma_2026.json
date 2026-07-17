@@ -1,5 +1,5 @@
 {
-  "_comment": "阿武隈S2026(2026-07-18・福島芝1800・3勝クラス・ハンデ・16頭)。検索で馬名・詳細を特定できた8頭のみの部分カード(残り8頭は出馬表スニペットの略称のみでフルネーム特定不可)。追い切り時計は3勝クラスのため取得不可。走破タイム実測は2頭のみ",
+  "_comment": "阿武隈S2026(2026-07-18・福島芝1800・3勝クラス・ハンデ・16頭)。検索で馬名・詳細を特定できた8頭のみの部分カード(残り8頭は出馬表スニペットの略称のみでフルネーム特定不可)。追い切り時計は3勝クラスのため取得不可。走破タイム実測は2頭のみ / keiba_list実測データ(〜2025年末)で過去走を補強 / 略称から推定した5頭を追加(コンドゥイア/サヴォンリンナ/ミラビリスマジック/エスコバル/ドラゴンヘッド)。ヴォン…/ショー…/タイキ…の3頭は特定不能",
   "race": {
     "name": "阿武隈S (3勝クラス)",
     "date": "2026-07-18",
@@ -27,6 +27,54 @@
           "finish_position": 2,
           "field_size": 13,
           "race_class": "3勝"
+        },
+        {
+          "date": "2025-10-25",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.6,
+          "weight_carried": 58.0,
+          "finish_position": 5,
+          "field_size": 18,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-08-30",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 132.2,
+          "weight_carried": 58.0,
+          "finish_position": 2,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-06-28",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.7,
+          "weight_carried": 58.0,
+          "finish_position": 7,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-06-01",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.0,
+          "weight_carried": 56.0,
+          "finish_position": 13,
+          "field_size": 18,
+          "race_class": "3勝"
         }
       ],
       "workouts": [],
@@ -37,7 +85,68 @@
       "sire": "ダノンバラード",
       "dam_sire": "Shamardal",
       "weight_carried": 56.0,
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-12-07",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 105.7,
+          "weight_carried": 57.0,
+          "finish_position": 4,
+          "field_size": 8,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-10-25",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.0,
+          "weight_carried": 56.0,
+          "finish_position": 3,
+          "field_size": 12,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-10-04",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.1,
+          "weight_carried": 56.0,
+          "finish_position": 6,
+          "field_size": 12,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-09-07",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍",
+          "time_sec": 109.8,
+          "weight_carried": 55.0,
+          "finish_position": 2,
+          "field_size": 14,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-07-06",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 108.7,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "1勝"
+        }
+      ],
       "workouts": [],
       "_notes": "近走タイム取得不可(逢坂山特別4着など)。トップハンデ=近走で勝ち上がりの可能性"
     },
@@ -58,6 +167,54 @@
           "finish_position": 1,
           "field_size": 13,
           "race_class": "2勝"
+        },
+        {
+          "date": "2025-11-15",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 93.7,
+          "weight_carried": 58.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-08-30",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 108.6,
+          "weight_carried": 56.0,
+          "finish_position": 3,
+          "field_size": 13,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-07-06",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 108.8,
+          "weight_carried": 58.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-05-18",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.5,
+          "weight_carried": 58.0,
+          "finish_position": 1,
+          "field_size": 9,
+          "race_class": "1勝"
         }
       ],
       "workouts": [],
@@ -68,7 +225,68 @@
       "sire": "スクリーンヒーロー",
       "dam_sire": null,
       "weight_carried": 56.0,
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-11-24",
+          "course": "福島",
+          "surface": "ダ",
+          "distance": 1700,
+          "going": "良",
+          "time_sec": 106.7,
+          "weight_carried": 58.0,
+          "finish_position": 6,
+          "field_size": 14,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-08-16",
+          "course": "札幌",
+          "surface": "ダ",
+          "distance": 1700,
+          "going": "良",
+          "time_sec": 105.4,
+          "weight_carried": 56.0,
+          "finish_position": 10,
+          "field_size": 14,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-07-20",
+          "course": "小倉",
+          "surface": "ダ",
+          "distance": 1700,
+          "going": "良",
+          "time_sec": 103.8,
+          "weight_carried": 55.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-06-01",
+          "course": "東京",
+          "surface": "ダ",
+          "distance": 1600,
+          "going": "稍",
+          "time_sec": 96.4,
+          "weight_carried": 58.0,
+          "finish_position": 11,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-03-23",
+          "course": "阪神",
+          "surface": "ダ",
+          "distance": 1400,
+          "going": "良",
+          "time_sec": 85.1,
+          "weight_carried": 58.0,
+          "finish_position": 5,
+          "field_size": 16,
+          "race_class": "3勝"
+        }
+      ],
       "workouts": [],
       "_notes": "美浦S6着(稍重58kg)は勝ちタイム未取得で除外。放牧明け"
     },
@@ -78,7 +296,68 @@
       "dam_sire": null,
       "weight_carried": 55.0,
       "running_style": "逃げ",
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-08-10",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "重",
+          "time_sec": 109.1,
+          "weight_carried": 58.0,
+          "finish_position": 4,
+          "field_size": 14,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-07-19",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 110.6,
+          "weight_carried": 55.0,
+          "finish_position": 8,
+          "field_size": 10,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-01-12",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 95.2,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2024-12-28",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 94.9,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2024-11-17",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.5,
+          "weight_carried": 55.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "3勝"
+        }
+      ],
       "workouts": [],
       "_notes": "新春S12着は勝ちタイム未取得で除外。脚質=逃げ(サウジRC逃げ2着など一般知識)。28戦2勝"
     },
@@ -87,7 +366,68 @@
       "sire": "ダイワメジャー",
       "dam_sire": "ウォーエンブレム",
       "weight_carried": 55.0,
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-12-13",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.8,
+          "weight_carried": 58.0,
+          "finish_position": 7,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-11-16",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.2,
+          "weight_carried": 57.0,
+          "finish_position": 6,
+          "field_size": 12,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-08-16",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.3,
+          "weight_carried": 57.0,
+          "finish_position": 8,
+          "field_size": 9,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-07-19",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 109.7,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 10,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-06-28",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.4,
+          "weight_carried": 58.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "3勝"
+        }
+      ],
       "workouts": [],
       "_notes": "昨年阿武隈S2着=当該コース実績(タイム未取得で数値化できず)。前走から1年の休み明けの可能性"
     },
@@ -96,7 +436,68 @@
       "sire": "ロジャーバローズ",
       "dam_sire": "Shamardal",
       "weight_carried": 53.0,
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-07-19",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.7,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 14,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-06-28",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.0,
+          "weight_carried": 56.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-06-14",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.6,
+          "weight_carried": 56.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-04-20",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 118.6,
+          "weight_carried": 56.0,
+          "finish_position": 5,
+          "field_size": 12,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-03-29",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍",
+          "time_sec": 110.6,
+          "weight_carried": 56.0,
+          "finish_position": 6,
+          "field_size": 12,
+          "race_class": "2勝"
+        }
+      ],
       "workouts": [],
       "_notes": "近3走タイム未取得(2026-02東京1800で1勝あり)。軽ハンデ53kg。追い切り注目馬(坂路好時計)の報あるが時計未取得"
     },
@@ -105,9 +506,420 @@
       "sire": "ダノンバラード",
       "dam_sire": "タイキシャトル",
       "weight_carried": 54.0,
-      "past_races": [],
+      "past_races": [
+        {
+          "date": "2025-12-13",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.7,
+          "weight_carried": 56.0,
+          "finish_position": 5,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-10-19",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 133.8,
+          "weight_carried": 55.0,
+          "finish_position": 12,
+          "field_size": 14,
+          "race_class": "L"
+        },
+        {
+          "date": "2025-09-14",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.0,
+          "weight_carried": 55.0,
+          "finish_position": 10,
+          "field_size": 14,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-08-02",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.5,
+          "weight_carried": 55.0,
+          "finish_position": 6,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-04-20",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 106.9,
+          "weight_carried": 55.0,
+          "finish_position": 6,
+          "field_size": 15,
+          "race_class": "G3"
+        }
+      ],
       "workouts": [],
       "_notes": "斤量未確認(54.0仮)。美浦S7着は勝ちタイム未取得で除外。牝馬・35戦3勝"
+    },
+    {
+      "name": "コンドゥイア",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2025-12-21",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "重",
+          "time_sec": 120.9,
+          "weight_carried": 55.0,
+          "finish_position": 3,
+          "field_size": 11,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-11-24",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.5,
+          "weight_carried": 54.0,
+          "finish_position": 2,
+          "field_size": 16,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2025-09-14",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 105.6,
+          "weight_carried": 55.0,
+          "finish_position": 14,
+          "field_size": 17,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-07-27",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍",
+          "time_sec": 107.4,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 8,
+          "race_class": "1勝"
+        },
+        {
+          "date": "2025-07-12",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.3,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 12,
+          "race_class": "未勝利"
+        }
+      ],
+      "workouts": [],
+      "_notes": "推定出走馬(出馬表略称『コンド』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
+    },
+    {
+      "name": "サヴォンリンナ",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2025-09-07",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.7,
+          "weight_carried": 55.0,
+          "finish_position": 9,
+          "field_size": 12,
+          "race_class": "G2"
+        },
+        {
+          "date": "2025-05-25",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2400,
+          "going": "良",
+          "time_sec": 148.1,
+          "weight_carried": 55.0,
+          "finish_position": 17,
+          "field_size": 18,
+          "race_class": "G1"
+        },
+        {
+          "date": "2025-04-13",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "稍",
+          "time_sec": 123.5,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 8,
+          "race_class": "L"
+        },
+        {
+          "date": "2025-02-15",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 122.0,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "未勝利"
+        },
+        {
+          "date": "2024-12-01",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 108.5,
+          "weight_carried": 55.0,
+          "finish_position": 2,
+          "field_size": 11,
+          "race_class": "未勝利"
+        }
+      ],
+      "workouts": [],
+      "_notes": "推定出走馬(出馬表略称『サヴォ』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
+    },
+    {
+      "name": "ミラビリスマジック",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2025-05-10",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍",
+          "time_sec": 95.0,
+          "weight_carried": 56.0,
+          "finish_position": 8,
+          "field_size": 15,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2024-11-23",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 93.7,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2024-09-22",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.7,
+          "weight_carried": 54.0,
+          "finish_position": 2,
+          "field_size": 13,
+          "race_class": "2勝"
+        },
+        {
+          "date": "2024-03-02",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍",
+          "time_sec": 93.7,
+          "weight_carried": 55.0,
+          "finish_position": 6,
+          "field_size": 16,
+          "race_class": "G2"
+        },
+        {
+          "date": "2024-01-13",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 93.4,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 12,
+          "race_class": "1勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "推定出走馬(出馬表略称『ミラビ』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
+    },
+    {
+      "name": "エスコバル",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2025-11-23",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 92.3,
+          "weight_carried": 54.0,
+          "finish_position": 4,
+          "field_size": 17,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-09-21",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 116.1,
+          "weight_carried": 55.0,
+          "finish_position": 16,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-04-06",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 121.2,
+          "weight_carried": 58.0,
+          "finish_position": 14,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2024-11-24",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.7,
+          "weight_carried": 58.0,
+          "finish_position": 9,
+          "field_size": 15,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2023-11-26",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 120.0,
+          "weight_carried": 58.0,
+          "finish_position": 10,
+          "field_size": 13,
+          "race_class": "3勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "推定出走馬(出馬表略称『エスコ』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
+    },
+    {
+      "name": "ドラゴンヘッド",
+      "sire": "",
+      "dam_sire": null,
+      "weight_carried": 55.0,
+      "past_races": [
+        {
+          "date": "2025-12-13",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 107.9,
+          "weight_carried": 58.0,
+          "finish_position": 10,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-10-25",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.2,
+          "weight_carried": 58.0,
+          "finish_position": 10,
+          "field_size": 18,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-08-30",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 2200,
+          "going": "良",
+          "time_sec": 134.3,
+          "weight_carried": 58.0,
+          "finish_position": 15,
+          "field_size": 16,
+          "race_class": "3勝"
+        },
+        {
+          "date": "2025-07-13",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 121.6,
+          "weight_carried": 52.0,
+          "finish_position": 5,
+          "field_size": 15,
+          "race_class": "G3"
+        },
+        {
+          "date": "2025-06-28",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "良",
+          "time_sec": 119.8,
+          "weight_carried": 58.0,
+          "finish_position": 8,
+          "field_size": 16,
+          "race_class": "3勝"
+        }
+      ],
+      "workouts": [],
+      "_notes": "推定出走馬(出馬表略称『ドラゴ』。もう1頭の候補ドラゴンブーストはOP馬のため3勝クラス出走不可で消去)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
     }
   ]
 }
