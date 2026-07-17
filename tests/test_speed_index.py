@@ -1,3 +1,5 @@
+import pytest
+
 from keiba.models import PastRace
 from keiba.speed_index import (
     aggregate_speed_score,
@@ -8,6 +10,9 @@ from keiba.speed_index import (
 )
 
 
+BASE_1600 = base_time("東京", "芝", 1600, "1勝")
+
+
 def make_race(**kwargs) -> PastRace:
     defaults = dict(
         date="2026-06-01",
@@ -15,7 +20,7 @@ def make_race(**kwargs) -> PastRace:
         surface="芝",
         distance=1600,
         going="良",
-        time_sec=94.3,
+        time_sec=BASE_1600,
         weight_carried=55.0,
         finish_position=1,
         field_size=16,
@@ -41,13 +46,15 @@ class TestDistanceIndex:
 
 class TestBaseTime:
     def test_registered_course(self):
-        assert base_time("東京", "芝", 1600, "1勝") == 94.3
+        # 実データ構築の基準タイム(東京芝1600・1勝)は妥当な範囲にある
+        assert 92.0 < base_time("東京", "芝", 1600, "1勝") < 97.0
 
     def test_class_offset_scales_with_distance(self):
         t_1600 = base_time("東京", "芝", 1600, "G1")
-        assert t_1600 == 94.3 - 2.0  # G1 補正 -2.0 × (1600/1600)
+        assert t_1600 == pytest.approx(BASE_1600 - 2.0)  # G1 補正 -2.0 × (1600/1600)
+        base_2400 = base_time("東京", "芝", 2400, "1勝")
         t_2400 = base_time("東京", "芝", 2400, "G1")
-        assert t_2400 == 145.0 - 2.0 * (2400 / 1600)
+        assert t_2400 == pytest.approx(base_2400 - 2.0 * (2400 / 1600))
 
     def test_fallback_for_unknown_condition(self):
         # 表に無い条件でも妥当な値を返す
@@ -62,7 +69,7 @@ class TestNishidaSpeedIndex:
 
     def test_faster_time_raises_index(self):
         # 1 秒速い → 1600m の距離指数 1.02 × 10 = 10.2 ポイント上昇
-        idx = nishida_speed_index(make_race(time_sec=93.3))
+        idx = nishida_speed_index(make_race(time_sec=BASE_1600 - 1.0))
         assert abs(idx - 90.2) < 1e-9
 
     def test_weight_adjustment(self):

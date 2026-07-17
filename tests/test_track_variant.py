@@ -3,12 +3,16 @@
 import json
 
 from keiba.models import PastRace, RaceCard
-from keiba.speed_index import nishida_speed_index
+from keiba.speed_index import base_time, nishida_speed_index
 from keiba.track_variant import VariantTable, compute_variants
 
+BASE_1600 = base_time("東京", "芝", 1600, "1勝")
 
-def make_row(race_id, time_sec, date="2026-05-24", course="東京", surface="芝",
+
+def make_row(race_id, time_sec=None, date="2026-05-24", course="東京", surface="芝",
              distance=1600, race_class="1勝"):
+    if time_sec is None:
+        time_sec = BASE_1600
     return {
         "race_id": race_id,
         "date": date,
@@ -26,16 +30,16 @@ class TestComputeVariants:
         # 東京芝1600の基準 94.3 に対し全馬 1 秒遅い日
         # → (95.3 - 94.3) × 10 × 1.02 = +10.2
         rows = [
-            make_row("r1", 95.3), make_row("r1", 95.3),
-            make_row("r2", 95.3), make_row("r2", 95.3),
+            make_row("r1", BASE_1600 + 1), make_row("r1", BASE_1600 + 1),
+            make_row("r2", BASE_1600 + 1), make_row("r2", BASE_1600 + 1),
         ]
         variants = compute_variants(rows)
         assert variants == {"2026-05-24|東京|芝": 10.2}
 
     def test_fast_day_gives_negative_variant(self):
         rows = [
-            make_row("r1", 93.3), make_row("r1", 93.3),
-            make_row("r2", 93.3),
+            make_row("r1", BASE_1600 - 1), make_row("r1", BASE_1600 - 1),
+            make_row("r2", BASE_1600 - 1),
         ]
         variants = compute_variants(rows)
         assert variants["2026-05-24|東京|芝"] == -10.2
@@ -43,35 +47,36 @@ class TestComputeVariants:
     def test_median_across_races_robust_to_outlier_race(self):
         # 2レースは基準どおり、1レースだけ極端に速い（ハイレベル戦）
         rows = [
-            make_row("r1", 94.3), make_row("r2", 94.3), make_row("r3", 91.0),
+            make_row("r1"), make_row("r2"), make_row("r3", BASE_1600 - 3.3),
         ]
         variants = compute_variants(rows, min_races=3)
         # 中央値なので外れ値レースに引っ張られず 0.0
         assert variants["2026-05-24|東京|芝"] == 0.0
 
     def test_class_adjustment_used(self):
-        # G1(補正-2.0)の勝ち時計 92.3 は「1勝クラス基準-2秒」でちょうど基準どおり
+        # G1(補正-2.0)の勝ち時計は「1勝クラス基準-2秒」でちょうど基準どおり
         rows = [
-            make_row("r1", 92.3, race_class="G1"),
-            make_row("r2", 92.3, race_class="G1"),
+            make_row("r1", BASE_1600 - 2.0, race_class="G1"),
+            make_row("r2", BASE_1600 - 2.0, race_class="G1"),
         ]
         variants = compute_variants(rows)
         assert variants["2026-05-24|東京|芝"] == 0.0
 
     def test_min_races_filter(self):
-        rows = [make_row("r1", 95.3)]
+        rows = [make_row("r1", BASE_1600 + 1)]
         assert compute_variants(rows, min_races=2) == {}
         assert "2026-05-24|東京|芝" in compute_variants(rows, min_races=1)
 
     def test_clamp(self):
-        rows = [make_row("r1", 104.3), make_row("r2", 104.3)]  # +10秒の異常値
+        rows = [make_row("r1", BASE_1600 + 10), make_row("r2", BASE_1600 + 10)]  # +10秒の異常値
         variants = compute_variants(rows, clamp=40.0)
         assert variants["2026-05-24|東京|芝"] == 40.0
 
     def test_surfaces_separated(self):
+        base_dirt = base_time("東京", "ダ", 1600, "1勝")
         rows = [
-            make_row("r1", 95.3), make_row("r2", 95.3),
-            make_row("r3", 97.8, surface="ダ"), make_row("r4", 97.8, surface="ダ"),
+            make_row("r1", BASE_1600 + 1), make_row("r2", BASE_1600 + 1),
+            make_row("r3", base_dirt, surface="ダ"), make_row("r4", base_dirt, surface="ダ"),
         ]
         variants = compute_variants(rows)
         assert variants["2026-05-24|東京|芝"] > 0
@@ -81,7 +86,7 @@ class TestComputeVariants:
 def make_past_race(**kwargs) -> PastRace:
     defaults = dict(
         date="2026-05-24", course="東京", surface="芝", distance=1600,
-        going="重", time_sec=95.3, weight_carried=55.0,
+        going="重", time_sec=BASE_1600 + 1, weight_carried=55.0,
         finish_position=1, field_size=16, race_class="1勝",
     )
     defaults.update(kwargs)
@@ -127,7 +132,7 @@ class TestVariantTable:
                         "past_races": [
                             {
                                 "date": "2026-05-24", "course": "東京", "surface": "芝",
-                                "distance": 1600, "going": "良", "time_sec": 95.3,
+                                "distance": 1600, "going": "良", "time_sec": BASE_1600 + 1,
                                 "weight_carried": 55.0, "finish_position": 1,
                                 "field_size": 16, "race_class": "1勝",
                             }

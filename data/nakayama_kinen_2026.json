@@ -1,5 +1,5 @@
 {
-  "_comment": "中山記念2026 レースカード(バックテスト用・レース前データのみ)。タイム推定規則: 実測>勝ちタイム+実着差>勝ちタイム+0.15秒×(着順-1)。勝ちタイム不明の走は除外。天皇賞秋2025勝ち1:58.6/皐月賞2025勝ち1:57.0/中山金杯2026勝ち2:00.3/鳴尾記念2025勝ち1:43.7/中日新聞杯2025勝ち1:57.6/七夕賞2025勝ち2:00.5/チャレンジC2025勝ち1:58.0/京成杯AH2025勝ち1:31.3等を基準。追い切りの美浦2/25は大雨・重馬場(評価は補正なし=注意)",
+  "_comment": "中山記念2026 レースカード(バックテスト用・レース前データのみ)。タイム推定規則: 実測>勝ちタイム+実着差>勝ちタイム+0.15秒×(着順-1)。勝ちタイム不明の走は除外。天皇賞秋2025勝ち1:58.6/皐月賞2025勝ち1:57.0/中山金杯2026勝ち2:00.3/鳴尾記念2025勝ち1:43.7/中日新聞杯2025勝ち1:57.6/七夕賞2025勝ち2:00.5/チャレンジC2025勝ち1:58.0/京成杯AH2025勝ち1:31.3等を基準。追い切りの美浦2/25は大雨・重馬場(評価は補正なし=注意) / TARGET実測データで5走を補正(タイム・斤量・通過順位)",
   "race": {
     "name": "中山記念 (G2)",
     "date": "2026-03-01",
@@ -294,10 +294,11 @@
           "distance": 2000,
           "going": "良",
           "time_sec": 119.3,
-          "weight_carried": 56.0,
-          "finish_position": 2,
+          "weight_carried": 58.0,
+          "finish_position": 4,
           "field_size": 13,
-          "race_class": "L"
+          "race_class": "L",
+          "position_4c": 3
         }
       ],
       "workouts": [
@@ -395,11 +396,12 @@
           "surface": "芝",
           "distance": 1600,
           "going": "良",
-          "time_sec": 92.7,
-          "weight_carried": 56.0,
-          "finish_position": 10,
+          "time_sec": 91.8,
+          "weight_carried": 55.0,
+          "finish_position": 6,
           "field_size": 16,
-          "race_class": "G3"
+          "race_class": "G3",
+          "position_4c": 14
         },
         {
           "date": "2025-04-20",
@@ -407,11 +409,12 @@
           "surface": "芝",
           "distance": 2000,
           "going": "良",
-          "time_sec": 118.4,
+          "time_sec": 118.0,
           "weight_carried": 57.0,
-          "finish_position": 10,
+          "finish_position": 12,
           "field_size": 18,
-          "race_class": "G1"
+          "race_class": "G1",
+          "position_4c": 13
         }
       ],
       "workouts": [
@@ -575,11 +578,12 @@
           "surface": "芝",
           "distance": 2000,
           "going": "良",
-          "time_sec": 118.8,
+          "time_sec": 118.1,
           "weight_carried": 57.0,
-          "finish_position": 13,
+          "finish_position": 14,
           "field_size": 18,
-          "race_class": "G1"
+          "race_class": "G1",
+          "position_4c": 7
         },
         {
           "date": "2025-01-19",
@@ -589,9 +593,10 @@
           "going": "良",
           "time_sec": 119.9,
           "weight_carried": 57.0,
-          "finish_position": 1,
+          "finish_position": 11,
           "field_size": 14,
-          "race_class": "G3"
+          "race_class": "G3",
+          "position_4c": 6
         }
       ],
       "workouts": []
