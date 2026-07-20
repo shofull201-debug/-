@@ -116,3 +116,26 @@ class TestAggregateSpeedScore:
         races = [make_race(date=f"2026-0{i}-01") for i in range(1, 7)]
         _, indices = aggregate_speed_score(races, "芝", 1600)
         assert len(indices) == 5
+
+    def test_trim_worst_excludes_lowest_from_average(self):
+        # 大敗走(指数-20)を1走トリムするとスコアが上がる
+        races = [
+            make_race(date="2026-06-01"),
+            make_race(date="2026-05-01", time_sec=BASE_1600 + 2.0),  # 大敗
+            make_race(date="2026-04-01"),
+            make_race(date="2026-03-01"),
+        ]
+        base, _ = aggregate_speed_score(races, "芝", 1600)
+        trimmed, _ = aggregate_speed_score(races, "芝", 1600, trim_worst=1)
+        assert trimmed > base
+
+    def test_trim_keeps_at_least_three_races(self):
+        # 3走しか無ければトリムしない(結果は同じ)
+        races = [
+            make_race(date="2026-06-01"),
+            make_race(date="2026-05-01", time_sec=BASE_1600 + 2.0),
+            make_race(date="2026-04-01"),
+        ]
+        base, _ = aggregate_speed_score(races, "芝", 1600)
+        trimmed, _ = aggregate_speed_score(races, "芝", 1600, trim_worst=1)
+        assert trimmed == base

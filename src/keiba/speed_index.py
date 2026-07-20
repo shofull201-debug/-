@@ -108,18 +108,30 @@ def _relevance(past: PastRace, surface: str, distance: int) -> float:
     return max(0.3, w)
 
 
+# 集約の既定値: 加重平均とベスト指数のブレンド比率、加重平均から除く大敗走の数
+BLEND_BEST = 0.45
+TRIM_WORST = 0
+
+
 def aggregate_speed_score(
     past_races: list[PastRace],
     surface: str,
     distance: int,
-    blend_best: float = 0.45,
+    blend_best: float | None = None,
+    trim_worst: int | None = None,
 ) -> tuple[float, list[float]]:
     """過去 5 走のスピード指数を集約して 1 頭のスピードスコアにする。
 
     - 各走の指数に「鮮度 × 今回条件への関連度」のウェイトを掛けた加重平均と、
       最高値（ベスト指数）を blend_best の比率でブレンドする。
+    - trim_worst > 0 なら、指数が最も低い走をその数だけ加重平均から除く
+      （出遅れ・不利などの大敗が平均を毀損するのを防ぐ。3走以上残る場合のみ）。
     - 戻り値: (スコア, 各走の生指数リスト[直近順])
     """
+    if blend_best is None:
+        blend_best = BLEND_BEST
+    if trim_worst is None:
+        trim_worst = TRIM_WORST
     if not past_races:
         return 0.0, []
 
@@ -128,7 +140,10 @@ def aggregate_speed_score(
         RECENCY_WEIGHTS[i] * _relevance(r, surface, distance)
         for i, r in enumerate(past_races[:5])
     ]
-    wavg = sum(v * w for v, w in zip(indices, weights)) / sum(weights)
+    pairs = list(zip(indices, weights))
+    if trim_worst > 0 and len(pairs) >= trim_worst + 3:
+        pairs = sorted(pairs, key=lambda p: p[0])[trim_worst:]
+    wavg = sum(v * w for v, w in pairs) / sum(w for _, w in pairs)
     best = max(indices)
     score = wavg * (1 - blend_best) + best * blend_best
     return score, indices
