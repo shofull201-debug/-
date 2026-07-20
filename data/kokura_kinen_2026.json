@@ -163,7 +163,7 @@
     },
     {
       "name": "カエルム",
-      "sire": "",
+      "sire": "ブラックタイド",
       "dam_sire": "キングカメハメハ",
       "weight_carried": 52.0,
       "past_races": [
@@ -685,7 +685,7 @@
     },
     {
       "name": "ゼンダンハヤブサ",
-      "sire": "",
+      "sire": "スマートオーディン",
       "dam_sire": null,
       "weight_carried": 52.0,
       "past_races": [

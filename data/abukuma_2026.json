@@ -573,7 +573,7 @@
     },
     {
       "name": "コンドゥイア",
-      "sire": "",
+      "sire": "フォーウィールドラ",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
@@ -643,7 +643,7 @@
     },
     {
       "name": "サヴォンリンナ",
-      "sire": "",
+      "sire": "サトノダイヤモンド",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
@@ -713,7 +713,7 @@
     },
     {
       "name": "ミラビリスマジック",
-      "sire": "",
+      "sire": "キズナ",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
@@ -783,7 +783,7 @@
     },
     {
       "name": "エスコバル",
-      "sire": "",
+      "sire": "モーリス",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
@@ -853,7 +853,7 @@
     },
     {
       "name": "ドラゴンヘッド",
-      "sire": "",
+      "sire": "ラブリーデイ",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
@@ -923,7 +923,7 @@
     },
     {
       "name": "ヴォンフレ",
-      "sire": "",
+      "sire": "ブラックタイド",
       "dam_sire": null,
       "weight_carried": 55.0,
       "past_races": [
