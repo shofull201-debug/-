@@ -178,7 +178,7 @@
       "name": "ショウナンマグマ",
       "horse_number": 3,
       "sire": "ザファクター",
-      "dam_sire": null,
+      "dam_sire": "ステイゴールド",
       "weight_carried": 55.0,
       "past_races": [
         {
@@ -353,7 +353,7 @@
       "name": "オーロラエックス",
       "horse_number": 5,
       "sire": "サトノダイヤモンド",
-      "dam_sire": null,
+      "dam_sire": "Galileo",
       "weight_carried": 55.0,
       "past_races": [
         {
@@ -971,7 +971,7 @@
       "name": "リカンカブール",
       "horse_number": 12,
       "sire": "シルバーステート",
-      "dam_sire": "ゾファニー",
+      "dam_sire": "Zoffany",
       "weight_carried": 57.0,
       "past_races": [
         {
@@ -1238,7 +1238,7 @@
       "name": "ヤマニンブークリエ",
       "horse_number": 15,
       "sire": "キタサンブラック",
-      "dam_sire": null,
+      "dam_sire": "チチカステナンゴ",
       "weight_carried": 56.0,
       "past_races": [
         {

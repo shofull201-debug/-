@@ -707,7 +707,7 @@
       "name": "フクノブルーレイク",
       "horse_number": 9,
       "sire": "ウインブライト",
-      "dam_sire": null,
+      "dam_sire": "ロードカナロア",
       "weight_carried": 53.0,
       "running_style": "差し",
       "past_races": [
@@ -881,7 +881,7 @@
       "name": "バレエマスター",
       "horse_number": 11,
       "sire": "スピルバーグ",
-      "dam_sire": null,
+      "dam_sire": "スウェプトオーヴァーボード",
       "weight_carried": 55.0,
       "running_style": "追込",
       "past_races": [
@@ -1137,7 +1137,7 @@
       "name": "シンハナーダ",
       "horse_number": 14,
       "sire": "レイデオロ",
-      "dam_sire": "ディープインパクト",
+      "dam_sire": "ウォーエンブレム",
       "weight_carried": 56.0,
       "running_style": "追込",
       "past_races": [

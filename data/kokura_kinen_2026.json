@@ -94,7 +94,7 @@
     {
       "name": "エヒト",
       "sire": "ルーラーシップ",
-      "dam_sire": null,
+      "dam_sire": "ディープインパクト",
       "weight_carried": 58.0,
       "past_races": [
         {
@@ -234,7 +234,7 @@
     {
       "name": "カネフラ",
       "sire": "グランデッツァ",
-      "dam_sire": null,
+      "dam_sire": "キングカメハメハ",
       "weight_carried": 53.0,
       "past_races": [
         {
@@ -304,7 +304,7 @@
     {
       "name": "ガイアメンテ",
       "sire": "ドゥラメンテ",
-      "dam_sire": null,
+      "dam_sire": "Concorde's Tune",
       "weight_carried": 57.0,
       "past_races": [
         {
@@ -385,7 +385,7 @@
     {
       "name": "ケイズレーヴ",
       "sire": "ブリックスアンドモルタル",
-      "dam_sire": null,
+      "dam_sire": "ディープブリランテ",
       "weight_carried": 57.0,
       "past_races": [],
       "workouts": [],
@@ -686,7 +686,7 @@
     {
       "name": "ゼンダンハヤブサ",
       "sire": "スマートオーディン",
-      "dam_sire": null,
+      "dam_sire": "アグネスタキオン",
       "weight_carried": 52.0,
       "past_races": [
         {
@@ -756,7 +756,7 @@
     {
       "name": "タガノアビー",
       "sire": "アニマルキングダム",
-      "dam_sire": "アイルハヴアナー",
+      "dam_sire": "アイルハヴアナザー",
       "weight_carried": 54.0,
       "past_races": [
         {

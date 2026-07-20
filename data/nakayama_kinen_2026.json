@@ -1106,7 +1106,7 @@
       "name": "シャンパンカラー",
       "horse_number": 14,
       "sire": "ドゥラメンテ",
-      "dam_sire": null,
+      "dam_sire": "Reckless Abandon",
       "weight_carried": 58.0,
       "past_races": [
         {
