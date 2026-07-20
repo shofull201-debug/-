@@ -6,6 +6,11 @@
 偏差値化する理由: スピード指数（〜110 程度）と血統・追切スコア（0〜100）は
 スケールも分散も異なるため、生値のまま足すと配分が崩れる。メンバー内での
 相対的な位置に揃えることで、重みが意図どおり効く。
+
+欠損の扱い: データが取れなかった要素（追切なし・血統未登録・過去走なし等）は
+中立値で評価に混ぜず、その馬についてはその要素の重みを残りの要素へ再配分する。
+「情報が無い」ことと「評価が低い」ことを区別するため。偏差値の母集団も
+データがある馬だけで計算する（欠損馬の中立値が分布を歪めないように）。
 """
 
 from __future__ import annotations
@@ -46,7 +51,8 @@ class HorseResult:
     workout: dict                      # 追切スコア内訳
     style: dict | None = None          # 脚質×コース形態の内訳
     going_aptitude: dict | None = None  # 道悪適性の内訳（良馬場のときは None）
-    deviations: dict[str, float] = field(default_factory=dict)  # 各要素の偏差値
+    # 各要素の偏差値。欠損（データなし・重みは他要素へ再配分）は None
+    deviations: dict[str, float | None] = field(default_factory=dict)
 
 
 def _to_deviation(values: list[float]) -> list[float]:
@@ -58,6 +64,41 @@ def _to_deviation(values: list[float]) -> list[float]:
     if sigma == 0:
         return [50.0 for _ in values]
     return [50.0 + (v - mu) / sigma * 10 for v in values]
+
+
+def _subset_deviation(
+    values: list[float], present: list[bool]
+) -> list[float | None]:
+    """データがある馬だけを母集団として偏差値化し、欠損馬は None を返す。
+
+    母集団が出走頭数より少ないときは √(データあり頭数/出走頭数) で
+    50 へ縮小する。数頭だけの母集団で計算した偏差値は振れが大きく、
+    そのまま使うと少数派どうしの比較が総合点を過剰に動かすため。
+    """
+    n_present = sum(present)
+    shrink = (n_present / len(present)) ** 0.5 if present else 1.0
+    devs = iter(
+        50.0 + (d - 50.0) * shrink
+        for d in _to_deviation([v for v, p in zip(values, present) if p])
+    )
+    return [next(devs) if p else None for p in present]
+
+
+def _missing_factors(raw: dict) -> set[str]:
+    """生スコアの内訳から「データが取れなかった要素」を判定する。"""
+    missing = set()
+    if not raw["speed_indices"]:
+        missing.add("speed")
+    if raw["workout"]["latest"] is None:
+        missing.add("workout")
+    ped = raw["pedigree"]
+    if not ped["sire_known"] and not ped["dam_sire_known"]:
+        missing.add("pedigree")
+    if raw["style"]["style"] is None:
+        missing.add("style")
+    if not raw["going_aptitude"]["known"]:
+        missing.add("going")
+    return missing
 
 
 def evaluate_horse(
@@ -98,37 +139,34 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
         evaluate_horse(h, race.surface, race.distance, course=race.course)
         for h in card.horses
     ]
+    missing = [_missing_factors(r) for r in raws]
 
-    # 過去走が無い馬（新馬など）のスピード指数はメンバー平均で補完する
-    known_speeds = [r["speed"] for r in raws if r["speed_indices"]]
-    fill = mean(known_speeds) if known_speeds else 0.0
-    speeds = [r["speed"] if r["speed_indices"] else fill for r in raws]
+    # 偏差値の母集団はデータがある馬だけ（欠損馬の中立値で分布を歪めない）
+    def devs(key: str, values: list[float]) -> list[float | None]:
+        return _subset_deviation(values, [key not in m for m in missing])
 
-    dev_speed = _to_deviation(speeds)
-    dev_ped = _to_deviation([r["pedigree"]["score"] for r in raws])
-    dev_work = _to_deviation([r["workout"]["score"] for r in raws])
-    dev_going = _to_deviation([r["going_aptitude"]["score"] for r in raws])
-    dev_style = _to_deviation([r["style"]["score"] for r in raws])
+    dev = {
+        "speed": devs("speed", [r["speed"] for r in raws]),
+        "pedigree": devs("pedigree", [r["pedigree"]["score"] for r in raws]),
+        "workout": devs("workout", [r["workout"]["score"] for r in raws]),
+        "going": devs("going", [r["going_aptitude"]["score"] for r in raws]),
+        "style": devs("style", [r["style"]["score"] for r in raws]),
+    }
 
+    shown = ["speed", "workout", "pedigree", "style"] + (["going"] if wet else [])
     results = []
-    for horse, raw, ds, dp, dw, dg, dst in zip(
-        card.horses, raws, dev_speed, dev_ped, dev_work, dev_going, dev_style
-    ):
-        total = (
-            ds * w["speed"]
-            + dp * w["pedigree"]
-            + dw * w["workout"]
-            + dg * w.get("going", 0.0)
-            + dst * w.get("style", 0.0)
-        )
+    for i, (horse, raw) in enumerate(zip(card.horses, raws)):
+        # 欠損要素の重みを、その馬が持っている要素へ比例配分する
+        avail = {k: w.get(k, 0.0) for k in dev if k not in missing[i]}
+        avail_total = sum(avail.values())
+        if avail_total > 0:
+            total = sum(dev[k][i] * v / avail_total for k, v in avail.items())
+        else:
+            total = 50.0  # 全要素欠損（実質あり得ない）は中立
         deviations = {
-            "speed": round(ds, 1),
-            "pedigree": round(dp, 1),
-            "workout": round(dw, 1),
-            "style": round(dst, 1),
+            k: round(dev[k][i], 1) if dev[k][i] is not None else None
+            for k in shown
         }
-        if wet:
-            deviations["going"] = round(dg, 1)
         results.append(
             HorseResult(
                 name=horse.name,

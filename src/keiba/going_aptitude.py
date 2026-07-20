@@ -64,7 +64,13 @@ def record_wet_score(past_races: list[PastRace]) -> float | None:
 
 
 def going_aptitude_score(horse: HorseEntry) -> dict:
-    """道悪適性の総合スコア（0〜100）と内訳を返す。"""
+    """道悪適性の総合スコア（0〜100）と内訳を返す。
+
+    known は「血統・実績のどちらかから道悪適性を推定できたか」。
+    False のとき score は中立値であり、予想側は欠損として扱ってよい。
+    """
+    _, s_known = _sire_wet(horse.sire)
+    _, d_known = _sire_wet(horse.dam_sire) if horse.dam_sire else (0.0, False)
     ped = pedigree_wet_score(horse.sire, horse.dam_sire)
     rec = record_wet_score(horse.past_races)
     total = ped if rec is None else ped * PEDIGREE_WEIGHT + rec * RECORD_WEIGHT
@@ -73,4 +79,5 @@ def going_aptitude_score(horse: HorseEntry) -> dict:
         "pedigree_wet": round(ped, 1),
         "record_wet": round(rec, 1) if rec is not None else None,
         "wet_starts": sum(1 for r in horse.past_races if is_wet(r.going)),
+        "known": rec is not None or s_known or d_known,
     }
