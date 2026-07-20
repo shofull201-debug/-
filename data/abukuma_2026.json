@@ -26,7 +26,8 @@
           "weight_carried": 58.0,
           "finish_position": 14,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 14
         },
         {
           "date": "2026-05-24",
@@ -38,7 +39,8 @@
           "weight_carried": 58.0,
           "finish_position": 12,
           "field_size": 14,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 14
         },
         {
           "date": "2026-04-19",
@@ -50,7 +52,8 @@
           "weight_carried": 57.0,
           "finish_position": 11,
           "field_size": 18,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2026-02-22",
@@ -62,7 +65,8 @@
           "weight_carried": 57.0,
           "finish_position": 11,
           "field_size": 14,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 12
         },
         {
           "date": "2025-11-30",
@@ -74,7 +78,8 @@
           "weight_carried": 58.0,
           "finish_position": 2,
           "field_size": 15,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 6
         }
       ],
       "workouts": [],
@@ -96,7 +101,8 @@
           "weight_carried": 58.0,
           "finish_position": 1,
           "field_size": 13,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 2
         },
         {
           "date": "2026-01-25",
@@ -108,7 +114,8 @@
           "weight_carried": 57.0,
           "finish_position": 3,
           "field_size": 10,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         },
         {
           "date": "2026-01-05",
@@ -120,7 +127,8 @@
           "weight_carried": 57.0,
           "finish_position": 4,
           "field_size": 11,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         },
         {
           "date": "2025-12-07",
@@ -132,7 +140,8 @@
           "weight_carried": 57.0,
           "finish_position": 4,
           "field_size": 8,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         },
         {
           "date": "2025-10-25",
@@ -144,7 +153,8 @@
           "weight_carried": 56.0,
           "finish_position": 3,
           "field_size": 12,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 5
         }
       ],
       "workouts": [],
@@ -166,7 +176,8 @@
           "weight_carried": 57.0,
           "finish_position": 1,
           "field_size": 12,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 1
         },
         {
           "date": "2026-03-21",
@@ -178,7 +189,8 @@
           "weight_carried": 57.0,
           "finish_position": 4,
           "field_size": 16,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 2
         },
         {
           "date": "2026-01-25",
@@ -190,7 +202,8 @@
           "weight_carried": 58.0,
           "finish_position": 4,
           "field_size": 10,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 8
         },
         {
           "date": "2025-11-15",
@@ -202,7 +215,8 @@
           "weight_carried": 58.0,
           "finish_position": 2,
           "field_size": 13,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         },
         {
           "date": "2025-08-30",
@@ -214,7 +228,8 @@
           "weight_carried": 56.0,
           "finish_position": 3,
           "field_size": 13,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 6
         }
       ],
       "workouts": [],
@@ -236,7 +251,8 @@
           "weight_carried": 58.0,
           "finish_position": 7,
           "field_size": 9,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2026-04-05",
@@ -248,7 +264,8 @@
           "weight_carried": 58.0,
           "finish_position": 6,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         },
         {
           "date": "2026-02-21",
@@ -260,7 +277,8 @@
           "weight_carried": 58.0,
           "finish_position": 11,
           "field_size": 13,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 12
         },
         {
           "date": "2026-02-07",
@@ -272,7 +290,8 @@
           "weight_carried": 56.0,
           "finish_position": 4,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 5
         },
         {
           "date": "2025-11-24",
@@ -284,7 +303,8 @@
           "weight_carried": 58.0,
           "finish_position": 6,
           "field_size": 14,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 6
         }
       ],
       "workouts": [],
@@ -307,7 +327,8 @@
           "weight_carried": 58.0,
           "finish_position": 7,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2026-04-12",
@@ -319,7 +340,8 @@
           "weight_carried": 58.0,
           "finish_position": 7,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         },
         {
           "date": "2025-08-10",
@@ -331,7 +353,8 @@
           "weight_carried": 58.0,
           "finish_position": 4,
           "field_size": 14,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2025-07-19",
@@ -343,7 +366,8 @@
           "weight_carried": 55.0,
           "finish_position": 8,
           "field_size": 10,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2025-01-12",
@@ -355,7 +379,8 @@
           "weight_carried": 56.0,
           "finish_position": 12,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         }
       ],
       "workouts": [],
@@ -377,7 +402,8 @@
           "weight_carried": 58.0,
           "finish_position": 13,
           "field_size": 14,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 9
         },
         {
           "date": "2026-05-17",
@@ -389,7 +415,8 @@
           "weight_carried": 58.0,
           "finish_position": 7,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 5
         },
         {
           "date": "2026-02-07",
@@ -401,7 +428,8 @@
           "weight_carried": 56.0,
           "finish_position": 14,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 11
         },
         {
           "date": "2026-01-25",
@@ -413,7 +441,8 @@
           "weight_carried": 58.0,
           "finish_position": 10,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 5
         },
         {
           "date": "2025-12-13",
@@ -425,7 +454,8 @@
           "weight_carried": 58.0,
           "finish_position": 7,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 4
         }
       ],
       "workouts": [],
@@ -447,7 +477,8 @@
           "weight_carried": 56.0,
           "finish_position": 10,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 10
         },
         {
           "date": "2026-03-14",
@@ -459,7 +490,8 @@
           "weight_carried": 53.0,
           "finish_position": 9,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 7
         },
         {
           "date": "2026-02-10",
@@ -471,7 +503,8 @@
           "weight_carried": 56.0,
           "finish_position": 1,
           "field_size": 9,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 1
         },
         {
           "date": "2026-01-25",
@@ -483,7 +516,8 @@
           "weight_carried": 56.0,
           "finish_position": 6,
           "field_size": 10,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 3
         },
         {
           "date": "2025-07-19",
@@ -495,7 +529,8 @@
           "weight_carried": 56.0,
           "finish_position": 12,
           "field_size": 14,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 3
         }
       ],
       "workouts": [],
@@ -517,7 +552,8 @@
           "weight_carried": 56.0,
           "finish_position": 6,
           "field_size": 9,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 1
         },
         {
           "date": "2026-04-05",
@@ -529,7 +565,8 @@
           "weight_carried": 56.0,
           "finish_position": 7,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2026-03-22",
@@ -541,7 +578,8 @@
           "weight_carried": 56.0,
           "finish_position": 9,
           "field_size": 9,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 1
         },
         {
           "date": "2026-01-24",
@@ -553,7 +591,8 @@
           "weight_carried": 54.0,
           "finish_position": 5,
           "field_size": 18,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 1
         },
         {
           "date": "2025-12-13",
@@ -565,7 +604,8 @@
           "weight_carried": 56.0,
           "finish_position": 5,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 4
         }
       ],
       "workouts": [],
@@ -587,7 +627,8 @@
           "weight_carried": 56.0,
           "finish_position": 13,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 7
         },
         {
           "date": "2026-04-19",
@@ -599,7 +640,8 @@
           "weight_carried": 55.0,
           "finish_position": 15,
           "field_size": 16,
-          "race_class": "G3"
+          "race_class": "G3",
+          "position_4c": 4
         },
         {
           "date": "2026-03-28",
@@ -611,7 +653,8 @@
           "weight_carried": 56.0,
           "finish_position": 14,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 1
         },
         {
           "date": "2026-01-11",
@@ -623,7 +666,8 @@
           "weight_carried": 55.0,
           "finish_position": 1,
           "field_size": 13,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 1
         },
         {
           "date": "2025-12-21",
@@ -635,7 +679,8 @@
           "weight_carried": 55.0,
           "finish_position": 3,
           "field_size": 11,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 2
         }
       ],
       "workouts": [],
@@ -657,7 +702,8 @@
           "weight_carried": 56.0,
           "finish_position": 12,
           "field_size": 18,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 9
         },
         {
           "date": "2026-04-05",
@@ -669,7 +715,8 @@
           "weight_carried": 56.0,
           "finish_position": 15,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 12
         },
         {
           "date": "2026-02-10",
@@ -681,7 +728,8 @@
           "weight_carried": 56.0,
           "finish_position": 7,
           "field_size": 13,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         },
         {
           "date": "2025-09-07",
@@ -693,7 +741,8 @@
           "weight_carried": 55.0,
           "finish_position": 9,
           "field_size": 12,
-          "race_class": "G2"
+          "race_class": "G2",
+          "position_4c": 2
         },
         {
           "date": "2025-05-25",
@@ -705,7 +754,8 @@
           "weight_carried": 55.0,
           "finish_position": 17,
           "field_size": 18,
-          "race_class": "G1"
+          "race_class": "G1",
+          "position_4c": 5
         }
       ],
       "workouts": [],
@@ -727,7 +777,8 @@
           "weight_carried": 56.0,
           "finish_position": 6,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 5
         },
         {
           "date": "2026-03-28",
@@ -739,7 +790,8 @@
           "weight_carried": 56.0,
           "finish_position": 9,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 9
         },
         {
           "date": "2026-02-15",
@@ -751,7 +803,8 @@
           "weight_carried": 56.0,
           "finish_position": 13,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         },
         {
           "date": "2025-05-10",
@@ -763,7 +816,8 @@
           "weight_carried": 56.0,
           "finish_position": 8,
           "field_size": 15,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 5
         },
         {
           "date": "2024-11-23",
@@ -797,7 +851,8 @@
           "weight_carried": 58.0,
           "finish_position": 12,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 12
         },
         {
           "date": "2026-02-15",
@@ -809,7 +864,8 @@
           "weight_carried": 58.0,
           "finish_position": 14,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 14
         },
         {
           "date": "2025-11-23",
@@ -821,7 +877,8 @@
           "weight_carried": 54.0,
           "finish_position": 4,
           "field_size": 17,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 17
         },
         {
           "date": "2025-09-21",
@@ -833,7 +890,8 @@
           "weight_carried": 55.0,
           "finish_position": 16,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 16
         },
         {
           "date": "2025-04-06",
@@ -845,7 +903,8 @@
           "weight_carried": 58.0,
           "finish_position": 14,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 7
         }
       ],
       "workouts": [],
@@ -867,7 +926,8 @@
           "weight_carried": 58.0,
           "finish_position": 5,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 13
         },
         {
           "date": "2026-03-01",
@@ -879,7 +939,8 @@
           "weight_carried": 58.0,
           "finish_position": 9,
           "field_size": 17,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 15
         },
         {
           "date": "2026-01-25",
@@ -891,7 +952,8 @@
           "weight_carried": 58.0,
           "finish_position": 6,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 10
         },
         {
           "date": "2025-12-13",
@@ -903,7 +965,8 @@
           "weight_carried": 58.0,
           "finish_position": 10,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 14
         },
         {
           "date": "2025-10-25",
@@ -915,7 +978,8 @@
           "weight_carried": 58.0,
           "finish_position": 10,
           "field_size": 18,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 15
         }
       ],
       "workouts": [],
@@ -937,7 +1001,8 @@
           "weight_carried": 56.0,
           "finish_position": 1,
           "field_size": 9,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 2
         },
         {
           "date": "2026-05-02",
@@ -949,7 +1014,8 @@
           "weight_carried": 56.0,
           "finish_position": 7,
           "field_size": 15,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 5
         },
         {
           "date": "2026-03-22",
@@ -961,7 +1027,8 @@
           "weight_carried": 56.0,
           "finish_position": 9,
           "field_size": 16,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         },
         {
           "date": "2026-01-18",
@@ -973,7 +1040,8 @@
           "weight_carried": 55.0,
           "finish_position": 3,
           "field_size": 16,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 6
         },
         {
           "date": "2025-12-07",
@@ -985,7 +1053,8 @@
           "weight_carried": 55.0,
           "finish_position": 11,
           "field_size": 16,
-          "race_class": "2勝"
+          "race_class": "2勝",
+          "position_4c": 4
         }
       ],
       "workouts": [],
@@ -1007,7 +1076,8 @@
           "weight_carried": 58.0,
           "finish_position": 12,
           "field_size": 12,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 3
         },
         {
           "date": "2026-03-21",
@@ -1019,7 +1089,8 @@
           "weight_carried": 52.0,
           "finish_position": 13,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 7
         },
         {
           "date": "2025-12-07",
@@ -1031,7 +1102,8 @@
           "weight_carried": 52.0,
           "finish_position": 18,
           "field_size": 18,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2025-11-23",
@@ -1043,7 +1115,8 @@
           "weight_carried": 53.0,
           "finish_position": 17,
           "field_size": 17,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 2
         },
         {
           "date": "2025-08-02",
@@ -1055,7 +1128,8 @@
           "weight_carried": 53.0,
           "finish_position": 16,
           "field_size": 16,
-          "race_class": "3勝"
+          "race_class": "3勝",
+          "position_4c": 16
         }
       ],
       "workouts": [],
