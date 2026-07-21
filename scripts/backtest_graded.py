@@ -61,7 +61,7 @@ def main() -> int:
 
     stats = defaultdict(lambda: {"n": 0, "win": 0, "place": 0,
                                  "tan_ret": 0, "fuku_ret": 0, "fuku_n": 0,
-                                 "cover3": 0, "box3": 0})
+                                 "cover3": 0, "box3": 0, "pay_n": 0})
     # 馬券戦略: (ラベル, 点数, 的中判定, 使う配当キー)
     # 判定は (top2set, top3set, marks_idx) を受け取る
     bets = {
@@ -95,13 +95,16 @@ def main() -> int:
 
         top2 = {i for i, f in enumerate(pre.finish) if (f or 99) <= 2}
         payouts = race.get("payouts") or {}
+        has_pay = bool(payouts.get("win"))
         for key in (grade, "全重賞"):
+            stats[key]["pay_n"] += has_pay
             for label, (points, is_hit, pay_key) in bets.items():
                 b = bet_stats[key][label]
-                b["cost"] += points * 100
-                if is_hit(top2, placers, order) and payouts.get(pay_key):
+                if has_pay:
+                    b["cost"] += points * 100
+                if is_hit(top2, placers, order):
                     b["hit"] += 1
-                    b["ret"] += payouts[pay_key]
+                    b["ret"] += payouts.get(pay_key) or 0
             wide_hit[key] += len(top5 & placers) >= 2
 
         cells = []
@@ -121,9 +124,10 @@ def main() -> int:
         s = stats[key]
         if not s["n"]:
             continue
+        tan = f"{s['tan_ret']/s['pay_n']:>6.1f}%" if s["pay_n"] else f"{'-':>7}"
+        fuku = f"{s['fuku_ret']/s['pay_n']:>6.1f}%" if s["pay_n"] else f"{'-':>7}"
         print(f"{key:<6} {s['n']:>5} {s['win']/s['n']*100:>6.1f}% "
-              f"{s['place']/s['n']*100:>6.1f}% "
-              f"{s['tan_ret']/s['n']:>6.1f}% {s['fuku_ret']/s['fuku_n']:>6.1f}%"
+              f"{s['place']/s['n']*100:>6.1f}% {tan} {fuku}"
               f" {s['cover3']/s['n']:>8.2f}頭 {s['box3']/s['n']*100:>7.1f}%")
 
     print("\n=== 馬券シミュレーション(100円/点) ===")
@@ -135,8 +139,8 @@ def main() -> int:
         cells = []
         for label in bets:
             b = bet_stats[key][label]
-            roi = b["ret"] / b["cost"] * 100 if b["cost"] else 0.0
-            cells.append(f" 的中{b['hit']/stats[key]['n']*100:>5.1f}%/回収{roi:>6.1f}%")
+            roi = f"{b['ret']/b['cost']*100:>6.1f}%" if b["cost"] else f"{'-':>7}"
+            cells.append(f" 的中{b['hit']/stats[key]['n']*100:>5.1f}%/回収{roi}")
         print(f"{key:<6}" + "".join(cells)
               + f" {wide_hit[key]/stats[key]['n']*100:>10.1f}%")
     print("* ワイドは配当列がデータに無いため的中率のみ(印5頭中2頭が3着内)")
