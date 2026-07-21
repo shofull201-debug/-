@@ -341,6 +341,35 @@ def _result_rows_from_dataset(dataset: dict):
                 }
 
 
+def cmd_import_workouts(args: argparse.Namespace) -> int:
+    """追い切り記事のテキスト/HTMLからカードへ追切を取り込む。"""
+    from .workout_import import card_horse_names, extract_workouts, merge_into_card
+
+    with open(args.card, encoding="utf-8") as f:
+        card_data = json.load(f)
+    year = args.year or int(card_data["race"]["date"][:4])
+
+    names = card_horse_names(card_data)
+    found: dict[str, dict] = {}
+    for path in args.articles:
+        with open(path, encoding=args.encoding, errors="replace") as f:
+            text = f.read()
+        extracted = extract_workouts(text, names, year)
+        print(f"{path}: {len(extracted)} 頭分を抽出")
+        for name, w in extracted.items():
+            found.setdefault(name, w)
+
+    applied = merge_into_card(card_data, found, replace=args.replace)
+    with open(args.card, "w", encoding="utf-8") as f:
+        json.dump(card_data, f, ensure_ascii=False, indent=2)
+    print(f"{args.card}: {applied} 頭に追切を設定"
+          f"({'既存を置換' if args.replace else '既存はそのまま'})")
+    missing = [n for n in names if n not in found]
+    if missing:
+        print(f"記事に見つからなかった馬: {'、'.join(missing)}")
+    return 0
+
+
 def cmd_build_variants(args: argparse.Namespace) -> int:
     """データセットから同日レースの馬場指数表を算出する。"""
     from .scrape.dataset import load_dataset
@@ -492,6 +521,17 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_fit.add_argument("-o", "--output", default=None, help="学習した重みの保存先 JSON")
     p_fit.set_defaults(func=cmd_fit)
+
+    p_imp = sub.add_parser(
+        "import-workouts",
+        help="追い切り記事(テキスト/HTML)から追切データをカードへ取り込む",
+    )
+    p_imp.add_argument("card", help="レースカード JSON(上書き保存される)")
+    p_imp.add_argument("articles", nargs="+", help="記事のテキスト/HTMLファイル")
+    p_imp.add_argument("--year", type=int, help="追い切り日の年(省略時はレース年)")
+    p_imp.add_argument("--encoding", default="utf-8")
+    p_imp.add_argument("--replace", action="store_true", help="既存の追切を置き換える")
+    p_imp.set_defaults(func=cmd_import_workouts)
 
     p_var = sub.add_parser("build-variants", help="データセットから同日レースの馬場指数表を算出")
     p_var.add_argument("dataset", help="keiba scrape が出力したデータセット JSON")
