@@ -82,7 +82,26 @@
           "position_4c": 6
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.9,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-05",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.4,
+          "last_1f": 12.5,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "ウェルカムS2着1:57.8実測。2026-02-22東京芝2000の11着は勝ちタイム未取得で除外。トップハンデ"
     },
     {
@@ -232,7 +251,26 @@
           "position_4c": 6
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.3,
+          "last_1f": 13.8,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-05",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.6,
+          "last_1f": 13.1,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "前走国分寺特別(東京芝1800)1着1:46.1実測・レーン騎乗。母父ステイゴールド=福島芝1800好相性の血統との傾向記事あり"
     },
     {
@@ -307,7 +345,26 @@
           "position_4c": 6
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 58.0,
+          "last_1f": 13.6,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-11",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.7,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "美浦S6着(稍重58kg)は勝ちタイム未取得で除外。放牧明け"
     },
     {
@@ -383,7 +440,26 @@
           "position_4c": 3
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.9,
+          "last_1f": 13.5,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.0,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "新春S12着は勝ちタイム未取得で除外。脚質=逃げ(サウジRC逃げ2着など一般知識)。28戦2勝"
     },
     {
@@ -458,7 +534,26 @@
           "position_4c": 4
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.1,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 59.5,
+          "last_1f": 13.9,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "昨年阿武隈S2着=当該コース実績(タイム未取得で数値化できず)。前走から1年の休み明けの可能性"
     },
     {
@@ -533,7 +628,26 @@
           "position_4c": 3
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.1,
+          "last_1f": 11.8,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-06-28",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.5,
+          "last_1f": 12.3,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "近3走タイム未取得(2026-02東京1800で1勝あり)。軽ハンデ53kg。追い切り注目馬(坂路好時計)の報あるが時計未取得"
     },
     {
@@ -608,7 +722,17 @@
           "position_4c": 4
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.1,
+          "last_1f": 13.5,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "斤量未確認(54.0仮)。美浦S7着は勝ちタイム未取得で除外。牝馬・35戦3勝"
     },
     {
@@ -683,7 +807,26 @@
           "position_4c": 2
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.7,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-05",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.5,
+          "last_1f": 11.9,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "推定出走馬(出馬表略称『コンド』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
     },
     {
@@ -907,7 +1050,17 @@
           "position_4c": 7
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-02",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.4,
+          "last_1f": 12.8,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "推定出走馬(出馬表略称『エスコ』の一意候補)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
     },
     {
@@ -982,7 +1135,26 @@
           "position_4c": 15
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.7,
+          "last_1f": 13.2,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-02",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.5,
+          "last_1f": 13.1,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "推定出走馬(出馬表略称『ドラゴ』。もう1頭の候補ドラゴンブーストはOP馬のため3勝クラス出走不可で消去)。血統・斤量未取得(斤量55.0仮)。走歴はkeiba_list実測(〜2025年末)"
     },
     {

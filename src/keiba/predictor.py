@@ -27,8 +27,10 @@ from .speed_index import aggregate_speed_score
 from .workout import workout_score
 
 # デフォルトの重み（スピード指数を主軸に、追切・血統・脚質・騎手厩舎で補正）
+# 追切0.2は坂路好タイム1年分のバックテスト(3,063レース)で0.1/0.3より
+# 回収率・的中率のバランスが良かった値
 DEFAULT_WEIGHTS = {
-    "speed": 0.5, "workout": 0.3, "pedigree": 0.2, "style": 0.1,
+    "speed": 0.5, "workout": 0.2, "pedigree": 0.2, "style": 0.1,
     "connections": 0.1,
 }
 

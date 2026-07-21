@@ -341,6 +341,24 @@ def _result_rows_from_dataset(dataset: dict):
                 }
 
 
+def cmd_attach_workouts(args: argparse.Namespace) -> int:
+    """調教好タイム索引からカードへ追切を付与する。"""
+    from .scrape.dataset import load_dataset
+    from .workout_attach import attach_to_card
+
+    index = load_dataset(args.index)["workouts"]
+    with open(args.card, encoding="utf-8") as f:
+        card_data = json.load(f)
+    applied = attach_to_card(card_data, index, days=args.days, replace=args.replace)
+    with open(args.card, "w", encoding="utf-8") as f:
+        json.dump(card_data, f, ensure_ascii=False, indent=2)
+    names = [h["name"] for h in card_data["horses"] if not h.get("workouts")]
+    print(f"{args.card}: {applied} 頭に坂路好タイムを付与")
+    if names:
+        print(f"好タイムなし(欠損扱い): {'、'.join(names)}")
+    return 0
+
+
 def cmd_import_workouts(args: argparse.Namespace) -> int:
     """追い切り記事のテキスト/HTMLからカードへ追切を取り込む。"""
     from .workout_import import card_horse_names, extract_workouts, merge_into_card
@@ -521,6 +539,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_fit.add_argument("-o", "--output", default=None, help="学習した重みの保存先 JSON")
     p_fit.set_defaults(func=cmd_fit)
+
+    p_att = sub.add_parser(
+        "attach-workouts",
+        help="調教好タイム索引(convert_tyoukyo.py出力)から追切をカードへ付与",
+    )
+    p_att.add_argument("card", help="レースカード JSON(上書き保存される)")
+    p_att.add_argument("--index", default="data/workout_index.json.gz")
+    p_att.add_argument("--days", type=int, default=21, help="レース前何日まで遡るか")
+    p_att.add_argument("--replace", action="store_true", help="既存の追切を置き換える")
+    p_att.set_defaults(func=cmd_attach_workouts)
 
     p_imp = sub.add_parser(
         "import-workouts",
