@@ -22,7 +22,7 @@ from keiba.scrape.dataset import load_dataset  # noqa: E402
 from keiba.track_variant import VariantTable  # noqa: E402
 
 GRADES = ("G1", "G2", "G3")
-MARKS = ("◎", "○", "▲")
+MARKS = ("◎", "○", "▲", "△", "△")
 
 
 def rank_horses(deviations: list[dict], weights: dict[str, float]) -> list[int]:
@@ -60,7 +60,8 @@ def main() -> int:
     precomp = precompute({"races": races}, variants)
 
     stats = defaultdict(lambda: {"n": 0, "win": 0, "place": 0,
-                                 "tan_ret": 0, "fuku_ret": 0, "fuku_n": 0})
+                                 "tan_ret": 0, "fuku_ret": 0, "fuku_n": 0,
+                                 "cover3": 0, "box3": 0})
     lines = []
     for race, pre in zip(races, precomp):
         info = race["race"]
@@ -68,6 +69,8 @@ def main() -> int:
         top = order[0]
         finish_top = pre.finish[top]
         grade = info["race_class"]
+        top5 = set(order[:5])
+        placers = {i for i, f in enumerate(pre.finish) if (f or 99) <= 3}
         for key in (grade, "全重賞"):
             s = stats[key]
             s["n"] += 1
@@ -77,6 +80,8 @@ def main() -> int:
             if pre.place_pay[top] is not None or True:
                 s["fuku_n"] += 1
                 s["fuku_ret"] += pre.place_pay[top] or 0
+            s["cover3"] += len(top5 & placers)      # 上位5頭中の3着内頭数
+            s["box3"] += placers <= top5            # 3着内を全て上位5頭で覆えたか
 
         cells = []
         for mark, idx in zip(MARKS, order):
@@ -89,14 +94,16 @@ def main() -> int:
         lines.append(f"| {info['date']} | {grade} | {info['name']} | "
                      + " ".join(cells) + " |")
 
-    print(f"\n{'':<6} {'レース数':>5} {'◎勝率':>7} {'◎複勝率':>7} {'単回収':>7} {'複回収':>7}")
+    print(f"\n{'':<6} {'レース数':>5} {'◎勝率':>7} {'◎複勝率':>7} {'単回収':>7} {'複回収':>7}"
+          f" {'印5頭中3着内':>9} {'3連複BOX率':>8}")
     for key in ("全重賞",) + GRADES:
         s = stats[key]
         if not s["n"]:
             continue
         print(f"{key:<6} {s['n']:>5} {s['win']/s['n']*100:>6.1f}% "
               f"{s['place']/s['n']*100:>6.1f}% "
-              f"{s['tan_ret']/s['n']:>6.1f}% {s['fuku_ret']/s['fuku_n']:>6.1f}%")
+              f"{s['tan_ret']/s['n']:>6.1f}% {s['fuku_ret']/s['fuku_n']:>6.1f}%"
+              f" {s['cover3']/s['n']:>8.2f}頭 {s['box3']/s['n']*100:>7.1f}%")
 
     if args.report:
         header = (
