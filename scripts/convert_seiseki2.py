@@ -158,6 +158,12 @@ def convert(
             fukusho = (row.get("複勝配当") or "").strip()
             if fukusho.isdigit() and number is not None:
                 race["payouts"]["place"][number] = int(fukusho)
+            # 連系配当は的中馬の行に同じ値が載る(馬連=1-2着行、3連複=1-3着行)
+            for col, key in (("馬連", "quinella"), ("馬単", "exacta"),
+                             ("３連複", "trio"), ("３連単", "trifecta")):
+                v = (row.get(col) or "").strip().replace(",", "")
+                if v.isdigit() and key not in race["payouts"]:
+                    race["payouts"][key] = int(v)
 
             race["horses"].append({
                 "name": name,

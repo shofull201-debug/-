@@ -62,6 +62,16 @@ def main() -> int:
     stats = defaultdict(lambda: {"n": 0, "win": 0, "place": 0,
                                  "tan_ret": 0, "fuku_ret": 0, "fuku_n": 0,
                                  "cover3": 0, "box3": 0})
+    # 馬券戦略: (ラベル, 点数, 的中判定, 使う配当キー)
+    # 判定は (top2set, top3set, marks_idx) を受け取る
+    bets = {
+        "馬連◎-○(1点)":   (1,  lambda t2, t3, m: t2 == set(m[:2]), "quinella"),
+        "馬連◎流し(4点)":  (4,  lambda t2, t3, m: m[0] in t2 and (t2 - {m[0]}) <= set(m[1:5]), "quinella"),
+        "馬連5頭BOX(10点)": (10, lambda t2, t3, m: t2 <= set(m[:5]), "quinella"),
+        "3連複5頭BOX(10点)": (10, lambda t2, t3, m: t3 <= set(m[:5]), "trio"),
+    }
+    bet_stats = defaultdict(lambda: defaultdict(lambda: {"hit": 0, "ret": 0, "cost": 0}))
+    wide_hit = defaultdict(int)  # 印5頭BOXでワイドが最低1点当たる(3着内2頭以上)
     lines = []
     for race, pre in zip(races, precomp):
         info = race["race"]
@@ -82,6 +92,17 @@ def main() -> int:
                 s["fuku_ret"] += pre.place_pay[top] or 0
             s["cover3"] += len(top5 & placers)      # 上位5頭中の3着内頭数
             s["box3"] += placers <= top5            # 3着内を全て上位5頭で覆えたか
+
+        top2 = {i for i, f in enumerate(pre.finish) if (f or 99) <= 2}
+        payouts = race.get("payouts") or {}
+        for key in (grade, "全重賞"):
+            for label, (points, is_hit, pay_key) in bets.items():
+                b = bet_stats[key][label]
+                b["cost"] += points * 100
+                if is_hit(top2, placers, order) and payouts.get(pay_key):
+                    b["hit"] += 1
+                    b["ret"] += payouts[pay_key]
+            wide_hit[key] += len(top5 & placers) >= 2
 
         cells = []
         for mark, idx in zip(MARKS, order):
@@ -104,6 +125,21 @@ def main() -> int:
               f"{s['place']/s['n']*100:>6.1f}% "
               f"{s['tan_ret']/s['n']:>6.1f}% {s['fuku_ret']/s['fuku_n']:>6.1f}%"
               f" {s['cover3']/s['n']:>8.2f}頭 {s['box3']/s['n']*100:>7.1f}%")
+
+    print("\n=== 馬券シミュレーション(100円/点) ===")
+    print(f"{'':<6}" + "".join(f" {label:>16}" for label in bets)
+          + f" {'ワイド1点以上*':>12}")
+    for key in ("全重賞",) + GRADES:
+        if not stats[key]["n"]:
+            continue
+        cells = []
+        for label in bets:
+            b = bet_stats[key][label]
+            roi = b["ret"] / b["cost"] * 100 if b["cost"] else 0.0
+            cells.append(f" 的中{b['hit']/stats[key]['n']*100:>5.1f}%/回収{roi:>6.1f}%")
+        print(f"{key:<6}" + "".join(cells)
+              + f" {wide_hit[key]/stats[key]['n']*100:>10.1f}%")
+    print("* ワイドは配当列がデータに無いため的中率のみ(印5頭中2頭が3着内)")
 
     if args.report:
         header = (
