@@ -86,7 +86,8 @@ def cmd_predict(args: argparse.Namespace) -> int:
     styled = any(r.style and r.style.get("style") for r in results)
     going_col = f" {'道偏':>5}" if wet else ""
     style_col = f" {'脚偏':>5} {'脚質':<3}" if styled else ""
-    header = f"{'印':<2} {'馬番':>3} {'馬名':<12} {'総合':>6} {'速偏':>5} {'調偏':>5} {'血偏':>5}{going_col}{style_col}  過去5走指数(直近→)"
+    header = (f"{'印':<2} {'馬番':>3} {'馬名':<12} {'総合':>6} {'速偏':>5} {'調偏':>5}"
+              f" {'血偏':>5} {'騎偏':>5}{going_col}{style_col}  過去5走指数(直近→)")
     print(header)
     print("-" * len(header))
     def dev_fmt(value):
@@ -104,10 +105,11 @@ def cmd_predict(args: argparse.Namespace) -> int:
         print(
             f"{r.mark or '　':<2} {num:>3} {r.name:<12} {r.total:>6.1f}"
             f"{dev_fmt(r.deviations['speed'])}{dev_fmt(r.deviations['workout'])}"
-            f"{dev_fmt(r.deviations['pedigree'])}{going_val}{style_val}  {indices}"
+            f"{dev_fmt(r.deviations['pedigree'])}"
+            f"{dev_fmt(r.deviations.get('connections'))}{going_val}{style_val}  {indices}"
         )
 
-    legend = "\n凡例: 総合=偏差値の加重合成 / 速偏=スピード指数偏差値 / 調偏=追切偏差値 / 血偏=血統偏差値 / --=データなし(重みを他要素へ再配分)"
+    legend = "\n凡例: 総合=偏差値の加重合成 / 速偏=スピード指数偏差値 / 調偏=追切偏差値 / 血偏=血統偏差値 / 騎偏=騎手・調教師偏差値 / --=データなし(重みを他要素へ再配分)"
     if wet:
         legend += " / 道偏=道悪適性偏差値"
     if styled:

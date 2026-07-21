@@ -18,6 +18,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from statistics import mean, pstdev
 
+from .connections import connections_score
 from .going_aptitude import going_aptitude_score, is_wet
 from .models import HorseEntry, RaceCard
 from .pedigree import pedigree_score
@@ -25,8 +26,11 @@ from .running_style import style_fit_score
 from .speed_index import aggregate_speed_score
 from .workout import workout_score
 
-# デフォルトの重み（スピード指数を主軸に、追切・血統・脚質で補正）
-DEFAULT_WEIGHTS = {"speed": 0.5, "workout": 0.3, "pedigree": 0.2, "style": 0.1}
+# デフォルトの重み（スピード指数を主軸に、追切・血統・脚質・騎手厩舎で補正）
+DEFAULT_WEIGHTS = {
+    "speed": 0.5, "workout": 0.3, "pedigree": 0.2, "style": 0.1,
+    "connections": 0.1,
+}
 
 # 当日馬場が良以外のとき、道悪適性を第4の要素として自動追加する重み
 # （他の重みと合算後に正規化されるため、渋るほど道悪適性の比重が上がる）
@@ -51,6 +55,7 @@ class HorseResult:
     workout: dict                      # 追切スコア内訳
     style: dict | None = None          # 脚質×コース形態の内訳
     going_aptitude: dict | None = None  # 道悪適性の内訳（良馬場のときは None）
+    connections: dict | None = None    # 騎手・調教師の内訳
     # 各要素の偏差値。欠損（データなし・重みは他要素へ再配分）は None
     deviations: dict[str, float | None] = field(default_factory=dict)
 
@@ -98,6 +103,8 @@ def _missing_factors(raw: dict) -> set[str]:
         missing.add("style")
     if not raw["going_aptitude"]["known"]:
         missing.add("going")
+    if not raw["connections"]["known"]:
+        missing.add("connections")
     return missing
 
 
@@ -115,6 +122,7 @@ def evaluate_horse(
         "workout": work,
         "style": style_fit_score(horse, course, surface, distance),
         "going_aptitude": going_aptitude_score(horse),
+        "connections": connections_score(horse.jockey, horse.trainer),
     }
 
 
@@ -151,9 +159,11 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
         "workout": devs("workout", [r["workout"]["score"] for r in raws]),
         "going": devs("going", [r["going_aptitude"]["score"] for r in raws]),
         "style": devs("style", [r["style"]["score"] for r in raws]),
+        "connections": devs("connections", [r["connections"]["score"] for r in raws]),
     }
 
-    shown = ["speed", "workout", "pedigree", "style"] + (["going"] if wet else [])
+    shown = (["speed", "workout", "pedigree", "style", "connections"]
+             + (["going"] if wet else []))
     results = []
     for i, (horse, raw) in enumerate(zip(card.horses, raws)):
         # 欠損要素の重みを、その馬が持っている要素へ比例配分する
@@ -180,6 +190,7 @@ def predict(card: RaceCard, weights: dict[str, float] | None = None) -> list[Hor
                 workout=raw["workout"],
                 style=raw["style"],
                 going_aptitude=raw["going_aptitude"] if wet else None,
+                connections=raw["connections"],
                 deviations=deviations,
             )
         )

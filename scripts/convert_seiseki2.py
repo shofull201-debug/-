@@ -185,6 +185,8 @@ def convert(
                 "sire": sire_map.get(name, ""),
                 "dam_sire": dam_sire_map.get(name),
                 "weight_carried": parse_weight(row.get("斤量")),
+                "jockey": (row.get("騎手") or "").strip(),
+                "trainer": re.sub(r"^[((][栗美地外][))]", "", (row.get("調教師") or "").strip()),
                 "past_races": [],
                 "workouts": [],
                 "result": {
@@ -192,6 +194,9 @@ def convert(
                     "time_sec": time_sec,
                     "odds": odds,
                     "popularity": to_int(row.get("人気")),
+                    "body_weight": to_int(row.get("馬体重")),
+                    "weight_diff": to_int(row.get("馬体重増減")),
+                    "pci": to_float(row.get("PCI")),
                 },
                 "_position_4c": to_int(row.get("4角")) or to_int(row.get("3角")),
                 "_field_size": to_int(row.get("頭数")),

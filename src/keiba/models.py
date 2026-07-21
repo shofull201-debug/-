@@ -104,6 +104,8 @@ class HorseEntry:
     weight_carried: float = 56.0       # 今回の斤量
     horse_number: int | None = None    # 馬番
     running_style: str | None = None   # 脚質（逃げ/先行/差し/追込）。None なら過去走から推定
+    jockey: str | None = None          # 騎手名
+    trainer: str | None = None         # 調教師名
     past_races: list[PastRace] = field(default_factory=list)
     workouts: list[Workout] = field(default_factory=list)
 
@@ -121,6 +123,8 @@ class HorseEntry:
             weight_carried=float(d.get("weight_carried", 56.0)),
             horse_number=d.get("horse_number"),
             running_style=d.get("running_style"),
+            jockey=d.get("jockey"),
+            trainer=d.get("trainer"),
             past_races=past[:5],  # 過去 5 走まで
             workouts=works,
         )

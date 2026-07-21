@@ -72,7 +72,7 @@ class TestPrecompute:
         assert len(precomp) == 3
         assert len(precomp[0].deviations) == 6
         assert set(precomp[0].deviations[0]) == {
-            "speed", "pedigree", "workout", "going", "style",
+            "speed", "pedigree", "workout", "going", "style", "connections",
         }
 
     def test_workout_inactive_without_data(self):
