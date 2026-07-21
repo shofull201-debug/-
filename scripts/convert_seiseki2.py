@@ -186,9 +186,43 @@ def convert(
     # 頭数下限で足切りして日付順に
     out = [r for r in races.values() if len(r["horses"]) >= min_field]
     out.sort(key=lambda r: r["race"]["date"])
+    print(f"除外: クラス不明 {skipped_class} 行, 中止・欠損 {skipped} 行")
+    return out
 
-    # 各馬の past_races を時系列で組み立てる(直近5走、新しい順)
+
+def seed_history(history_path: str, before: str) -> dict[str, list[dict]]:
+    """別データセット(keiba_list変換など)から before より前の走を馬ごとに集める。
+
+    データ期間の序盤はファイル内に過去走が無く履歴が浅くなるため、
+    旧年データで接ぎ木する。通過順位(position_4c)は旧データに無いので None。
+    """
+    from keiba.scrape.dataset import load_dataset
+
     history: dict[str, list[dict]] = defaultdict(list)
+    ds = load_dataset(history_path)
+    for race in ds["races"]:
+        info = race["race"]
+        if info["date"] >= before:
+            continue
+        for h in race["horses"]:
+            history[h["name"]].append({
+                "date": info["date"], "course": info["course"],
+                "surface": info["surface"], "distance": info["distance"],
+                "going": info["going"], "time_sec": h["result"]["time_sec"],
+                "weight_carried": h["weight_carried"],
+                "finish_position": h["result"]["finish_position"],
+                "field_size": len(race["horses"]),
+                "race_class": info["race_class"],
+                "position_4c": None,
+            })
+    for runs in history.values():
+        runs.sort(key=lambda r: r["date"])
+    return history
+
+
+def assemble_past_races(out: list[dict], seeded: dict[str, list[dict]]) -> None:
+    # 各馬の past_races を時系列で組み立てる(直近5走、新しい順)
+    history: dict[str, list[dict]] = defaultdict(list, seeded)
     for race in out:
         info = race["race"]
         for h in race["horses"]:
@@ -207,12 +241,6 @@ def convert(
         for h in race["horses"]:
             del h["_position_4c"], h["_field_size"]
 
-    n_win = sum(1 for r in out if r["payouts"]["win"])
-    print(f"変換: {len(out)} レース / {sum(len(r['horses']) for r in out)} 走"
-          f" (単勝払戻あり {n_win} レース)")
-    print(f"除外: クラス不明 {skipped_class} 行, 中止・欠損 {skipped} 行")
-    return {"races": out}
-
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
@@ -222,10 +250,24 @@ def main() -> int:
     ap.add_argument("--min-field", type=int, default=5)
     ap.add_argument("--sire-map", default="data/sire_map.json.gz",
                     help="馬名→父/母父マップ(build_sire_aptitude.py の出力)")
+    ap.add_argument("--history",
+                    help="旧年データセット(.json.gz)。期間序盤の past_races を接ぎ木する")
     args = ap.parse_args()
 
-    dataset = convert(args.seiseki2, args.grades, args.min_field, args.sire_map)
-    save_dataset(dataset, args.output)
+    races = convert(args.seiseki2, args.grades, args.min_field, args.sire_map)
+    seeded: dict = {}
+    if args.history and races:
+        first_date = races[0]["race"]["date"]
+        seeded = seed_history(args.history, before=first_date)
+        n_runs = sum(len(v) for v in seeded.values())
+        print(f"履歴の接ぎ木: {args.history} から {first_date} より前の"
+              f" {len(seeded)} 頭 / {n_runs} 走")
+    assemble_past_races(races, seeded)
+
+    n_win = sum(1 for r in races if r["payouts"]["win"])
+    print(f"変換: {len(races)} レース / {sum(len(r['horses']) for r in races)} 走"
+          f" (単勝払戻あり {n_win} レース)")
+    save_dataset({"races": races}, args.output)
     print(f"{args.output} に保存しました")
     return 0
 
