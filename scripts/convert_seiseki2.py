@@ -47,7 +47,13 @@ GOING_ABBR = {"良": "良", "稍": "稍重", "重": "重", "不": "不良"}
 CLASS_PATTERN = re.compile(
     r"(G[123]|Jpn[123]|3勝|2勝|1勝|未勝利|新馬|オープン|OP|\(L\)|L$|1600万|1000万|500万)"
 )
-ZEN2HAN = str.maketrans("０１２３４５６７８９", "0123456789")
+ZEN2HAN = str.maketrans(
+    "０１２３４５６７８９",
+    "0123456789",
+)
+# 丸数字(降着・繰り上がりなどの表記)も通常の着順として扱う
+CIRCLED = {chr(0x2460 + i): str(i + 1) for i in range(20)}        # ①〜⑳
+CIRCLED.update({chr(0x3251 + i): str(i + 21) for i in range(15)})  # ㉑〜㉟
 
 
 def parse_time(text: str) -> float | None:
@@ -61,6 +67,7 @@ def parse_time(text: str) -> float | None:
 
 def to_int(value: str | None) -> int | None:
     s = (value or "").strip().translate(ZEN2HAN)
+    s = "".join(CIRCLED.get(ch, ch) for ch in s)
     return int(s) if s.lstrip("+-").isdigit() else None
 
 
