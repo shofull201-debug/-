@@ -1,15 +1,20 @@
-"""TARGET調教好タイムCSV(t2.csv)を調教索引に変換する。
+"""TARGET調教CSVを調教索引に変換する。
 
-入力(cp932): 場所,年月日,曜日,時刻,馬名,Ｃ,性別,年齢,収得賞金,調教師,
-             Time1,Time2,Time3,Time4,Lap4,Lap3,Lap2,Lap1
-- Time1〜4 は 4F/3F/2F/1F の通し時計(坂路)
-- 好タイム抽出のため全馬・全本数は含まれない
+対応フォーマット(どちらも cp932、複数ファイル可):
+1. 坂路好タイム(ヘッダあり):
+   場所,年月日,曜日,時刻,馬名,Ｃ,性別,年齢,収得賞金,調教師,
+   Time1..Time4(4F/3F/2F/1F通し),Lap4..Lap1
+2. ウッドチップ調教一覧(ヘッダなし40列):
+   場所,コース記号,回り,年月日,曜日,時刻,馬名,Ｃ,性別,年齢,収得賞金,調教師,
+   10F..1F通し(10列),Lap...(9列),血統番号,日付,場所,父,母,...
+   → 6F(なければ5F/7F/4F)の通しで採用。遅い帯同・キャンター
+     (1Fあたり15秒超)は追い切りとみなさず除外
 
 出力: data/workout_index.json.gz
-  {"workouts": {馬名: [[ISO日付, 施設, 4F通し, 終い1F], ...]}}
+  {"workouts": {馬名: [[ISO日付, 施設, 通し, 終い1F, コース, ハロン数], ...]}}
 
 使い方:
-    python scripts/convert_tyoukyo.py t2.csv -o data/workout_index.json.gz
+    python scripts/convert_tyoukyo.py t2.csv 今週コース.csv -o data/workout_index.json.gz
 """
 
 from __future__ import annotations
@@ -24,8 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from keiba.scrape.dataset import save_dataset  # noqa: E402
 
-# 坂路4Fとして妥当な範囲(計測異常の除外)
-TIME_RANGE = (45.0, 75.0)
+# 妥当な範囲(計測異常・キャンターの除外): 1Fあたり11〜15秒、終い1F 10〜18秒
 LAST1F_RANGE = (10.0, 18.0)
 
 
@@ -37,25 +41,55 @@ def main() -> int:
 
     index: dict[str, list] = defaultdict(list)
     kept = skipped = 0
+
+    def add(name, ymd, facility, total, last, course, furlongs):
+        nonlocal kept, skipped
+        if course == "坂路":
+            ok = total is not None and 45.0 <= total <= 75.0  # 追切効果の検証時と同じ範囲
+        else:
+            ok = total is not None and 11.0 <= total / furlongs <= 15.0  # キャンター除外
+        if (not name or len(ymd) != 8 or not ok or last is None
+                or not LAST1F_RANGE[0] <= last <= LAST1F_RANGE[1]):
+            skipped += 1
+            return
+        iso = f"{ymd[0:4]}-{ymd[4:6]}-{ymd[6:8]}"
+        index[name].append([iso, facility, total, last, course, furlongs])
+        kept += 1
+
+    def to_f(v):
+        try:
+            return float(v)
+        except (TypeError, ValueError):
+            return None
+
     for path in args.csvs:
         with open(path, encoding="cp932", newline="") as f:
-            for row in csv.DictReader(f):
-                name = (row.get("馬名") or "").strip()
-                d = (row.get("年月日") or "").strip()
-                try:
-                    total = float(row.get("Time1") or 0)
-                    last = float(row.get("Time4") or 0)
-                except ValueError:
-                    skipped += 1
-                    continue
-                if (not name or len(d) != 8
-                        or not TIME_RANGE[0] <= total <= TIME_RANGE[1]
-                        or not LAST1F_RANGE[0] <= last <= LAST1F_RANGE[1]):
-                    skipped += 1
-                    continue
-                iso = f"{d[0:4]}-{d[4:6]}-{d[6:8]}"
-                index[name].append([iso, (row.get("場所") or "").strip(), total, last])
-                kept += 1
+            first = f.readline()
+            f.seek(0)
+            if "馬名" in first:  # 坂路好タイム(ヘッダあり)
+                for row in csv.DictReader(f):
+                    add((row.get("馬名") or "").strip(),
+                        (row.get("年月日") or "").strip(),
+                        (row.get("場所") or "").strip(),
+                        to_f(row.get("Time1")), to_f(row.get("Time4")),
+                        "坂路", 4)
+            else:  # ウッドチップ調教一覧(ヘッダなし40列)
+                for row in csv.reader(f):
+                    if len(row) < 31:
+                        skipped += 1
+                        continue
+                    times = [to_f(v) for v in row[12:22]]  # 10F..1F 通し
+                    total = furlongs = None
+                    for fur in (6, 5, 7, 4):               # 6F優先で採用
+                        t = times[10 - fur]
+                        if t is not None:
+                            total, furlongs = t, fur
+                            break
+                    if total is None:
+                        skipped += 1
+                        continue
+                    add(row[6].strip(), row[3].strip(), row[0].strip(),
+                        total, times[9], "W", furlongs)
 
     for works in index.values():
         works.sort()

@@ -1,10 +1,11 @@
-"""調教好タイム索引(TARGET出力)からのレースカード/データセットへの適用。
+"""調教索引(TARGET出力)からのレースカード/データセットへの適用。
 
-索引は {馬名: [[日付, 施設, 4F通し, 終い1F], ...]}(日付昇順)。
-レース日の直前 days 日以内の坂路好タイムを、直近1本+それ以外のベスト1本
-(4F通しが最速)の最大2本として Workout 形式にする。
+索引は {馬名: [[日付, 施設, 通し, 終い1F, コース, ハロン数], ...]}(日付昇順)。
+旧形式の4要素([日付, 施設, 4F通し, 終い1F])は坂路4Fとして解釈する。
+レース日の直前 days 日以内から、直近1本+それ以外のベスト1本
+(1Fあたりペースが最速)の最大2本を Workout 形式にする。
 
-「好タイムのみ」の抽出データなので、載っていない馬は
+坂路は「好タイムのみ」の抽出データなので、載っていない馬は
 「速い時計を出していない」か「コース追い中心」のどちらか。
 予想側では欠損(追切なし)として扱われ、重みは他要素へ再配分される。
 """
@@ -35,20 +36,23 @@ def workouts_for(
     ]
     if not window:
         return []
+    def pace(e) -> float:  # 1Fあたりの通しペース(坂路/コース混在の比較用)
+        furlongs = e[5] if len(e) > 5 else 4
+        return e[2] / furlongs
+
     window.sort(key=lambda e: e[0])
     latest = window[-1]
     picks = [latest]
     others = window[:-1]
     if others:
-        best = min(others, key=lambda e: e[2])
-        picks.append(best)
+        picks.append(min(others, key=pace))
 
     return [
         {
             "date": e[0],
             "facility": e[1],
-            "course": "坂路",
-            "furlongs": 4,
+            "course": e[4] if len(e) > 4 else "坂路",
+            "furlongs": e[5] if len(e) > 5 else 4,
             "total_time": e[2],
             "last_1f": e[3],
             "intensity": "馬なり",
