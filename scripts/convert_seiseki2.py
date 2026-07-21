@@ -71,6 +71,13 @@ def to_int(value: str | None) -> int | None:
     return int(s) if s.lstrip("+-").isdigit() else None
 
 
+def to_float(value: str | None) -> float | None:
+    try:
+        return float((value or "").strip())
+    except ValueError:
+        return None
+
+
 def parse_weight(text: str) -> float:
     """'54△' などの減量記号つき斤量。"""
     m = re.search(r"[\d.]+", (text or ""))
@@ -188,6 +195,7 @@ def convert(
                 },
                 "_position_4c": to_int(row.get("4角")) or to_int(row.get("3角")),
                 "_field_size": to_int(row.get("頭数")),
+                "_last_3f": to_float(row.get("上り3F")),
             })
 
     # 頭数下限で足切りして日付順に
@@ -232,8 +240,13 @@ def assemble_past_races(out: list[dict], seeded: dict[str, list[dict]]) -> None:
     history: dict[str, list[dict]] = defaultdict(list, seeded)
     for race in out:
         info = race["race"]
+        agaris = [h["_last_3f"] for h in race["horses"] if h["_last_3f"]]
+        avg_3f = sum(agaris) / len(agaris) if agaris else None
         for h in race["horses"]:
             h["past_races"] = list(reversed(history[h["name"]][-5:]))
+            # 当日バイアス推定などで使えるよう、当該走の通過・上がりは結果にも残す
+            h["result"]["position_4c"] = h["_position_4c"]
+            h["result"]["last_3f"] = h["_last_3f"]
             history[h["name"]].append({
                 "date": info["date"], "course": info["course"],
                 "surface": info["surface"], "distance": info["distance"],
@@ -243,10 +256,15 @@ def assemble_past_races(out: list[dict], seeded: dict[str, list[dict]]) -> None:
                 "field_size": h["_field_size"] or len(race["horses"]),
                 "race_class": info["race_class"],
                 "position_4c": h["_position_4c"],
+                "last_3f": h["_last_3f"],
+                "last_3f_rel": (
+                    round(h["_last_3f"] - avg_3f, 2)
+                    if h["_last_3f"] and avg_3f else None
+                ),
             })
     for race in out:
         for h in race["horses"]:
-            del h["_position_4c"], h["_field_size"]
+            del h["_position_4c"], h["_field_size"], h["_last_3f"]
 
 
 def main() -> int:

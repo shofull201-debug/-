@@ -111,6 +111,11 @@ def _relevance(past: PastRace, surface: str, distance: int) -> float:
 # 集約の既定値: 加重平均とベスト指数のブレンド比率、加重平均から除く大敗走の数
 BLEND_BEST = 0.45
 TRIM_WORST = 0
+# 上がり3F補正: レース平均より1秒速い上がりにつき指数へ加算するポイント
+# (末脚の質を評価。0 で無効)
+# 2022-2024学習/2025-2026検証の両方で的中率を改善(◎複勝率+0.9〜1.4pt)。
+# 一方で人気サイドに寄るため単勝回収はやや下がる(順位精度を優先して採用)
+AGARI_COEF = 6.0
 
 
 def aggregate_speed_score(
@@ -136,14 +141,20 @@ def aggregate_speed_score(
         return 0.0, []
 
     indices = [nishida_speed_index(r) for r in past_races[:5]]
+    # 上がり3F補正: レース平均より速い上がり(rel<0)は末脚の質として加点
+    effective = [
+        idx - AGARI_COEF * r.last_3f_rel
+        if AGARI_COEF and r.last_3f_rel is not None else idx
+        for idx, r in zip(indices, past_races[:5])
+    ]
     weights = [
         RECENCY_WEIGHTS[i] * _relevance(r, surface, distance)
         for i, r in enumerate(past_races[:5])
     ]
-    pairs = list(zip(indices, weights))
+    pairs = list(zip(effective, weights))
     if trim_worst > 0 and len(pairs) >= trim_worst + 3:
         pairs = sorted(pairs, key=lambda p: p[0])[trim_worst:]
     wavg = sum(v * w for v, w in pairs) / sum(w for _, w in pairs)
-    best = max(indices)
+    best = max(effective)
     score = wavg * (1 - blend_best) + best * blend_best
     return score, indices

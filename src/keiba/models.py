@@ -32,6 +32,8 @@ class PastRace:
     race_class: str           # クラス（RACE_CLASSES のいずれか）
     track_variant: float | None = None  # その日の馬場指数（指数ポイント）。不明なら None
     position_4c: int | None = None      # 4コーナー通過順位（脚質推定用）。不明なら None
+    last_3f: float | None = None        # 上がり3F（秒）。不明なら None
+    last_3f_rel: float | None = None    # 上がり3Fのレース平均との差（秒、負=速い）
 
     @classmethod
     def from_dict(cls, d: dict[str, Any]) -> "PastRace":
@@ -51,6 +53,12 @@ class PastRace:
             ),
             position_4c=(
                 int(d["position_4c"]) if d.get("position_4c") is not None else None
+            ),
+            last_3f=(
+                float(d["last_3f"]) if d.get("last_3f") is not None else None
+            ),
+            last_3f_rel=(
+                float(d["last_3f_rel"]) if d.get("last_3f_rel") is not None else None
             ),
         )
 

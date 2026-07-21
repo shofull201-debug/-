@@ -129,6 +129,23 @@ class TestAggregateSpeedScore:
         trimmed, _ = aggregate_speed_score(races, "芝", 1600, trim_worst=1)
         assert trimmed > base
 
+    def test_agari_bonus_raises_score(self):
+        # レース平均より1秒速い上がり(rel=-1.0)は AGARI_COEF ポイントの加点
+        from keiba.speed_index import AGARI_COEF
+
+        base, _ = aggregate_speed_score([make_race()], "芝", 1600)
+        fast, _ = aggregate_speed_score(
+            [make_race(last_3f_rel=-1.0)], "芝", 1600
+        )
+        assert fast == pytest.approx(base + AGARI_COEF)
+
+    def test_agari_none_is_neutral(self):
+        base, _ = aggregate_speed_score([make_race()], "芝", 1600)
+        none_rel, _ = aggregate_speed_score(
+            [make_race(last_3f_rel=None)], "芝", 1600
+        )
+        assert none_rel == base
+
     def test_trim_keeps_at_least_three_races(self):
         # 3走しか無ければトリムしない(結果は同じ)
         races = [
