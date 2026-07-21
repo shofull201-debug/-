@@ -66,13 +66,20 @@ def main() -> int:
         with open(path, encoding="cp932", newline="") as f:
             first = f.readline()
             f.seek(0)
-            if "馬名" in first:  # 坂路好タイム(ヘッダあり)
+            if "馬名" in first:  # 坂路(ヘッダあり)
                 for row in csv.DictReader(f):
                     add((row.get("馬名") or "").strip(),
                         (row.get("年月日") or "").strip(),
                         (row.get("場所") or "").strip(),
                         to_f(row.get("Time1")), to_f(row.get("Time4")),
                         "坂路", 4)
+            elif len(first.split(",")) == 18:  # 坂路(ヘッダなし18列)
+                for row in csv.reader(f):
+                    if len(row) < 14:
+                        skipped += 1
+                        continue
+                    add(row[4].strip(), row[1].strip(), row[0].strip(),
+                        to_f(row[10]), to_f(row[13]), "坂路", 4)
             else:  # ウッドチップ調教一覧(ヘッダなし40列)
                 for row in csv.reader(f):
                     if len(row) < 31:

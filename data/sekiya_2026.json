@@ -95,21 +95,21 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-17",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 71.1,
+          "last_1f": 17.0,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-12",
           "facility": "美浦",
           "course": "坂路",
           "furlongs": 4,
           "total_time": 54.9,
           "last_1f": 12.8,
-          "intensity": "馬なり"
-        },
-        {
-          "date": "2026-07-05",
-          "facility": "美浦",
-          "course": "坂路",
-          "furlongs": 4,
-          "total_time": 56.6,
-          "last_1f": 13.0,
           "intensity": "馬なり"
         }
       ]
@@ -200,12 +200,12 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-12",
+          "date": "2026-07-17",
           "facility": "栗東",
           "course": "坂路",
           "furlongs": 4,
-          "total_time": 57.5,
-          "last_1f": 12.8,
+          "total_time": 68.3,
+          "last_1f": 16.3,
           "intensity": "馬なり"
         },
         {
@@ -410,21 +410,21 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-17",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 71.1,
+          "last_1f": 17.2,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-12",
           "facility": "美浦",
           "course": "坂路",
           "furlongs": 4,
           "total_time": 54.8,
           "last_1f": 12.3,
-          "intensity": "馬なり"
-        },
-        {
-          "date": "2026-07-05",
-          "facility": "美浦",
-          "course": "坂路",
-          "furlongs": 4,
-          "total_time": 55.1,
-          "last_1f": 12.9,
           "intensity": "馬なり"
         }
       ]
@@ -514,6 +514,15 @@
         }
       ],
       "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.8,
+          "last_1f": 12.9,
+          "intensity": "馬なり"
+        },
         {
           "date": "2026-07-17",
           "facility": "栗東",
@@ -1012,12 +1021,12 @@
           "intensity": "馬なり"
         },
         {
-          "date": "2026-07-08",
+          "date": "2026-07-16",
           "facility": "栗東",
           "course": "坂路",
           "furlongs": 4,
-          "total_time": 56.6,
-          "last_1f": 12.9,
+          "total_time": 50.6,
+          "last_1f": 12.2,
           "intensity": "馬なり"
         }
       ]
@@ -1108,21 +1117,21 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 62.8,
+          "last_1f": 15.0,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-15",
           "facility": "栗東",
           "course": "坂路",
           "furlongs": 4,
           "total_time": 52.5,
           "last_1f": 12.3,
-          "intensity": "馬なり"
-        },
-        {
-          "date": "2026-07-08",
-          "facility": "栗東",
-          "course": "坂路",
-          "furlongs": 4,
-          "total_time": 54.2,
-          "last_1f": 12.7,
           "intensity": "馬なり"
         }
       ]
@@ -1211,7 +1220,17 @@
           "last_3f_rel": 1.42
         }
       ],
-      "workouts": []
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 64.7,
+          "last_1f": 15.4,
+          "intensity": "馬なり"
+        }
+      ]
     },
     {
       "name": "ランスオブカオス",
@@ -1298,6 +1317,15 @@
         }
       ],
       "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 65.9,
+          "last_1f": 16.3,
+          "intensity": "馬なり"
+        },
         {
           "date": "2026-07-12",
           "facility": "栗東",
@@ -1395,21 +1423,21 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 67.5,
+          "last_1f": 15.6,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-15",
           "facility": "栗東",
           "course": "坂路",
           "furlongs": 4,
           "total_time": 54.2,
           "last_1f": 12.6,
-          "intensity": "馬なり"
-        },
-        {
-          "date": "2026-07-08",
-          "facility": "栗東",
-          "course": "坂路",
-          "furlongs": 4,
-          "total_time": 54.6,
-          "last_1f": 12.1,
           "intensity": "馬なり"
         }
       ]
