@@ -112,7 +112,8 @@
           "last_1f": 12.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 3
     },
     {
       "name": "エルトンバローズ",
@@ -217,7 +218,8 @@
           "last_1f": 12.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 7
     },
     {
       "name": "クランフォード",
@@ -322,14 +324,15 @@
           "last_1f": 11.8,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 10
     },
     {
       "name": "サンダーストラック",
       "sire": "ロードカナロア",
       "dam_sire": "Hinchinbrook",
       "weight_carried": 54.0,
-      "jockey": null,
+      "jockey": "丸山元気",
       "trainer": null,
       "past_races": [
         {
@@ -427,14 +430,15 @@
           "last_1f": 11.6,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 9
     },
     {
       "name": "ジュタ",
       "sire": "ドゥラメンテ",
       "dam_sire": "Street Sense",
       "weight_carried": 56.0,
-      "jockey": null,
+      "jockey": "吉田豊",
       "trainer": null,
       "past_races": [
         {
@@ -532,7 +536,8 @@
           "last_1f": 12.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 2
     },
     {
       "name": "シリウスコルト",
@@ -637,7 +642,8 @@
           "last_1f": 11.4,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 6
     },
     {
       "name": "ダノンセンチュリー",
@@ -742,7 +748,8 @@
           "last_1f": 10.7,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 8
     },
     {
       "name": "ドロップオブライト",
@@ -847,14 +854,15 @@
           "last_1f": 10.9,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 11
     },
     {
       "name": "ファーヴェント",
       "sire": "ハーツクライ",
       "dam_sire": "Street Cry",
       "weight_carried": 57.0,
-      "jockey": null,
+      "jockey": "西塚洸二",
       "trainer": null,
       "past_races": [
         {
@@ -952,7 +960,8 @@
           "last_1f": 12.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 1
     },
     {
       "name": "ブエナオンダ",
@@ -1057,7 +1066,8 @@
           "last_1f": 12.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 13
     },
     {
       "name": "マテンロウスカイ",
@@ -1162,7 +1172,8 @@
           "last_1f": 12.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 4
     },
     {
       "name": "メタルスピード",
@@ -1267,7 +1278,8 @@
           "last_1f": 11.5,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 14
     },
     {
       "name": "ランスオブカオス",
@@ -1372,7 +1384,8 @@
           "last_1f": 11.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 12
     },
     {
       "name": "レディマリオン",
@@ -1477,7 +1490,8 @@
           "last_1f": 12.6,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 5
     }
   ]
 }

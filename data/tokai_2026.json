@@ -112,7 +112,8 @@
           "last_1f": 12.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 9
     },
     {
       "name": "ケイアイドリー",
@@ -202,14 +203,15 @@
           "last_1f": 12.7,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 6
     },
     {
       "name": "ジュンウィンダム",
       "sire": "カレンブラックヒル",
       "dam_sire": "ベーカバド",
       "weight_carried": 55.0,
-      "jockey": null,
+      "jockey": "国分優作",
       "trainer": null,
       "past_races": [
         {
@@ -307,7 +309,8 @@
           "last_1f": 12.7,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 2
     },
     {
       "name": "ダノンフィーゴ",
@@ -412,7 +415,8 @@
           "last_1f": 12.9,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 7
     },
     {
       "name": "ドラゴンテイラー",
@@ -517,7 +521,8 @@
           "last_1f": 12.1,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 13
     },
     {
       "name": "トリリオンボーイ",
@@ -622,7 +627,8 @@
           "last_1f": 12.4,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 10
     },
     {
       "name": "ドンインザムード",
@@ -727,7 +733,8 @@
           "last_1f": 12.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 5
     },
     {
       "name": "ノーブルロジャー",
@@ -832,14 +839,15 @@
           "last_1f": 12.4,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 1
     },
     {
       "name": "ハッピーマン",
       "sire": "ダノンレジェンド",
       "dam_sire": "キングカメハメハ",
       "weight_carried": 58.0,
-      "jockey": "高杉吏麒",
+      "jockey": "幸英明",
       "trainer": null,
       "past_races": [
         {
@@ -937,7 +945,8 @@
           "last_1f": 11.2,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 3
     },
     {
       "name": "バトルクライ",
@@ -1042,7 +1051,8 @@
           "last_1f": 11.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 12
     },
     {
       "name": "ベルジュロネット",
@@ -1147,7 +1157,8 @@
           "last_1f": 11.4,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 8
     },
     {
       "name": "マテンロウコマンド",
@@ -1252,7 +1263,8 @@
           "last_1f": 12.6,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 14
     },
     {
       "name": "メイショウハチロー",
@@ -1357,7 +1369,8 @@
           "last_1f": 12.5,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 11
     },
     {
       "name": "モンドプリューム",
@@ -1453,7 +1466,8 @@
           "last_1f": 11.4,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 4
     }
   ]
 }
