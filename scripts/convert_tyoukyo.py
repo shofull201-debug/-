@@ -35,11 +35,19 @@ LAST1F_RANGE = (10.0, 18.0)
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("csvs", nargs="+", help="調教好タイムCSV(追加分も並べて渡せる)")
+    ap.add_argument("csvs", nargs="+", help="調教CSV(追加分も並べて渡せる)")
     ap.add_argument("-o", "--output", default="data/workout_index.json.gz")
+    ap.add_argument("--merge", action="store_true",
+                    help="出力先の既存索引に追記する(重複は除去)")
     args = ap.parse_args()
 
     index: dict[str, list] = defaultdict(list)
+    if args.merge and Path(args.output).exists():
+        from keiba.scrape.dataset import load_dataset
+
+        for name, works in load_dataset(args.output)["workouts"].items():
+            index[name] = list(works)
+        print(f"既存索引を読み込み: {len(index)} 頭")
     kept = skipped = 0
 
     def add(name, ymd, facility, total, last, course, furlongs):
@@ -98,8 +106,11 @@ def main() -> int:
                     add(row[6].strip(), row[3].strip(), row[0].strip(),
                         total, times[9], "W", furlongs)
 
-    for works in index.values():
-        works.sort()
+    for name, works in index.items():
+        # 4要素の旧形式は坂路4Fとして正規化し、重複を除いて日付順に
+        normed = [w if len(w) >= 6 else w + ["坂路", 4] for w in works]
+        index[name] = sorted({tuple(w) for w in normed})
+        index[name] = [list(w) for w in index[name]]
     dates = sorted(w[0] for works in index.values() for w in works)
     print(f"取り込み {kept} 本 / 除外 {skipped} 本 / {len(index)} 頭"
           f" ({dates[0]} 〜 {dates[-1]})")
