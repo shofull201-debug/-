@@ -84,14 +84,22 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-08",
+          "date": "2026-07-12",
           "facility": "栗東",
-          "course": "W",
-          "furlongs": 6,
-          "total_time": 84.8,
-          "last_1f": 11.2,
-          "intensity": "強め",
-          "partner_result": "先着"
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 58.3,
+          "last_1f": 13.0,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-05",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 58.4,
+          "last_1f": 14.0,
+          "intensity": "馬なり"
         }
       ],
       "_notes": "メトロポリタンS・アンドロメダSともに勝ちタイム実測。中間の走歴(転厩を挟む)は未確認"
@@ -168,7 +176,26 @@
           "position_4c": 7
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 64.9,
+          "last_1f": 16.3,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.3,
+          "last_1f": 12.0,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "トップハンデ58.0。9歳・2023小倉記念勝ち馬。日経賞4着=勝ち2:30.7+0.15×3で推定。AJCC3着・天皇賞春は勝ちタイム/着順未取得で除外"
     },
     {
@@ -243,7 +270,17 @@
           "position_4c": 10
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.7,
+          "last_1f": 12.9,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "父・過去走とも検索で確認できず=全要素ほぼ中立評価"
     },
     {
@@ -318,7 +355,26 @@
           "position_4c": 13
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 67.1,
+          "last_1f": 14.9,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-02",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.2,
+          "last_1f": 12.6,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "小倉日経賞5着=勝ちレーゼドラマ1:59.4+0.6で推定。大阪-ハンブルクC7着は勝ちタイム未取得で除外"
     },
     {
@@ -395,14 +451,22 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-08",
+          "date": "2026-07-11",
           "facility": "栗東",
-          "course": "W",
-          "furlongs": 6,
-          "total_time": 83.9,
-          "last_1f": 10.9,
-          "intensity": "強め",
-          "partner_result": "先着"
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 66.4,
+          "last_1f": 14.1,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-06-28",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 59.2,
+          "last_1f": 13.4,
+          "intensity": "馬なり"
         }
       ],
       "_notes": "都大路S1:43.4レコード勝ち(実測)、福島民報杯2着=サヴォーナ1:58.4+1馬身3/4推定。1週前CWで川田騎乗テーオーソラネルに2馬身半先着・ラスト10.9"
@@ -487,7 +551,26 @@
           "race_class": "3勝"
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.3,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.5,
+          "last_1f": 13.0,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "過去走詳細を確認できず"
     },
     {
@@ -563,7 +646,26 @@
           "position_4c": 6
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-05",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 56.9,
+          "last_1f": 12.5,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.7,
+          "last_1f": 12.5,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "新潟大賞典13着・金鯱賞9着等は0.15秒×着順差の推定。阪神牝馬S1着1:32.8実測。7/9小倉入り済み・師「これだけ時計が出ていれば十分」(時計未取得)"
     },
     {
@@ -640,14 +742,22 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-08",
+          "date": "2026-07-15",
           "facility": "栗東",
-          "course": "W",
-          "furlongs": 6,
-          "total_time": 82.4,
-          "last_1f": 11.5,
-          "intensity": "強め",
-          "partner_result": null
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.9,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.8,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
         }
       ],
       "_notes": "金鯱賞ハナ差2着=勝ち1:58.1とほぼ同タイム、皐月賞4着=ミュージアムマイル1:57.0+0.45推定。QE2世C(香港)5着は海外のため除外。神戸新聞杯3着・ホープフルS2着は勝ちタイム未取得で除外。想定人気上位"
@@ -724,7 +834,26 @@
           "position_4c": 1
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 61.5,
+          "last_1f": 14.6,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 52.1,
+          "last_1f": 12.2,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "都大路S3着=ガイアメンテのレコード1:43.4+0.3推定(1番人気で3着)。難波S(3勝)1着は勝ちタイム未取得で除外。7戦3勝の上がり馬"
     },
     {
@@ -799,7 +928,26 @@
           "position_4c": 7
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 67.4,
+          "last_1f": 15.7,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.3,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "血統・過去走とも確認できず=ほぼ中立評価"
     },
     {
@@ -874,7 +1022,26 @@
           "position_4c": 17
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 59.3,
+          "last_1f": 13.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.2,
+          "last_1f": 13.0,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "シドニーT1着1:59.4実測(3/4馬身差)。オークス2025 3着は勝ちタイム未取得で除外。アニマルキングダム(米)は種牡馬データ未登録=血統は中立寄り"
     },
     {
@@ -944,7 +1111,26 @@
           "race_class": "3勝"
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.7,
+          "last_1f": 12.8,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-06-28",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.6,
+          "last_1f": 13.5,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "長期休み明け。直近走を特定できずアンドロメダS2023(4着1:59.6)のみ収録=鮮度面の割引を指数に反映できない点に注意。1週前はガイアメンテに2馬身半遅れ"
     },
     {
@@ -1019,7 +1205,26 @@
           "race_class": "G1"
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-05",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 60.6,
+          "last_1f": 13.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.5,
+          "last_1f": 12.7,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "セン3歳(去勢明け)。新潟2歳S2024勝ち馬。前走大阪-ハンブルクC12着は勝ちタイム未取得で除外。師「スタートが決まれば逃げてもいい」→脚質=逃げ。7/9小倉入り"
     },
     {
@@ -1094,7 +1299,26 @@
           "position_4c": 2
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 52.5,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.0,
+          "last_1f": 12.7,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "ジューンS9着=勝ち1:46.0+0.15×8で推定(初ブリンカー逆効果の可能性との評)。師「障害練習で体がパンプアップ、すごくいい状態」"
     },
     {
@@ -1169,7 +1393,26 @@
           "position_4c": 6
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 64.0,
+          "last_1f": 15.6,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.1,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "前走博多S(3勝)10着・馬体12kg減は勝ちタイム未取得で除外"
     },
     {
@@ -1243,7 +1486,26 @@
           "position_4c": 7
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 71.7,
+          "last_1f": 16.8,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.1,
+          "last_1f": 12.8,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "最軽量50kg。新潟大賞典13着=推定(直線で進路を塞がれる不利あり)"
     },
     {
@@ -1318,7 +1580,26 @@
           "position_4c": 9
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.5,
+          "last_1f": 12.6,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-08",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 51.7,
+          "last_1f": 13.2,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "前走メトロポリタンSは着順情報が6着/8着で混在し確定できず未収録。師「夏場に強く体調はいい」"
     },
     {
@@ -1394,7 +1675,26 @@
           "position_4c": 8
         }
       ],
-      "workouts": [],
+      "workouts": [
+        {
+          "date": "2026-07-17",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 63.6,
+          "last_1f": 14.5,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-01",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.9,
+          "last_1f": 12.9,
+          "intensity": "馬なり"
+        }
+      ],
       "_notes": "小倉日経賞1:59.4逃げ切り(実測・当該コース勝ち)。福島牝馬S6着・フラワーC1着は勝ちタイム未取得で除外。師「気持ちが切れている雰囲気」とやや不安コメント"
     }
   ]
