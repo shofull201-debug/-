@@ -249,7 +249,15 @@
     "total": 42.23
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "アンパドゥ",
+    "クランフォード",
+    "ファーヴェント"
+   ],
+   "win_pay": null,
+   "place_pays": {}
+  }
  },
  {
   "race": {
