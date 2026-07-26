@@ -48,13 +48,21 @@ FOLDS = [("2022", "2023"), ("2023", "2024"), ("2024", "2025"), ("2025", "2026")]
 
 
 def to_arrays(precomp):
-    """レースごとの (偏差値行列, 着順, 単勝払戻, 複勝払戻) に変換。"""
+    """レースごとの (偏差値行列, 着順, 単勝払戻, 複勝払戻) に変換。
+
+    データセットの馬は着順順に並んでいるため、そのまま argmax すると
+    同点時(新馬戦で全馬過去走なし等)に勝ち馬を選ぶリークが起きる。
+    レースごとに馬順を固定シードでシャッフルして同点を公平にする。
+    """
+    rng = np.random.default_rng(0)
     out = []
     for p in precomp:
-        dev = np.array([[d[f] for f in FACTORS] for d in p.deviations])
-        finish = np.array([f if f else 99 for f in p.finish])
-        win = np.array([w if w else 0 for w in p.win_pay])
-        plc = np.array([w if w else 0 for w in p.place_pay])
+        n = len(p.deviations)
+        perm = rng.permutation(n)
+        dev = np.array([[p.deviations[i][f] for f in FACTORS] for i in perm])
+        finish = np.array([p.finish[i] if p.finish[i] else 99 for i in perm])
+        win = np.array([p.win_pay[i] if p.win_pay[i] else 0 for i in perm])
+        plc = np.array([p.place_pay[i] if p.place_pay[i] else 0 for i in perm])
         out.append((dev, finish, win, plc))
     return out
 
