@@ -118,7 +118,12 @@ def main() -> int:
             trainer = ""
         trainer = re.sub(r"[((][栗美][))]", "", trainer)
 
-        past = list(reversed(histories.get(name, [])[-5:]))
+        runs = histories.get(name, [])
+        past = runs[-5:]
+        # 道悪適性の実績評価用に、直近5走に含まれない道悪走を最大3走足す
+        wet_extra = [r for r in runs[:-5]
+                     if r["going"] in ("稍重", "重", "不良")][-3:]
+        past = list(reversed(wet_extra + past))
         if not past:
             print(f"  注意: {name} の過去走がデータセットに無い")
         if jockey and jockey not in jockeys:

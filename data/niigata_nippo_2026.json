@@ -91,6 +91,51 @@
           "position_4c": 5,
           "last_3f": 33.9,
           "last_3f_rel": 0.09
+        },
+        {
+          "date": "2025-03-16",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "重",
+          "time_sec": 98.5,
+          "weight_carried": 56.0,
+          "finish_position": 12,
+          "field_size": 16,
+          "race_class": "1勝",
+          "position_4c": 11,
+          "last_3f": 36.1,
+          "last_3f_rel": -0.04
+        },
+        {
+          "date": "2024-03-02",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "稍重",
+          "time_sec": 123.1,
+          "weight_carried": 56.0,
+          "finish_position": 6,
+          "field_size": 13,
+          "race_class": "1勝",
+          "position_4c": 6,
+          "last_3f": 36.8,
+          "last_3f_rel": -0.79
+        },
+        {
+          "date": "2024-02-03",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 2000,
+          "going": "稍重",
+          "time_sec": 125.1,
+          "weight_carried": 54.0,
+          "finish_position": 8,
+          "field_size": 11,
+          "race_class": "1勝",
+          "position_4c": 3,
+          "last_3f": 40.2,
+          "last_3f_rel": 0.6
         }
       ],
       "workouts": [
@@ -197,6 +242,36 @@
           "position_4c": 2,
           "last_3f": 35.0,
           "last_3f_rel": 1.19
+        },
+        {
+          "date": "2024-04-06",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 71.4,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "未勝利",
+          "position_4c": 2,
+          "last_3f": 37.6,
+          "last_3f_rel": -0.81
+        },
+        {
+          "date": "2024-03-16",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 72.0,
+          "weight_carried": 57.0,
+          "finish_position": 2,
+          "field_size": 16,
+          "race_class": "未勝利",
+          "position_4c": 2,
+          "last_3f": 38.2,
+          "last_3f_rel": -0.06
         }
       ],
       "workouts": [
@@ -303,6 +378,51 @@
           "position_4c": 10,
           "last_3f": 33.3,
           "last_3f_rel": -0.83
+        },
+        {
+          "date": "2025-12-21",
+          "course": "阪神",
+          "surface": "ダ",
+          "distance": 1400,
+          "going": "重",
+          "time_sec": 83.2,
+          "weight_carried": 58.0,
+          "finish_position": 9,
+          "field_size": 16,
+          "race_class": "3勝",
+          "position_4c": 11,
+          "last_3f": 36.5,
+          "last_3f_rel": -0.4
+        },
+        {
+          "date": "2025-10-04",
+          "course": "京都",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "不良",
+          "time_sec": 70.1,
+          "weight_carried": 58.0,
+          "finish_position": 8,
+          "field_size": 16,
+          "race_class": "3勝",
+          "position_4c": 14,
+          "last_3f": 34.6,
+          "last_3f_rel": -1.09
+        },
+        {
+          "date": "2024-06-23",
+          "course": "東京",
+          "surface": "ダ",
+          "distance": 1600,
+          "going": "重",
+          "time_sec": 96.6,
+          "weight_carried": 55.0,
+          "finish_position": 13,
+          "field_size": 16,
+          "race_class": "3勝",
+          "position_4c": 15,
+          "last_3f": 35.7,
+          "last_3f_rel": -0.36
         }
       ],
       "workouts": [
@@ -409,6 +529,51 @@
           "position_4c": 7,
           "last_3f": 33.2,
           "last_3f_rel": -0.84
+        },
+        {
+          "date": "2025-09-07",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 110.4,
+          "weight_carried": 58.0,
+          "finish_position": 10,
+          "field_size": 14,
+          "race_class": "2勝",
+          "position_4c": 13,
+          "last_3f": 36.7,
+          "last_3f_rel": -0.74
+        },
+        {
+          "date": "2025-05-31",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "重",
+          "time_sec": 97.5,
+          "weight_carried": 58.0,
+          "finish_position": 12,
+          "field_size": 16,
+          "race_class": "2勝",
+          "position_4c": 13,
+          "last_3f": 36.4,
+          "last_3f_rel": 0.23
+        },
+        {
+          "date": "2025-03-29",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 110.8,
+          "weight_carried": 58.0,
+          "finish_position": 7,
+          "field_size": 12,
+          "race_class": "2勝",
+          "position_4c": 10,
+          "last_3f": 36.1,
+          "last_3f_rel": -0.62
         }
       ],
       "workouts": [
@@ -506,6 +671,51 @@
           "position_4c": 17,
           "last_3f": 33.2,
           "last_3f_rel": -0.98
+        },
+        {
+          "date": "2025-07-05",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 69.6,
+          "weight_carried": 58.0,
+          "finish_position": 4,
+          "field_size": 14,
+          "race_class": "3勝",
+          "position_4c": 5,
+          "last_3f": 34.4,
+          "last_3f_rel": -0.07
+        },
+        {
+          "date": "2025-06-22",
+          "course": "函館",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "重",
+          "time_sec": 69.2,
+          "weight_carried": 56.0,
+          "finish_position": 9,
+          "field_size": 15,
+          "race_class": "3勝",
+          "position_4c": 8,
+          "last_3f": 34.4,
+          "last_3f_rel": -0.19
+        },
+        {
+          "date": "2024-08-31",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1500,
+          "going": "重",
+          "time_sec": 91.4,
+          "weight_carried": 58.0,
+          "finish_position": 11,
+          "field_size": 14,
+          "race_class": "3勝",
+          "position_4c": 4,
+          "last_3f": 37.2,
+          "last_3f_rel": 0.71
         }
       ],
       "workouts": [
@@ -612,6 +822,51 @@
           "position_4c": 6,
           "last_3f": 34.1,
           "last_3f_rel": -0.08
+        },
+        {
+          "date": "2025-05-17",
+          "course": "新潟",
+          "surface": "芝",
+          "distance": 1400,
+          "going": "稍重",
+          "time_sec": 83.2,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "1勝",
+          "position_4c": 3,
+          "last_3f": 35.3,
+          "last_3f_rel": -0.66
+        },
+        {
+          "date": "2025-02-16",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 96.2,
+          "weight_carried": 56.0,
+          "finish_position": 10,
+          "field_size": 18,
+          "race_class": "1勝",
+          "position_4c": 6,
+          "last_3f": 36.4,
+          "last_3f_rel": 0.24
+        },
+        {
+          "date": "2025-02-01",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 109.1,
+          "weight_carried": 53.0,
+          "finish_position": 5,
+          "field_size": 16,
+          "race_class": "1勝",
+          "position_4c": 1,
+          "last_3f": 37.0,
+          "last_3f_rel": -0.15
         }
       ],
       "workouts": [
@@ -815,6 +1070,36 @@
           "position_4c": 6,
           "last_3f": 38.6,
           "last_3f_rel": 0.97
+        },
+        {
+          "date": "2025-05-10",
+          "course": "東京",
+          "surface": "ダ",
+          "distance": 1400,
+          "going": "重",
+          "time_sec": 82.8,
+          "weight_carried": 56.0,
+          "finish_position": 4,
+          "field_size": 16,
+          "race_class": "2勝",
+          "position_4c": 8,
+          "last_3f": 35.6,
+          "last_3f_rel": -0.46
+        },
+        {
+          "date": "2024-03-02",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 93.9,
+          "weight_carried": 55.0,
+          "finish_position": 10,
+          "field_size": 16,
+          "race_class": "G2",
+          "position_4c": 4,
+          "last_3f": 35.6,
+          "last_3f_rel": 0.24
         }
       ],
       "workouts": [
@@ -912,6 +1197,51 @@
           "position_4c": 2,
           "last_3f": 37.7,
           "last_3f_rel": 1.43
+        },
+        {
+          "date": "2025-03-22",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 71.4,
+          "weight_carried": 56.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "2勝",
+          "position_4c": 6,
+          "last_3f": 36.4,
+          "last_3f_rel": -0.49
+        },
+        {
+          "date": "2025-03-16",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "不良",
+          "time_sec": 72.1,
+          "weight_carried": 56.0,
+          "finish_position": 15,
+          "field_size": 16,
+          "race_class": "2勝",
+          "position_4c": 7,
+          "last_3f": 38.4,
+          "last_3f_rel": 0.71
+        },
+        {
+          "date": "2024-04-06",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 71.8,
+          "weight_carried": 54.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "1勝",
+          "position_4c": 1,
+          "last_3f": 37.1,
+          "last_3f_rel": -0.06
         }
       ],
       "workouts": [],
@@ -999,6 +1329,21 @@
           "position_4c": 5,
           "last_3f": 34.9,
           "last_3f_rel": -1.4
+        },
+        {
+          "date": "2024-09-01",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 1400,
+          "going": "重",
+          "time_sec": 83.7,
+          "weight_carried": 55.0,
+          "finish_position": 4,
+          "field_size": 11,
+          "race_class": "新馬",
+          "position_4c": 7,
+          "last_3f": 35.8,
+          "last_3f_rel": -0.41
         }
       ],
       "workouts": [
@@ -1105,6 +1450,21 @@
           "position_4c": 12,
           "last_3f": 32.6,
           "last_3f_rel": -0.89
+        },
+        {
+          "date": "2025-08-17",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1500,
+          "going": "稍重",
+          "time_sec": 89.9,
+          "weight_carried": 53.0,
+          "finish_position": 1,
+          "field_size": 14,
+          "race_class": "1勝",
+          "position_4c": 2,
+          "last_3f": 35.4,
+          "last_3f_rel": -0.63
         }
       ],
       "workouts": [
@@ -1211,6 +1571,51 @@
           "position_4c": 2,
           "last_3f": 34.8,
           "last_3f_rel": 0.39
+        },
+        {
+          "date": "2025-02-02",
+          "course": "京都",
+          "surface": "芝",
+          "distance": 1400,
+          "going": "稍重",
+          "time_sec": 83.0,
+          "weight_carried": 58.0,
+          "finish_position": 1,
+          "field_size": 17,
+          "race_class": "1勝",
+          "position_4c": 6,
+          "last_3f": 34.3,
+          "last_3f_rel": -0.78
+        },
+        {
+          "date": "2024-02-24",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 69.7,
+          "weight_carried": 58.0,
+          "finish_position": 3,
+          "field_size": 14,
+          "race_class": "1勝",
+          "position_4c": 2,
+          "last_3f": 35.0,
+          "last_3f_rel": -0.04
+        },
+        {
+          "date": "2023-02-25",
+          "course": "阪神",
+          "surface": "ダ",
+          "distance": 1400,
+          "going": "稍重",
+          "time_sec": 86.1,
+          "weight_carried": 56.0,
+          "finish_position": 6,
+          "field_size": 16,
+          "race_class": "未勝利",
+          "position_4c": 8,
+          "last_3f": 38.6,
+          "last_3f_rel": -1.57
         }
       ],
       "workouts": [
@@ -1317,6 +1722,51 @@
           "position_4c": 3,
           "last_3f": 34.5,
           "last_3f_rel": 0.31
+        },
+        {
+          "date": "2025-05-31",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1400,
+          "going": "稍重",
+          "time_sec": 84.4,
+          "weight_carried": 57.0,
+          "finish_position": 9,
+          "field_size": 11,
+          "race_class": "1勝",
+          "position_4c": 10,
+          "last_3f": 34.9,
+          "last_3f_rel": -0.07
+        },
+        {
+          "date": "2025-05-10",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1400,
+          "going": "稍重",
+          "time_sec": 82.1,
+          "weight_carried": 57.0,
+          "finish_position": 1,
+          "field_size": 16,
+          "race_class": "未勝利",
+          "position_4c": 5,
+          "last_3f": 34.6,
+          "last_3f_rel": -0.69
+        },
+        {
+          "date": "2025-04-12",
+          "course": "中山",
+          "surface": "ダ",
+          "distance": 1800,
+          "going": "稍重",
+          "time_sec": 117.7,
+          "weight_carried": 57.0,
+          "finish_position": 11,
+          "field_size": 12,
+          "race_class": "未勝利",
+          "position_4c": 5,
+          "last_3f": 40.9,
+          "last_3f_rel": 1.62
         }
       ],
       "workouts": [
@@ -1423,6 +1873,36 @@
           "position_4c": 6,
           "last_3f": 33.5,
           "last_3f_rel": -0.27
+        },
+        {
+          "date": "2025-04-13",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 95.1,
+          "weight_carried": 55.0,
+          "finish_position": 12,
+          "field_size": 18,
+          "race_class": "G1",
+          "position_4c": 4,
+          "last_3f": 36.2,
+          "last_3f_rel": 0.31
+        },
+        {
+          "date": "2024-06-23",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 100.3,
+          "weight_carried": 55.0,
+          "finish_position": 3,
+          "field_size": 13,
+          "race_class": "新馬",
+          "position_4c": 5,
+          "last_3f": 34.4,
+          "last_3f_rel": -0.42
         }
       ],
       "workouts": [
@@ -1520,6 +2000,21 @@
           "position_4c": 8,
           "last_3f": 33.3,
           "last_3f_rel": -0.69
+        },
+        {
+          "date": "2025-04-13",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 97.9,
+          "weight_carried": 55.0,
+          "finish_position": 17,
+          "field_size": 18,
+          "race_class": "G1",
+          "position_4c": 4,
+          "last_3f": 39.0,
+          "last_3f_rel": 3.11
         }
       ],
       "workouts": [
@@ -1626,6 +2121,21 @@
           "position_4c": 6,
           "last_3f": 33.4,
           "last_3f_rel": -0.38
+        },
+        {
+          "date": "2025-08-31",
+          "course": "札幌",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 69.9,
+          "weight_carried": 55.0,
+          "finish_position": 5,
+          "field_size": 16,
+          "race_class": "2勝",
+          "position_4c": 11,
+          "last_3f": 34.7,
+          "last_3f_rel": -0.52
         }
       ],
       "workouts": [
@@ -1732,6 +2242,36 @@
           "position_4c": 4,
           "last_3f": 33.9,
           "last_3f_rel": 0.33
+        },
+        {
+          "date": "2024-07-14",
+          "course": "小倉",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "稍重",
+          "time_sec": 71.3,
+          "weight_carried": 54.0,
+          "finish_position": 3,
+          "field_size": 9,
+          "race_class": "未勝利",
+          "position_4c": 6,
+          "last_3f": 36.9,
+          "last_3f_rel": -0.57
+        },
+        {
+          "date": "2024-06-29",
+          "course": "小倉",
+          "surface": "ダ",
+          "distance": 1000,
+          "going": "稍重",
+          "time_sec": 60.5,
+          "weight_carried": 54.0,
+          "finish_position": 6,
+          "field_size": 8,
+          "race_class": "新馬",
+          "position_4c": 6,
+          "last_3f": 36.4,
+          "last_3f_rel": 0.11
         }
       ],
       "workouts": [
@@ -1838,6 +2378,51 @@
           "position_4c": 12,
           "last_3f": 33.5,
           "last_3f_rel": -0.16
+        },
+        {
+          "date": "2025-03-29",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 95.5,
+          "weight_carried": 56.0,
+          "finish_position": 5,
+          "field_size": 11,
+          "race_class": "3勝",
+          "position_4c": 6,
+          "last_3f": 34.2,
+          "last_3f_rel": -0.44
+        },
+        {
+          "date": "2024-09-15",
+          "course": "中京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 94.3,
+          "weight_carried": 56.0,
+          "finish_position": 11,
+          "field_size": 16,
+          "race_class": "3勝",
+          "position_4c": 10,
+          "last_3f": 34.6,
+          "last_3f_rel": 0.06
+        },
+        {
+          "date": "2023-04-08",
+          "course": "中山",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 94.2,
+          "weight_carried": 54.0,
+          "finish_position": 6,
+          "field_size": 16,
+          "race_class": "G2",
+          "position_4c": 8,
+          "last_3f": 35.9,
+          "last_3f_rel": -0.32
         }
       ],
       "workouts": [

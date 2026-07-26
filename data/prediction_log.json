@@ -155,98 +155,98 @@
     "mark": "◎",
     "horse_number": 3,
     "name": "アンパドゥ",
-    "total": 61.68
+    "total": 61.45
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 4,
     "name": "マテンロウスカイ",
-    "total": 57.91
+    "total": 58.39
    },
    {
     "rank": 3,
     "mark": "▲",
     "horse_number": 13,
     "name": "ブエナオンダ",
-    "total": 54.63
+    "total": 53.82
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 8,
-    "name": "ダノンセンチュリー",
-    "total": 54.41
+    "horse_number": 12,
+    "name": "ランスオブカオス",
+    "total": 53.6
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": 12,
-    "name": "ランスオブカオス",
-    "total": 52.7
+    "horse_number": 8,
+    "name": "ダノンセンチュリー",
+    "total": 51.67
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 1,
-    "name": "ファーヴェント",
-    "total": 49.4
+    "horse_number": 14,
+    "name": "メタルスピード",
+    "total": 49.92
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 7,
-    "name": "エルトンバローズ",
-    "total": 49.31
+    "horse_number": 1,
+    "name": "ファーヴェント",
+    "total": 49.86
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 14,
-    "name": "メタルスピード",
-    "total": 49.22
+    "horse_number": 10,
+    "name": "クランフォード",
+    "total": 49.55
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 10,
-    "name": "クランフォード",
-    "total": 49.06
+    "horse_number": 5,
+    "name": "レディマリオン",
+    "total": 48.75
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 5,
-    "name": "レディマリオン",
-    "total": 47.53
+    "horse_number": 7,
+    "name": "エルトンバローズ",
+    "total": 47.78
    },
    {
     "rank": 11,
     "mark": "",
     "horse_number": 2,
     "name": "ジュタ",
-    "total": 47.45
+    "total": 45.05
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 9,
-    "name": "サンダーストラック",
+    "horse_number": 11,
+    "name": "ドロップオブライト",
     "total": 44.32
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 11,
-    "name": "ドロップオブライト",
-    "total": 43.28
+    "horse_number": 9,
+    "name": "サンダーストラック",
+    "total": 43.6
    },
    {
     "rank": 14,
     "mark": "",
     "horse_number": 6,
     "name": "シリウスコルト",
-    "total": 39.1
+    "total": 42.23
    }
   ],
   "result": null

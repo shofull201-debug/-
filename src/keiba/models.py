@@ -125,7 +125,8 @@ class HorseEntry:
             running_style=d.get("running_style"),
             jockey=d.get("jockey"),
             trainer=d.get("trainer"),
-            past_races=past[:5],  # 過去 5 走まで
+            # 直近5走 + 道悪実績用の追加走(最大8走)。スピード指数は先頭5走のみ使う
+            past_races=past[:8],
             workouts=works,
         )
 
