@@ -106,12 +106,15 @@ class TestMissingFactorRedistribution:
 
     def test_no_workout_is_missing_not_penalized(self):
         # 追切なし → 調偏 None、総合は残り要素の再配分で計算される
+        from keiba.predictor import DEFAULT_WEIGHTS
+
         results = predict(self.make_card(self.base_horse()))
         r = next(x for x in results if x.name == "テスト馬")
         assert r.deviations["workout"] is None
+        ws, wp = DEFAULT_WEIGHTS["speed"], DEFAULT_WEIGHTS["pedigree"]
         expected = (
-            r.deviations["speed"] * 0.5 + r.deviations["pedigree"] * 0.2
-        ) / 0.7
+            r.deviations["speed"] * ws + r.deviations["pedigree"] * wp
+        ) / (ws + wp)
         assert abs(r.total - expected) < 0.15
 
     def test_missing_horse_excluded_from_deviation_pool(self):
