@@ -137,7 +137,15 @@
     "total": 36.08
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "ピコローズ",
+    "ポッドロワール",
+    "エマヌエーレ"
+   ],
+   "win_pay": 950,
+   "place_pays": {}
+  }
  },
  {
   "race": {
