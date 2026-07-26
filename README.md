@@ -322,8 +322,46 @@ pip install pytest
 python -m pytest tests/ -v
 ```
 
-## 今後の拡張候補
+## 週次運用の手順(ルーチン)
 
-- 枠順・脚質・展開の評価要素追加
-- 種牡馬適性の実データからの自動算出（産駒成績の集計）
-- グリッドサーチをロジスティック回帰等の学習ベース最適化に置き換え
+### 毎週(レース前)
+
+1. **調教データの更新** — TARGETから坂路CSV・ウッドチップCSVを出力して:
+   ```
+   python scripts/convert_tyoukyo.py 坂路.csv ウッド.csv --merge -o data/workout_index.json.gz
+   ```
+2. **カード作成** — 出走表(馬名,斤量,騎手,調教師 のCSV)から:
+   ```
+   python scripts/build_card.py --name レース名 --date 2026-08-02 \
+       --course 新潟 --surface 芝 --distance 1600 --race-class G3 entries.csv -o data/xxx.json
+   keiba attach-workouts data/xxx.json
+   ```
+3. **予想+ログ記録**:
+   ```
+   keiba predict data/xxx.json --variants data/track_variants_2022_2026.json \
+       --log data/prediction_log.json
+   ```
+
+### 毎週(レース後)
+
+```
+keiba record-result レース名 "1着馬,2着馬,3着馬" --win-pay 420 --place-pays "馬A=180"
+keiba report        # ライブ成績(◎勝率・回収率)の累計
+```
+
+前向きログ(data/prediction_log.json)が唯一の汚染ゼロ検証。数字はここで積む。
+
+### 月1回
+
+- seseki2形式の成績CSVを追加出力 → `scripts/convert_seiseki2.py` でデータセット再構築
+  (過去走の鮮度・馬場指数・騎手統計・種牡馬統計がまとめて更新される)
+- `python scripts/build_connections.py` / `scripts/build_sire_aptitude.py` で統計再構築
+- `bash scripts/run_backtests.sh` で回帰チェック
+
+## 検証済みの設計判断(変更するときは再検証すること)
+
+- 重み: 速0.5 / 追切0.2 / 血統0.2 / 騎手厩舎0.1 / 脚質0(表示のみ) / 道悪0.10-0.20
+- 検証はすべて「2022-24で構築 → 2025-26で評価」の分離、最終確認はウォークフォワード
+  (scripts/walk_forward_audit.py)。クリーン実力値: ◎勝率22.4% / 複勝率51.4%
+- 不採用が確定済み: 枠順・馬体重増減・展開補正・当日馬場バイアス・大敗トリム・
+  中央値集約・z値指数・回収率直接最適化・オッズ帯フィルタ

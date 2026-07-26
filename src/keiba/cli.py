@@ -57,6 +57,18 @@ def cmd_predict(args: argparse.Namespace) -> int:
 
     results = predict(card, weights=weights)
 
+    if args.log:
+        from .tracking import append_prediction
+
+        race_info = {
+            "name": card.race.name, "date": card.race.date,
+            "course": card.race.course, "surface": card.race.surface,
+            "distance": card.race.distance, "going": card.race.going,
+            "race_class": card.race.race_class,
+        }
+        created = append_prediction(args.log, race_info, results)
+        print(f"予想を {args.log} に{'記録' if created else '上書き記録'}しました")
+
     race = card.race
     print(f"\n=== {race.name or '予想'} ===")
     print(f"{race.course} {race.surface}{race.distance}m {race.race_class} 馬場:{race.going}\n")
@@ -342,6 +354,48 @@ def _result_rows_from_dataset(dataset: dict):
                 }
 
 
+def cmd_record_result(args: argparse.Namespace) -> int:
+    """予想ログへレース結果を記録する。"""
+    from .tracking import set_result
+
+    place_pays = {}
+    if args.place_pays:
+        for part in args.place_pays.split(","):
+            name, _, pay = part.partition("=")
+            place_pays[name.strip()] = int(pay)
+    entry = set_result(
+        args.log, args.race, [n.strip() for n in args.order.split(",")],
+        win_pay=args.win_pay, place_pays=place_pays, date=args.date,
+    )
+    top = entry["picks"][0]
+    order = entry["result"]["order"]
+    pos = order.index(top["name"]) + 1 if top["name"] in order else "圏外"
+    print(f"{entry['race']['name']}: 結果を記録。◎{top['name']} は {pos}着"
+          if isinstance(pos, int) else
+          f"{entry['race']['name']}: 結果を記録。◎{top['name']} は 3着内なし")
+    return 0
+
+
+def cmd_report(args: argparse.Namespace) -> int:
+    """予想ログのライブ成績を集計する。"""
+    from .tracking import load_log, summarize
+
+    s = summarize(load_log(args.log))
+    print(f"予想 {s['n_logged']} レース / 結果入力済み {s['n_finished']} レース\n")
+    if not s["n_finished"]:
+        return 0
+    for r in s["rows"]:
+        fin = f"{r['top_finish']}着" if r["top_finish"] else "着外"
+        print(f"  {r['date']} {r['name']:<12} ◎{r['top']} → {fin}"
+              f" / 印5頭中3着内 {r['cover3']}頭")
+    print(f"\n◎勝率 {s['win_rate']*100:.1f}% / ◎複勝率 {s['place_rate']*100:.1f}%"
+          f" / 印5頭中3着内 {s['cover3_avg']:.2f}頭 / 3連複BOX率 {s['box3_rate']*100:.1f}%")
+    tan = f"{s['tan_roi']:.1f}% ({s['tan_n']}R)" if s["tan_roi"] is not None else "払戻未入力"
+    fuku = f"{s['fuku_roi']:.1f}% ({s['fuku_n']}R)" if s["fuku_roi"] is not None else "払戻未入力"
+    print(f"単勝回収 {tan} / 複勝回収 {fuku}")
+    return 0
+
+
 def cmd_attach_workouts(args: argparse.Namespace) -> int:
     """調教好タイム索引からカードへ追切を付与する。"""
     from .scrape.dataset import load_dataset
@@ -478,6 +532,10 @@ def main(argv: list[str] | None = None) -> int:
         "--variants", default=None, help="keiba build-variants が出力した馬場指数表 JSON"
     )
     p_predict.add_argument("--json", action="store_true", help="JSON 形式で出力")
+    p_predict.add_argument(
+        "--log", default=None,
+        help="予想を記録するログJSON(例: data/prediction_log.json)。前向き成績の集計用",
+    )
     p_predict.set_defaults(func=cmd_predict)
 
     p_index = sub.add_parser("speed-index", help="単発でスピード指数を計算")
@@ -540,6 +598,19 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_fit.add_argument("-o", "--output", default=None, help="学習した重みの保存先 JSON")
     p_fit.set_defaults(func=cmd_fit)
+
+    p_res = sub.add_parser("record-result", help="予想ログへレース結果を記録")
+    p_res.add_argument("race", help="レース名(ログに記録した名前)")
+    p_res.add_argument("order", help="1〜3着の馬名をカンマ区切りで")
+    p_res.add_argument("--log", default="data/prediction_log.json")
+    p_res.add_argument("--date", help="同名レースが複数あるときの日付指定")
+    p_res.add_argument("--win-pay", type=int, help="勝ち馬の単勝払戻(100円あたり)")
+    p_res.add_argument("--place-pays", help="複勝払戻 例: 馬A=180,馬B=240,馬C=720")
+    p_res.set_defaults(func=cmd_record_result)
+
+    p_rep = sub.add_parser("report", help="予想ログのライブ成績を集計")
+    p_rep.add_argument("--log", default="data/prediction_log.json")
+    p_rep.set_defaults(func=cmd_report)
 
     p_att = sub.add_parser(
         "attach-workouts",
