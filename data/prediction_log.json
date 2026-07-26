@@ -361,7 +361,15 @@
     "total": 38.77
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "マテンロウコマンド",
+    "メイショウハチロー",
+    "ドンインザムード"
+   ],
+   "win_pay": null,
+   "place_pays": {}
+  }
  },
  {
   "race": {
