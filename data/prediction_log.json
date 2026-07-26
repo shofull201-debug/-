@@ -146,7 +146,7 @@
    "course": "新潟",
    "surface": "芝",
    "distance": 1600,
-   "going": "良",
+   "going": "不良",
    "race_class": "G3"
   },
   "picks": [
@@ -155,98 +155,98 @@
     "mark": "◎",
     "horse_number": 3,
     "name": "アンパドゥ",
-    "total": 63.29
+    "total": 61.68
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 4,
     "name": "マテンロウスカイ",
-    "total": 60.06
+    "total": 57.91
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 8,
-    "name": "ダノンセンチュリー",
-    "total": 56.42
+    "horse_number": 13,
+    "name": "ブエナオンダ",
+    "total": 54.63
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 13,
-    "name": "ブエナオンダ",
-    "total": 54.89
+    "horse_number": 8,
+    "name": "ダノンセンチュリー",
+    "total": 54.41
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": 12,
     "name": "ランスオブカオス",
-    "total": 51.96
+    "total": 52.7
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 14,
-    "name": "メタルスピード",
-    "total": 48.72
+    "horse_number": 1,
+    "name": "ファーヴェント",
+    "total": 49.4
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 10,
-    "name": "クランフォード",
-    "total": 48.14
+    "horse_number": 7,
+    "name": "エルトンバローズ",
+    "total": 49.31
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 1,
-    "name": "ファーヴェント",
-    "total": 47.87
+    "horse_number": 14,
+    "name": "メタルスピード",
+    "total": 49.22
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 7,
-    "name": "エルトンバローズ",
-    "total": 47.31
+    "horse_number": 10,
+    "name": "クランフォード",
+    "total": 49.06
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 9,
-    "name": "サンダーストラック",
-    "total": 46.14
+    "horse_number": 5,
+    "name": "レディマリオン",
+    "total": 47.53
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 5,
-    "name": "レディマリオン",
-    "total": 45.75
+    "horse_number": 2,
+    "name": "ジュタ",
+    "total": 47.45
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 2,
-    "name": "ジュタ",
-    "total": 44.03
+    "horse_number": 9,
+    "name": "サンダーストラック",
+    "total": 44.32
    },
    {
     "rank": 13,
     "mark": "",
     "horse_number": 11,
     "name": "ドロップオブライト",
-    "total": 43.61
+    "total": 43.28
    },
    {
     "rank": 14,
     "mark": "",
     "horse_number": 6,
     "name": "シリウスコルト",
-    "total": 41.81
+    "total": 39.1
    }
   ],
   "result": null
