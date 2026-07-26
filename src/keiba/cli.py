@@ -31,9 +31,10 @@ def _parse_weights(text: str) -> dict[str, float]:
     for part in text.split(","):
         key, _, value = part.partition("=")
         key = key.strip()
-        if key not in ("speed", "workout", "pedigree", "going", "style"):
+        if key not in ("speed", "workout", "pedigree", "going", "style", "connections"):
             raise argparse.ArgumentTypeError(
-                f"不明な重みキー: {key}（speed / workout / pedigree / going / style のいずれか）"
+                f"不明な重みキー: {key}"
+                "（speed / workout / pedigree / going / style / connections のいずれか）"
             )
         weights[key] = float(value)
     return weights

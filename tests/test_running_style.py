@@ -119,13 +119,17 @@ class TestPredictWithStyle:
             }
         )
 
+    # 既定重みでは脚質は0(アブレーションで除外)のため、明示的に重みを与えて
+    # 機構(推定・コース適合・偏差値化)が機能することを確認する
+    STYLE_ON = {"style": 0.1}
+
     def test_front_runner_ranked_higher_on_small_track(self):
-        results = predict(self.make_card("福島"))
+        results = predict(self.make_card("福島"), weights=self.STYLE_ON)
         assert results[0].name == "ニゲウマ"
         assert results[0].deviations["style"] > results[1].deviations["style"]
         assert results[0].style["style"] == "逃げ"
 
     def test_closer_gains_on_long_stretch(self):
         # 東京では差し追込有利（追込7 > 逃げ5）
-        results = predict(self.make_card("東京"))
+        results = predict(self.make_card("東京"), weights=self.STYLE_ON)
         assert results[0].name == "オイコミウマ"
