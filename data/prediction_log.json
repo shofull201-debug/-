@@ -503,5 +503,278 @@
    "win_pay": 210,
    "place_pays": {}
   }
+ },
+ {
+  "race": {
+   "name": "アイビスSD",
+   "date": "2026-08-02",
+   "course": "新潟",
+   "surface": "芝",
+   "distance": 1000,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": null,
+    "name": "アメリカンステージ",
+    "total": 74.79
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": null,
+    "name": "カウンターセブン",
+    "total": 56.72
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": null,
+    "name": "ピューロマジック",
+    "total": 52.95
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": null,
+    "name": "バグラダス",
+    "total": 52.82
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": null,
+    "name": "ベルギューン",
+    "total": 52.22
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": null,
+    "name": "デュガ",
+    "total": 51.38
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": null,
+    "name": "ウイングレイテスト",
+    "total": 50.96
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": null,
+    "name": "カウスリップ",
+    "total": 50.38
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": null,
+    "name": "ブーケファロス",
+    "total": 49.34
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": null,
+    "name": "ロードトレイル",
+    "total": 48.84
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": null,
+    "name": "エコロレジーナ",
+    "total": 48.76
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": null,
+    "name": "クムシラコ",
+    "total": 48.09
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": null,
+    "name": "ビッグシーザー",
+    "total": 47.94
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": null,
+    "name": "ミカッテヨンデイイ",
+    "total": 44.37
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": null,
+    "name": "フロムダスク",
+    "total": 42.93
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": null,
+    "name": "テイエムスパーダ",
+    "total": 42.44
+   },
+   {
+    "rank": 17,
+    "mark": "",
+    "horse_number": null,
+    "name": "シュラフ",
+    "total": 42.32
+   },
+   {
+    "rank": 18,
+    "mark": "",
+    "horse_number": null,
+    "name": "アタリダイキチ",
+    "total": 41.72
+   }
+  ],
+  "result": null
+ },
+ {
+  "race": {
+   "name": "クイーンS",
+   "date": "2026-08-02",
+   "course": "札幌",
+   "surface": "芝",
+   "distance": 1800,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": null,
+    "name": "エルフストラック",
+    "total": 62.08
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": null,
+    "name": "ココナッツブラウン",
+    "total": 57.19
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": null,
+    "name": "ケリフレッドアスク",
+    "total": 55.42
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": null,
+    "name": "カテリーナ",
+    "total": 54.42
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": null,
+    "name": "コガネノソラ",
+    "total": 54.23
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": null,
+    "name": "ルージュソリテール",
+    "total": 53.52
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": null,
+    "name": "ピンクジン",
+    "total": 53.49
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": null,
+    "name": "フレミングフープ",
+    "total": 50.94
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": null,
+    "name": "ボンドガール",
+    "total": 50.26
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": null,
+    "name": "エリカエクスプレス",
+    "total": 49.48
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": null,
+    "name": "アンゴラブラック",
+    "total": 47.57
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": null,
+    "name": "エラトー",
+    "total": 47.23
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": null,
+    "name": "ヴーレヴー",
+    "total": 46.29
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": null,
+    "name": "フェスティバルヒル",
+    "total": 45.47
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": null,
+    "name": "パレハ",
+    "total": 44.38
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": null,
+    "name": "リラボニート",
+    "total": 41.7
+   },
+   {
+    "rank": 17,
+    "mark": "",
+    "horse_number": null,
+    "name": "クリノメイ",
+    "total": 34.96
+   }
+  ],
+  "result": null
  }
 ]
