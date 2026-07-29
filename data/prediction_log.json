@@ -659,120 +659,106 @@
     "rank": 1,
     "mark": "◎",
     "horse_number": null,
-    "name": "エルフストラック",
-    "total": 62.08
+    "name": "ココナッツブラウン",
+    "total": 59.37
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": null,
-    "name": "ココナッツブラウン",
-    "total": 57.19
+    "name": "ケリフレッドアスク",
+    "total": 57.18
    },
    {
     "rank": 3,
     "mark": "▲",
     "horse_number": null,
-    "name": "ケリフレッドアスク",
-    "total": 55.42
+    "name": "カテリーナ",
+    "total": 56.86
    },
    {
     "rank": 4,
     "mark": "△",
     "horse_number": null,
-    "name": "カテリーナ",
-    "total": 54.42
+    "name": "コガネノソラ",
+    "total": 55.5
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": null,
-    "name": "コガネノソラ",
-    "total": 54.23
+    "name": "ルージュソリテール",
+    "total": 55.21
    },
    {
     "rank": 6,
     "mark": "",
     "horse_number": null,
-    "name": "ルージュソリテール",
-    "total": 53.52
+    "name": "フレミングフープ",
+    "total": 51.81
    },
    {
     "rank": 7,
     "mark": "",
     "horse_number": null,
-    "name": "ピンクジン",
-    "total": 53.49
+    "name": "ボンドガール",
+    "total": 50.84
    },
    {
     "rank": 8,
     "mark": "",
     "horse_number": null,
-    "name": "フレミングフープ",
-    "total": 50.94
+    "name": "エリカエクスプレス",
+    "total": 50.4
    },
    {
     "rank": 9,
     "mark": "",
     "horse_number": null,
-    "name": "ボンドガール",
-    "total": 50.26
+    "name": "エラトー",
+    "total": 48.39
    },
    {
     "rank": 10,
     "mark": "",
     "horse_number": null,
-    "name": "エリカエクスプレス",
-    "total": 49.48
+    "name": "ヴーレヴー",
+    "total": 47.43
    },
    {
     "rank": 11,
     "mark": "",
     "horse_number": null,
     "name": "アンゴラブラック",
-    "total": 47.57
+    "total": 47.16
    },
    {
     "rank": 12,
     "mark": "",
     "horse_number": null,
-    "name": "エラトー",
-    "total": 47.23
+    "name": "フェスティバルヒル",
+    "total": 45.97
    },
    {
     "rank": 13,
     "mark": "",
     "horse_number": null,
-    "name": "ヴーレヴー",
-    "total": 46.29
+    "name": "パレハ",
+    "total": 45.15
    },
    {
     "rank": 14,
     "mark": "",
     "horse_number": null,
-    "name": "フェスティバルヒル",
-    "total": 45.47
+    "name": "リラボニート",
+    "total": 41.73
    },
    {
     "rank": 15,
     "mark": "",
     "horse_number": null,
-    "name": "パレハ",
-    "total": 44.38
-   },
-   {
-    "rank": 16,
-    "mark": "",
-    "horse_number": null,
-    "name": "リラボニート",
-    "total": 41.7
-   },
-   {
-    "rank": 17,
-    "mark": "",
-    "horse_number": null,
     "name": "クリノメイ",
-    "total": 34.96
+    "total": 34.15
    }
   ],
   "result": null
