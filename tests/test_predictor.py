@@ -167,3 +167,25 @@ class TestMissingFactorRedistribution:
             assert r.deviations["speed"] is not None
             assert r.deviations["workout"] is not None
             assert r.deviations["pedigree"] is not None
+
+
+class TestTodayImpost:
+    def test_heavier_today_weight_lowers_speed_score(self):
+        from keiba.models import HorseEntry
+        from keiba.predictor import evaluate_horse
+
+        base = {
+            "name": "斤量テスト", "sire": "キズナ", "weight_carried": 55.0,
+            "past_races": [
+                {"date": "2026-06-07", "course": "東京", "surface": "芝",
+                 "distance": 1600, "going": "良", "time_sec": 93.0,
+                 "weight_carried": 56.0, "finish_position": 1,
+                 "field_size": 14, "race_class": "OP"}
+            ],
+        }
+        light = evaluate_horse(HorseEntry.from_dict(base), "芝", 1600)
+        heavy = evaluate_horse(
+            HorseEntry.from_dict({**base, "weight_carried": 57.0}), "芝", 1600
+        )
+        # 今回+2kg → 西田式換算で 4pt 減
+        assert light["speed"] - heavy["speed"] == 4.0
