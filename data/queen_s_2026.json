@@ -108,7 +108,8 @@
           "last_3f_rel": -1.38
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 5
     },
     {
       "name": "ヴーレヴー",
@@ -209,14 +210,15 @@
           "last_3f_rel": -0.69
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 14
     },
     {
       "name": "エラトー",
       "sire": "Saxon Warrior",
       "dam_sire": "Siyouni",
       "weight_carried": 55.0,
-      "jockey": null,
+      "jockey": "舟山瑠泉",
       "trainer": null,
       "past_races": [
         {
@@ -325,7 +327,8 @@
           "last_3f_rel": -0.83
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 8
     },
     {
       "name": "エリカエクスプレス",
@@ -443,12 +446,12 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-17",
+          "date": "2026-07-22",
           "facility": "栗東",
-          "course": "坂路",
-          "furlongs": 4,
-          "total_time": 67.5,
-          "last_1f": 16.0,
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 78.5,
+          "last_1f": 11.1,
           "intensity": "馬なり"
         },
         {
@@ -460,7 +463,8 @@
           "last_1f": 12.3,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 9
     },
     {
       "name": "カテリーナ",
@@ -561,7 +565,8 @@
           "last_3f_rel": -0.94
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 3
     },
     {
       "name": "クリノメイ",
@@ -647,7 +652,8 @@
           "last_3f_rel": 1.41
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 6
     },
     {
       "name": "ケリフレッドアスク",
@@ -748,7 +754,8 @@
           "last_3f_rel": -0.91
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 2
     },
     {
       "name": "コガネノソラ",
@@ -881,6 +888,15 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-22",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 82.5,
+          "last_1f": 11.3,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-16",
           "facility": "美浦",
           "course": "W",
@@ -889,7 +905,8 @@
           "last_1f": 10.9,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 11
     },
     {
       "name": "ココナッツブラウン",
@@ -1020,138 +1037,8 @@
           "last_3f_rel": -1.39
         }
       ],
-      "workouts": []
-    },
-    {
-      "name": "パレハ",
-      "sire": "ヨハネスブルグ",
-      "dam_sire": "サンデーサイレンス",
-      "weight_carried": 55.0,
-      "jockey": "舟山瑠泉",
-      "trainer": null,
-      "past_races": [
-        {
-          "date": "2026-04-19",
-          "course": "福島",
-          "surface": "芝",
-          "distance": 1800,
-          "going": "良",
-          "time_sec": 106.1,
-          "weight_carried": 55.0,
-          "finish_position": 9,
-          "field_size": 16,
-          "race_class": "G3",
-          "position_4c": 10,
-          "last_3f": 34.5,
-          "last_3f_rel": -0.42
-        },
-        {
-          "date": "2026-02-22",
-          "course": "小倉",
-          "surface": "芝",
-          "distance": 1800,
-          "going": "良",
-          "time_sec": 106.0,
-          "weight_carried": 54.0,
-          "finish_position": 9,
-          "field_size": 16,
-          "race_class": "G3",
-          "position_4c": 4,
-          "last_3f": 35.4,
-          "last_3f_rel": 0.05
-        },
-        {
-          "date": "2026-01-24",
-          "course": "小倉",
-          "surface": "芝",
-          "distance": 2000,
-          "going": "良",
-          "time_sec": 118.4,
-          "weight_carried": 54.0,
-          "finish_position": 7,
-          "field_size": 18,
-          "race_class": "G3",
-          "position_4c": 9,
-          "last_3f": 33.9,
-          "last_3f_rel": -0.68
-        },
-        {
-          "date": "2025-11-22",
-          "course": "福島",
-          "surface": "芝",
-          "distance": 2000,
-          "going": "良",
-          "time_sec": 120.2,
-          "weight_carried": 54.0,
-          "finish_position": 3,
-          "field_size": 16,
-          "race_class": "G3",
-          "position_4c": 9,
-          "last_3f": 33.6,
-          "last_3f_rel": -0.54
-        },
-        {
-          "date": "2025-08-03",
-          "course": "札幌",
-          "surface": "芝",
-          "distance": 1800,
-          "going": "良",
-          "time_sec": 106.3,
-          "weight_carried": 55.0,
-          "finish_position": 5,
-          "field_size": 14,
-          "race_class": "G3",
-          "position_4c": 7,
-          "last_3f": 35.0,
-          "last_3f_rel": -0.58
-        },
-        {
-          "date": "2025-03-16",
-          "course": "中山",
-          "surface": "芝",
-          "distance": 1800,
-          "going": "重",
-          "time_sec": 112.5,
-          "weight_carried": 56.0,
-          "finish_position": 7,
-          "field_size": 16,
-          "race_class": "2勝",
-          "position_4c": 5,
-          "last_3f": 38.0,
-          "last_3f_rel": -0.07
-        },
-        {
-          "date": "2024-07-20",
-          "course": "小倉",
-          "surface": "芝",
-          "distance": 2000,
-          "going": "稍重",
-          "time_sec": 120.8,
-          "weight_carried": 53.0,
-          "finish_position": 4,
-          "field_size": 11,
-          "race_class": "1勝",
-          "position_4c": 6,
-          "last_3f": 36.1,
-          "last_3f_rel": -0.65
-        },
-        {
-          "date": "2024-01-21",
-          "course": "京都",
-          "surface": "芝",
-          "distance": 1600,
-          "going": "不良",
-          "time_sec": 98.4,
-          "weight_carried": 55.0,
-          "finish_position": 4,
-          "field_size": 17,
-          "race_class": "新馬",
-          "position_4c": 7,
-          "last_3f": 36.4,
-          "last_3f_rel": -1.11
-        }
-      ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 7
     },
     {
       "name": "フェスティバルヒル",
@@ -1224,15 +1111,25 @@
       ],
       "workouts": [
         {
-          "date": "2026-07-17",
+          "date": "2026-07-21",
           "facility": "栗東",
           "course": "坂路",
           "furlongs": 4,
-          "total_time": 67.3,
-          "last_1f": 15.6,
+          "total_time": 65.0,
+          "last_1f": 15.3,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 86.0,
+          "last_1f": 11.1,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 10
     },
     {
       "name": "フレミングフープ",
@@ -1365,6 +1262,15 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-15",
+          "facility": "栗東",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.5,
+          "last_1f": 11.4,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-12",
           "facility": "栗東",
           "course": "坂路",
@@ -1373,7 +1279,8 @@
           "last_1f": 11.9,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 1
     },
     {
       "name": "ボンドガール",
@@ -1506,6 +1413,15 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-22",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.9,
+          "last_1f": 12.7,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-16",
           "facility": "美浦",
           "course": "坂路",
@@ -1514,7 +1430,8 @@
           "last_1f": 13.1,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 12
     },
     {
       "name": "リラボニート",
@@ -1645,7 +1562,8 @@
           "last_3f_rel": -0.1
         }
       ],
-      "workouts": []
+      "workouts": [],
+      "horse_number": 4
     },
     {
       "name": "ルージュソリテール",
@@ -1748,6 +1666,15 @@
       ],
       "workouts": [
         {
+          "date": "2026-07-14",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 65.0,
+          "last_1f": 15.0,
+          "intensity": "馬なり"
+        },
+        {
           "date": "2026-07-12",
           "facility": "栗東",
           "course": "坂路",
@@ -1756,7 +1683,8 @@
           "last_1f": 14.6,
           "intensity": "馬なり"
         }
-      ]
+      ],
+      "horse_number": 13
     }
   ]
 }
