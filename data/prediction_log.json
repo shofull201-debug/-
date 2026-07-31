@@ -520,119 +520,119 @@
     "mark": "◎",
     "horse_number": 16,
     "name": "アメリカンステージ",
-    "total": 74.07
+    "total": 74.1
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 9,
     "name": "カウンターセブン",
-    "total": 55.23
+    "total": 55.8
    },
    {
     "rank": 3,
     "mark": "▲",
     "horse_number": 4,
     "name": "カウスリップ",
-    "total": 55.15
+    "total": 53.56
    },
    {
     "rank": 4,
     "mark": "△",
     "horse_number": 12,
     "name": "クムシラコ",
-    "total": 52.58
+    "total": 53.19
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": 17,
     "name": "ビッグシーザー",
-    "total": 52.32
+    "total": 53.13
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 6,
-    "name": "ピューロマジック",
-    "total": 51.49
+    "horse_number": 1,
+    "name": "ウイングレイテスト",
+    "total": 52.09
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 10,
-    "name": "エコロレジーナ",
-    "total": 50.94
+    "horse_number": 6,
+    "name": "ピューロマジック",
+    "total": 51.13
    },
    {
     "rank": 8,
     "mark": "",
     "horse_number": 7,
     "name": "バグラダス",
-    "total": 50.34
+    "total": 51.0
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 1,
-    "name": "ウイングレイテスト",
-    "total": 50.21
+    "horse_number": 10,
+    "name": "エコロレジーナ",
+    "total": 49.42
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 5,
-    "name": "ベルギューン",
-    "total": 48.51
+    "horse_number": 14,
+    "name": "ブーケファロス",
+    "total": 47.64
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 14,
-    "name": "ブーケファロス",
-    "total": 46.75
+    "horse_number": 5,
+    "name": "ベルギューン",
+    "total": 46.81
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 8,
-    "name": "シュラフ",
-    "total": 45.58
+    "horse_number": 2,
+    "name": "デュガ",
+    "total": 45.33
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 2,
-    "name": "デュガ",
-    "total": 44.58
+    "horse_number": 11,
+    "name": "ロードトレイル",
+    "total": 45.03
    },
    {
     "rank": 14,
     "mark": "",
-    "horse_number": 11,
-    "name": "ロードトレイル",
-    "total": 44.07
+    "horse_number": 8,
+    "name": "シュラフ",
+    "total": 44.13
    },
    {
     "rank": 15,
     "mark": "",
-    "horse_number": 3,
-    "name": "ミカッテヨンデイイ",
-    "total": 43.9
+    "horse_number": 15,
+    "name": "アタリダイキチ",
+    "total": 42.82
    },
    {
     "rank": 16,
     "mark": "",
-    "horse_number": 13,
-    "name": "テイエムスパーダ",
-    "total": 42.42
+    "horse_number": 3,
+    "name": "ミカッテヨンデイイ",
+    "total": 42.6
    },
    {
     "rank": 17,
     "mark": "",
-    "horse_number": 15,
-    "name": "アタリダイキチ",
-    "total": 41.85
+    "horse_number": 13,
+    "name": "テイエムスパーダ",
+    "total": 42.22
    }
   ],
   "result": null
@@ -653,98 +653,98 @@
     "mark": "◎",
     "horse_number": 7,
     "name": "ココナッツブラウン",
-    "total": 59.6
+    "total": 59.61
    },
    {
     "rank": 2,
     "mark": "○",
-    "horse_number": 3,
-    "name": "カテリーナ",
-    "total": 58.02
+    "horse_number": 2,
+    "name": "ケリフレッドアスク",
+    "total": 58.81
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 2,
-    "name": "ケリフレッドアスク",
-    "total": 55.28
+    "horse_number": 3,
+    "name": "カテリーナ",
+    "total": 58.04
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 10,
-    "name": "フェスティバルヒル",
-    "total": 52.63
+    "horse_number": 11,
+    "name": "コガネノソラ",
+    "total": 53.24
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": 13,
     "name": "ルージュソリテール",
-    "total": 51.54
+    "total": 51.58
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 11,
-    "name": "コガネノソラ",
-    "total": 51.46
+    "horse_number": 12,
+    "name": "ボンドガール",
+    "total": 49.74
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 12,
-    "name": "ボンドガール",
-    "total": 49.9
+    "horse_number": 1,
+    "name": "フレミングフープ",
+    "total": 49.64
    },
    {
     "rank": 8,
     "mark": "",
     "horse_number": 9,
     "name": "エリカエクスプレス",
-    "total": 49.81
+    "total": 49.63
    },
    {
     "rank": 9,
     "mark": "",
     "horse_number": 8,
     "name": "エラトー",
-    "total": 49.77
+    "total": 49.62
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 1,
-    "name": "フレミングフープ",
-    "total": 49.74
+    "horse_number": 14,
+    "name": "ヴーレヴー",
+    "total": 48.02
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 14,
-    "name": "ヴーレヴー",
-    "total": 48.16
+    "horse_number": 10,
+    "name": "フェスティバルヒル",
+    "total": 46.94
    },
    {
     "rank": 12,
     "mark": "",
     "horse_number": 5,
     "name": "アンゴラブラック",
-    "total": 46.66
+    "total": 46.5
    },
    {
     "rank": 13,
     "mark": "",
     "horse_number": 4,
     "name": "リラボニート",
-    "total": 42.75
+    "total": 42.47
    },
    {
     "rank": 14,
     "mark": "",
     "horse_number": 6,
     "name": "クリノメイ",
-    "total": 34.67
+    "total": 36.17
    }
   ],
   "result": null

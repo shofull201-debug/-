@@ -170,7 +170,9 @@ class TestMissingFactorRedistribution:
 
 
 class TestTodayImpost:
-    def test_heavier_today_weight_lowers_speed_score(self):
+    def test_today_weight_does_not_change_speed_score(self):
+        # 今回斤量補正はローリングWFで効果なし(むしろ悪化)と判明し不採用。
+        # 過去走の斤量は55kg基準へ正規化済みで、今回斤量はスコアに影響しない。
         from keiba.models import HorseEntry
         from keiba.predictor import evaluate_horse
 
@@ -187,5 +189,4 @@ class TestTodayImpost:
         heavy = evaluate_horse(
             HorseEntry.from_dict({**base, "weight_carried": 57.0}), "芝", 1600
         )
-        # 今回+2kg → 西田式換算で 4pt 減
-        assert light["speed"] - heavy["speed"] == 4.0
+        assert light["speed"] == heavy["speed"]

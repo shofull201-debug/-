@@ -120,11 +120,9 @@ def evaluate_horse(
 ) -> dict:
     """1 頭の各要素の生スコアを算出する。"""
     speed, indices = aggregate_speed_score(horse.past_races, surface, distance)
-    if indices:
-        # 今回背負う斤量の補正(西田式の換算どおり1kg=2pt)。
-        # 過去走は55kg基準へ正規化済みなので、今回の斤量差はここで効かせる。
-        # 学習/検証の両期間で◎勝率+0.4ptを確認して採用(K=1.0が最適)
-        speed -= (horse.weight_carried - 55.0) * 2.0
+    # 今回斤量の補正は不採用。2分割検証では◎勝率+0.4ptに見えたが、
+    # ローリングWF(4年11,848R・斤量差3kg以上の9,158Rでも)ではK=0が最良で
+    # 補正を強めるほど複勝率が単調悪化したため撤回(scripts/rolling_today_impost.py)
     ped = pedigree_score(horse.sire, horse.dam_sire, surface, distance)
     work = workout_score(horse.workouts)
     return {
