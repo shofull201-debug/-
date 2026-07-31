@@ -40,6 +40,16 @@
       "furlongs": 6,
       "total": { "excellent": 80.0, "good": 81.5, "average": 83.5, "slow": 86.0 },
       "last_1f": { "excellent": 11.8, "good": 12.3, "average": 13.0, "slow": 13.8 }
+    },
+    "その他|芝": {
+      "furlongs": 5,
+      "total": { "excellent": 64.5, "good": 66.0, "average": 68.0, "slow": 70.5 },
+      "last_1f": { "excellent": 11.4, "good": 11.9, "average": 12.4, "slow": 13.2 }
+    },
+    "その他|ダ": {
+      "furlongs": 5,
+      "total": { "excellent": 67.0, "good": 69.5, "average": 72.0, "slow": 75.0 },
+      "last_1f": { "excellent": 11.8, "good": 12.3, "average": 12.9, "slow": 13.7 }
     }
   },
   "intensity_bonus": {

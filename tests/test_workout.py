@@ -41,7 +41,7 @@ class TestSingleWorkout:
         assert ahead > behind
 
     def test_unknown_course_is_neutral(self):
-        score = score_single_workout(make_workout(facility="その他", course="ダ"))
+        score = score_single_workout(make_workout(facility="その他", course="プール"))
         assert score == 50.0
 
     def test_furlong_scaling(self):
