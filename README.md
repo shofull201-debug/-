@@ -373,4 +373,6 @@ keiba report        # ライブ成績(◎勝率・回収率)の累計
   中央値集約・z値指数・回収率直接最適化・オッズ帯フィルタ・
   今回斤量補正(2分割では+0.4ptに見えたがローリングWFでK=0が最良、
   斤量差3kg以上のレースに絞っても同傾向 → scripts/rolling_today_impost.py)・
-  追切の期間内ベスト重視ブレンド(最終0.7維持 → scripts/tune_workout_blend.py)
+  追切の期間内ベスト重視ブレンド(最終0.7維持 → scripts/tune_workout_blend.py)・
+  牝馬の牡馬換算(過去走指数への+2kg×2pt加算はローリングWFで全Fold悪化、
+  牡牝混合戦に絞っても換算なしが上 → scripts/rolling_mare_allowance.py)
