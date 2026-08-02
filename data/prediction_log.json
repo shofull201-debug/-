@@ -747,6 +747,14 @@
     "total": 36.17
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "ココナッツブラウン",
+    "コガネノソラ",
+    "ヴーレヴー"
+   ],
+   "win_pay": null,
+   "place_pays": {}
+  }
  }
 ]
