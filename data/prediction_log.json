@@ -635,7 +635,15 @@
     "total": 42.22
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "ピューロマジック",
+    "ロードトレイル",
+    "カウスリップ"
+   ],
+   "win_pay": null,
+   "place_pays": {}
+  }
  },
  {
   "race": {
