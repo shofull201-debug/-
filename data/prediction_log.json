@@ -772,5 +772,96 @@
     "ヴーレヴー": 320
    }
   }
+ },
+ {
+  "race": {
+   "name": "エルムS",
+   "date": "2026-08-08",
+   "course": "札幌",
+   "surface": "ダ",
+   "distance": 1700,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 4,
+    "name": "ナチュラルライズ",
+    "total": 63.1
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 3,
+    "name": "ルクソールカフェ",
+    "total": 54.41
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 5,
+    "name": "テーオーパスワード",
+    "total": 53.11
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 10,
+    "name": "オメガギネス",
+    "total": 52.09
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 11,
+    "name": "ペリエール",
+    "total": 50.49
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 8,
+    "name": "ウェイワードアクト",
+    "total": 50.35
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 6,
+    "name": "ヴァルツァーシャル",
+    "total": 48.86
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 1,
+    "name": "アクションプラン",
+    "total": 46.42
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ヒルノハンブルク",
+    "total": 46.29
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 2,
+    "name": "レヴォントゥレット",
+    "total": 42.38
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 7,
+    "name": "テーオードレフォン",
+    "total": 37.52
+   }
+  ],
+  "result": null
  }
 ]
