@@ -789,77 +789,77 @@
     "mark": "◎",
     "horse_number": 4,
     "name": "ナチュラルライズ",
-    "total": 63.1
+    "total": 68.15
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 3,
     "name": "ルクソールカフェ",
-    "total": 54.41
+    "total": 55.05
    },
    {
     "rank": 3,
     "mark": "▲",
     "horse_number": 5,
     "name": "テーオーパスワード",
-    "total": 53.11
+    "total": 53.85
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 10,
-    "name": "オメガギネス",
-    "total": 52.09
+    "horse_number": 11,
+    "name": "ペリエール",
+    "total": 51.53
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": 11,
-    "name": "ペリエール",
-    "total": 50.49
+    "horse_number": 8,
+    "name": "ウェイワードアクト",
+    "total": 50.27
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 8,
-    "name": "ウェイワードアクト",
-    "total": 50.35
+    "horse_number": 10,
+    "name": "オメガギネス",
+    "total": 49.36
    },
    {
     "rank": 7,
     "mark": "",
     "horse_number": 6,
     "name": "ヴァルツァーシャル",
-    "total": 48.86
+    "total": 48.45
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 1,
-    "name": "アクションプラン",
-    "total": 46.42
+    "horse_number": 9,
+    "name": "ヒルノハンブルク",
+    "total": 46.22
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 9,
-    "name": "ヒルノハンブルク",
-    "total": 46.29
+    "horse_number": 1,
+    "name": "アクションプラン",
+    "total": 44.98
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 2,
-    "name": "レヴォントゥレット",
-    "total": 42.38
+    "horse_number": 7,
+    "name": "テーオードレフォン",
+    "total": 41.7
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 7,
-    "name": "テーオードレフォン",
-    "total": 37.52
+    "horse_number": 2,
+    "name": "レヴォントゥレット",
+    "total": 40.44
    }
   ],
   "result": null
@@ -880,126 +880,224 @@
     "mark": "◎",
     "horse_number": 18,
     "name": "ペプチドヤマト",
-    "total": 61.36
+    "total": 60.3
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 7,
     "name": "ディアナザール",
-    "total": 59.98
+    "total": 59.92
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 3,
-    "name": "レイピア",
-    "total": 57.1
+    "horse_number": 6,
+    "name": "レッドエヴァンス",
+    "total": 56.97
    },
    {
     "rank": 4,
     "mark": "△",
     "horse_number": 14,
     "name": "コウセキ",
-    "total": 56.17
+    "total": 56.59
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": 15,
     "name": "アンクルクロス",
-    "total": 54.91
+    "total": 54.61
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 6,
-    "name": "レッドエヴァンス",
-    "total": 54.87
+    "horse_number": 3,
+    "name": "レイピア",
+    "total": 53.58
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 1,
-    "name": "イツモニコニコ",
-    "total": 49.65
+    "horse_number": 4,
+    "name": "プロトポロス",
+    "total": 53.09
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 10,
-    "name": "ナムラローズマリー",
-    "total": 49.14
+    "horse_number": 17,
+    "name": "タマモイカロス",
+    "total": 49.52
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 4,
-    "name": "プロトポロス",
-    "total": 47.77
+    "horse_number": 16,
+    "name": "アブキールベイ",
+    "total": 47.42
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 5,
-    "name": "ジェニファー",
-    "total": 47.38
+    "horse_number": 1,
+    "name": "イツモニコニコ",
+    "total": 46.6
    },
    {
     "rank": 11,
     "mark": "",
     "horse_number": 9,
     "name": "クラスペディア",
-    "total": 46.67
+    "total": 46.54
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 12,
-    "name": "インビンシブルパパ",
-    "total": 46.65
+    "horse_number": 10,
+    "name": "ナムラローズマリー",
+    "total": 46.4
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 17,
-    "name": "タマモイカロス",
-    "total": 46.32
+    "horse_number": 12,
+    "name": "インビンシブルパパ",
+    "total": 46.27
    },
    {
     "rank": 14,
     "mark": "",
-    "horse_number": 16,
-    "name": "アブキールベイ",
-    "total": 46.13
+    "horse_number": 13,
+    "name": "サンアントワーヌ",
+    "total": 45.58
    },
    {
     "rank": 15,
     "mark": "",
-    "horse_number": 13,
-    "name": "サンアントワーヌ",
-    "total": 45.66
+    "horse_number": 11,
+    "name": "タマモブラックタイ",
+    "total": 45.24
    },
    {
     "rank": 16,
     "mark": "",
     "horse_number": 2,
     "name": "フロムダスク",
-    "total": 44.59
+    "total": 44.69
    },
    {
     "rank": 17,
     "mark": "",
-    "horse_number": 11,
-    "name": "タマモブラックタイ",
-    "total": 42.99
+    "horse_number": 5,
+    "name": "ジェニファー",
+    "total": 44.19
    },
    {
     "rank": 18,
     "mark": "",
     "horse_number": 8,
     "name": "フィオライア",
-    "total": 42.67
+    "total": 42.48
+   }
+  ],
+  "result": null
+ },
+ {
+  "race": {
+   "name": "レパードS",
+   "date": "2026-08-09",
+   "course": "新潟",
+   "surface": "ダ",
+   "distance": 1800,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 11,
+    "name": "パイロマンサー",
+    "total": 64.21
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 5,
+    "name": "マクリール",
+    "total": 59.66
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 7,
+    "name": "パラダイスフェイス",
+    "total": 54.55
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 8,
+    "name": "テンカムテキ",
+    "total": 50.69
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 6,
+    "name": "ドンエレクトス",
+    "total": 49.96
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 12,
+    "name": "メルカントゥール",
+    "total": 47.92
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 2,
+    "name": "ファイアマン",
+    "total": 47.58
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ショウナンバンライ",
+    "total": 47.55
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 4,
+    "name": "チェリヴェント",
+    "total": 46.47
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 3,
+    "name": "ヒシアムルーズ",
+    "total": 46.05
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 1,
+    "name": "オオツカ",
+    "total": 42.91
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 10,
+    "name": "タガノアバンドーネ",
+    "total": 42.47
    }
   ],
   "result": null
