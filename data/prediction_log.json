@@ -789,112 +789,112 @@
     "mark": "◎",
     "horse_number": 10,
     "name": "アドマイヤテラ",
-    "total": 62.32
+    "total": 60.49
    },
    {
     "rank": 2,
     "mark": "○",
     "horse_number": 9,
     "name": "マイネルモーント",
-    "total": 58.4
+    "total": 59.17
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 7,
-    "name": "ショウヘイ",
-    "total": 56.87
+    "horse_number": 6,
+    "name": "ローシャムパーク",
+    "total": 55.91
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 6,
-    "name": "ローシャムパーク",
-    "total": 55.3
+    "horse_number": 7,
+    "name": "ショウヘイ",
+    "total": 55.69
    },
    {
     "rank": 5,
     "mark": "△",
     "horse_number": 13,
     "name": "グランディア",
-    "total": 54.48
+    "total": 53.11
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 1,
-    "name": "オニャンコポン",
-    "total": 52.02
+    "horse_number": 8,
+    "name": "サクラファレル",
+    "total": 52.17
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 2,
-    "name": "イガッチ",
-    "total": 50.65
+    "horse_number": 1,
+    "name": "オニャンコポン",
+    "total": 51.12
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 8,
-    "name": "サクラファレル",
-    "total": 50.24
+    "horse_number": 15,
+    "name": "シェイクユアハート",
+    "total": 51.01
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 15,
-    "name": "シェイクユアハート",
-    "total": 49.43
+    "horse_number": 14,
+    "name": "レディネス",
+    "total": 49.38
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 4,
-    "name": "マジックサンズ",
-    "total": 48.85
+    "horse_number": 2,
+    "name": "イガッチ",
+    "total": 49.26
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 11,
-    "name": "アラタ",
-    "total": 48.25
+    "horse_number": 4,
+    "name": "マジックサンズ",
+    "total": 49.02
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 12,
-    "name": "ゼンダンハヤブサ",
-    "total": 45.37
+    "horse_number": 11,
+    "name": "アラタ",
+    "total": 46.03
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 14,
-    "name": "レディネス",
-    "total": 43.9
+    "horse_number": 5,
+    "name": "エコロヴァルツ",
+    "total": 44.38
    },
    {
     "rank": 14,
     "mark": "",
-    "horse_number": 5,
-    "name": "エコロヴァルツ",
-    "total": 43.5
+    "horse_number": 3,
+    "name": "ピンクジン",
+    "total": 43.1
    },
    {
     "rank": 15,
     "mark": "",
-    "horse_number": 3,
-    "name": "ピンクジン",
-    "total": 42.86
+    "horse_number": 12,
+    "name": "ゼンダンハヤブサ",
+    "total": 42.99
    },
    {
     "rank": 16,
     "mark": "",
     "horse_number": 16,
     "name": "ホウオウビスケッツ",
-    "total": 34.08
+    "total": 37.17
    }
   ],
   "result": null
