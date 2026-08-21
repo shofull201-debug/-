@@ -1,0 +1,409 @@
+{
+  "race": {
+    "name": "新潟2歳S",
+    "date": "2026-08-23",
+    "course": "新潟",
+    "surface": "芝",
+    "distance": 1600,
+    "going": "良",
+    "race_class": "G3"
+  },
+  "horses": [
+    {
+      "name": "シャンデヴァーグ",
+      "sire": "ロードカナロア",
+      "dam_sire": "Le Havre",
+      "weight_carried": 55.0,
+      "jockey": "津村明秀",
+      "trainer": "森一誠",
+      "past_races": [
+        {
+          "date": "2026-06-13",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "良",
+          "time_sec": 98.5,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 7,
+          "race_class": "新馬",
+          "position_4c": 4,
+          "last_3f": 33.4,
+          "last_3f_rel": -0.97
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.9,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-02",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.2,
+          "last_1f": 12.5,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 1
+    },
+    {
+      "name": "レッチュベルク",
+      "sire": "インディチャンプ",
+      "dam_sire": "Galileo",
+      "weight_carried": 55.0,
+      "jockey": "田辺裕信",
+      "trainer": "久保田貴",
+      "past_races": [
+        {
+          "date": "2026-06-20",
+          "course": "東京",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 96.8,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 10,
+          "race_class": "新馬",
+          "position_4c": 3,
+          "last_3f": 33.7,
+          "last_3f_rel": -1.62
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 82.9,
+          "last_1f": 11.3,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-16",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.5,
+          "last_1f": 12.9,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 2
+    },
+    {
+      "name": "トップチェッカー",
+      "sire": "インディチャンプ",
+      "dam_sire": "クロフネ",
+      "weight_carried": 55.0,
+      "jockey": "北村友一",
+      "trainer": "武英智",
+      "past_races": [
+        {
+          "date": "2026-06-21",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1600,
+          "going": "稍重",
+          "time_sec": 97.1,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 9,
+          "race_class": "新馬",
+          "position_4c": 3,
+          "last_3f": 34.3,
+          "last_3f_rel": -0.84
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-21",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 67.1,
+          "last_1f": 16.0,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-15",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.3,
+          "last_1f": 12.3,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 3
+    },
+    {
+      "name": "アイデアルカット",
+      "sire": "ロジャーバローズ",
+      "dam_sire": "スウェプトオーヴァーボード",
+      "weight_carried": 55.0,
+      "jockey": "嶋田純次",
+      "trainer": "手塚貴徳",
+      "past_races": [
+        {
+          "date": "2026-06-27",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "良",
+          "time_sec": 70.7,
+          "weight_carried": 55.0,
+          "finish_position": 7,
+          "field_size": 11,
+          "race_class": "新馬",
+          "position_4c": 4,
+          "last_3f": 35.8,
+          "last_3f_rel": -0.48
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-21",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 71.2,
+          "last_1f": 17.5,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-13",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 82.4,
+          "last_1f": 11.4,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 4
+    },
+    {
+      "name": "エレスレイプニル",
+      "sire": "ハイランドリール",
+      "dam_sire": "Flower Alley",
+      "weight_carried": 55.0,
+      "jockey": "木幡育也",
+      "trainer": "杉浦宏昭",
+      "past_races": [
+        {
+          "date": "2026-07-05",
+          "course": "福島",
+          "surface": "芝",
+          "distance": 1200,
+          "going": "良",
+          "time_sec": 71.9,
+          "weight_carried": 55.0,
+          "finish_position": 10,
+          "field_size": 13,
+          "race_class": "新馬",
+          "position_4c": 9,
+          "last_3f": 35.9,
+          "last_3f_rel": -0.28
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-21",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 68.3,
+          "last_1f": 16.9,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 89.7,
+          "last_1f": 11.6,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 5
+    },
+    {
+      "name": "マインドフルネス",
+      "sire": "ダノンバラード",
+      "dam_sire": "フェノーメノ",
+      "weight_carried": 55.0,
+      "jockey": "菊沢一樹",
+      "trainer": "村田一誠",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 83.0,
+          "last_1f": 11.8,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-06",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 55.1,
+          "last_1f": 12.2,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 6
+    },
+    {
+      "name": "トウシンマジック",
+      "sire": "モズアスコット",
+      "dam_sire": "エンパイアメーカー",
+      "weight_carried": 55.0,
+      "jockey": "コレット",
+      "trainer": "秋本大介",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-08-21",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 66.6,
+          "last_1f": 15.1,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-12",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 81.2,
+          "last_1f": 11.6,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 7
+    },
+    {
+      "name": "マイホームパパ",
+      "sire": "ミッキーグローリー",
+      "dam_sire": "ストーミングホーム",
+      "weight_carried": 55.0,
+      "jockey": "江田照男",
+      "trainer": "深山雅史",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 85.3,
+          "last_1f": 12.4,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-05",
+          "facility": "美浦",
+          "course": "W",
+          "furlongs": 6,
+          "total_time": 86.6,
+          "last_1f": 12.1,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 8
+    },
+    {
+      "name": "スイートアリッサム",
+      "sire": "ステルヴィオ",
+      "dam_sire": "ハーツクライ",
+      "weight_carried": 55.0,
+      "jockey": "杉原誠人",
+      "trainer": "大和田成",
+      "past_races": [],
+      "workouts": [
+        {
+          "date": "2026-08-19",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 54.7,
+          "last_1f": 12.3,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-16",
+          "facility": "美浦",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 57.0,
+          "last_1f": 13.1,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 9
+    },
+    {
+      "name": "インカルナータ",
+      "sire": "エフフォーリア",
+      "dam_sire": "フジキセキ",
+      "weight_carried": 55.0,
+      "jockey": "坂井瑠星",
+      "trainer": "西園翔太",
+      "past_races": [
+        {
+          "date": "2026-06-14",
+          "course": "阪神",
+          "surface": "芝",
+          "distance": 1800,
+          "going": "良",
+          "time_sec": 108.3,
+          "weight_carried": 55.0,
+          "finish_position": 1,
+          "field_size": 8,
+          "race_class": "新馬",
+          "position_4c": 1,
+          "last_3f": 33.2,
+          "last_3f_rel": -0.7
+        }
+      ],
+      "workouts": [
+        {
+          "date": "2026-08-21",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 69.0,
+          "last_1f": 16.6,
+          "intensity": "馬なり"
+        },
+        {
+          "date": "2026-08-12",
+          "facility": "栗東",
+          "course": "坂路",
+          "furlongs": 4,
+          "total_time": 53.0,
+          "last_1f": 12.6,
+          "intensity": "馬なり"
+        }
+      ],
+      "horse_number": 10
+    }
+  ]
+}

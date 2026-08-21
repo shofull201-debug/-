@@ -15,7 +15,7 @@
    "dam_sire": "Storm Cat",
    "weight_carried": 55.0,
    "jockey": "浜中俊",
-   "trainer": null,
+   "trainer": "長谷川浩",
    "past_races": [
     {
      "date": "2026-05-17",
@@ -143,7 +143,7 @@
    "dam_sire": "ロージズインメイ",
    "weight_carried": 57.0,
    "jockey": "レーン",
-   "trainer": null,
+   "trainer": "田島俊明",
    "past_races": [
     {
      "date": "2026-06-13",
@@ -270,7 +270,7 @@
    "dam_sire": "ヴィクトワールピサ",
    "weight_carried": 58.0,
    "jockey": "松山弘平",
-   "trainer": null,
+   "trainer": "橋口慎介",
    "past_races": [
     {
      "date": "2026-06-07",
@@ -392,7 +392,7 @@
    "dam_sire": "ハーツクライ",
    "weight_carried": 57.0,
    "jockey": "富田暁",
-   "trainer": null,
+   "trainer": "武英智",
    "past_races": [
     {
      "date": "2026-06-13",
@@ -544,7 +544,7 @@
    "dam_sire": "ディープインパクト",
    "weight_carried": 57.0,
    "jockey": "ロイド",
-   "trainer": null,
+   "trainer": "池江泰寿",
    "past_races": [
     {
      "date": "2026-04-04",
@@ -681,7 +681,7 @@
    "dam_sire": "キングヘイロー",
    "weight_carried": 57.0,
    "jockey": "吉村智洋",
-   "trainer": null,
+   "trainer": "清水久詞",
    "past_races": [
     {
      "date": "2026-06-13",
@@ -823,7 +823,7 @@
    "dam_sire": "ロージズインメイ",
    "weight_carried": 57.0,
    "jockey": "Rヘルナン",
-   "trainer": null,
+   "trainer": "室井潔",
    "past_races": [
     {
      "date": "2025-10-04",
@@ -906,7 +906,7 @@
    "dam_sire": "マイネルラヴ",
    "weight_carried": 59.0,
    "jockey": "三浦皇成",
-   "trainer": null,
+   "trainer": "鹿戸雄一",
    "past_races": [
     {
      "date": "2026-03-29",
@@ -1058,7 +1058,7 @@
    "dam_sire": "ダンスインザダーク",
    "weight_carried": 55.0,
    "jockey": "ナレドゥ",
-   "trainer": null,
+   "trainer": "浜田多実",
    "past_races": [
     {
      "date": "2026-07-05",
@@ -1190,7 +1190,7 @@
    "dam_sire": "Holy Roman Emperor",
    "weight_carried": 57.0,
    "jockey": "池添謙一",
-   "trainer": null,
+   "trainer": "藤原英昭",
    "past_races": [
     {
      "date": "2026-06-13",
@@ -1287,7 +1287,7 @@
    "dam_sire": "Galileo",
    "weight_carried": 57.0,
    "jockey": "ルメール",
-   "trainer": null,
+   "trainer": "武幸四郎",
    "past_races": [
     {
      "date": "2026-03-08",
@@ -1394,7 +1394,7 @@
    "dam_sire": "Invincible Spirit",
    "weight_carried": 57.0,
    "jockey": "岩田康誠",
-   "trainer": null,
+   "trainer": "尾関知人",
    "past_races": [
     {
      "date": "2025-09-07",
@@ -1516,7 +1516,7 @@
    "dam_sire": "ハーツクライ",
    "weight_carried": 55.0,
    "jockey": "丹内祐次",
-   "trainer": null,
+   "trainer": "尾形和幸",
    "past_races": [
     {
      "date": "2026-06-06",
@@ -1613,7 +1613,7 @@
    "dam_sire": "ケイムホーム",
    "weight_carried": 55.0,
    "jockey": "武豊",
-   "trainer": null,
+   "trainer": "武英智",
    "past_races": [
     {
      "date": "2026-07-05",
@@ -1750,7 +1750,7 @@
    "dam_sire": "キングカメハメハ",
    "weight_carried": 55.0,
    "jockey": "川又賢治",
-   "trainer": null,
+   "trainer": "大久保龍",
    "past_races": [
     {
      "date": "2026-05-30",
@@ -1841,7 +1841,7 @@
    "dam_sire": "War Front",
    "weight_carried": 57.0,
    "jockey": "岩田望来",
-   "trainer": null,
+   "trainer": "友道康夫",
    "past_races": [
     {
      "date": "2026-04-12",
