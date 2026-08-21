@@ -1406,5 +1406,131 @@
     "レディネス": 970
    }
   }
+ },
+ {
+  "race": {
+   "name": "キーンランドC",
+   "date": "2026-08-23",
+   "course": "札幌",
+   "surface": "芝",
+   "distance": 1200,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": null,
+    "name": "ルシード",
+    "total": 57.52
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": null,
+    "name": "リラエンブレム",
+    "total": 56.64
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": null,
+    "name": "ロジケープ",
+    "total": 55.29
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": null,
+    "name": "パンジャタワー",
+    "total": 54.6
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": null,
+    "name": "レッドアヴァンティ",
+    "total": 53.34
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": null,
+    "name": "エーティーマクフィ",
+    "total": 52.79
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": null,
+    "name": "ウインカーネリアン",
+    "total": 52.66
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": null,
+    "name": "ゾンニッヒ",
+    "total": 52.31
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": null,
+    "name": "ジョーメッドヴィン",
+    "total": 50.05
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": null,
+    "name": "ロードフォアエース",
+    "total": 48.8
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": null,
+    "name": "イツモニコニコ",
+    "total": 48.46
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": null,
+    "name": "ダノンマッキンリー",
+    "total": 47.67
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": null,
+    "name": "ナムラクララ",
+    "total": 47.25
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": null,
+    "name": "サウンドモリアーナ",
+    "total": 45.34
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": null,
+    "name": "エイシンディード",
+    "total": 42.73
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": null,
+    "name": "マイネルジェロディ",
+    "total": 34.16
+   }
+  ],
+  "result": null
  }
 ]
