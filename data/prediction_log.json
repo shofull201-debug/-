@@ -1421,112 +1421,112 @@
    {
     "rank": 1,
     "mark": "◎",
-    "horse_number": null,
-    "name": "ルシード",
-    "total": 57.52
+    "horse_number": 11,
+    "name": "リラエンブレム",
+    "total": 59.27
    },
    {
     "rank": 2,
     "mark": "○",
-    "horse_number": null,
-    "name": "リラエンブレム",
-    "total": 56.64
+    "horse_number": 2,
+    "name": "ルシード",
+    "total": 58.76
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": null,
-    "name": "ロジケープ",
-    "total": 55.29
+    "horse_number": 3,
+    "name": "パンジャタワー",
+    "total": 54.56
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": null,
-    "name": "パンジャタワー",
-    "total": 54.6
+    "horse_number": 13,
+    "name": "ロジケープ",
+    "total": 53.76
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": null,
-    "name": "レッドアヴァンティ",
-    "total": 53.34
-   },
-   {
-    "rank": 6,
-    "mark": "",
-    "horse_number": null,
-    "name": "エーティーマクフィ",
-    "total": 52.79
-   },
-   {
-    "rank": 7,
-    "mark": "",
-    "horse_number": null,
-    "name": "ウインカーネリアン",
-    "total": 52.66
-   },
-   {
-    "rank": 8,
-    "mark": "",
-    "horse_number": null,
+    "horse_number": 5,
     "name": "ゾンニッヒ",
     "total": 52.31
    },
    {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 8,
+    "name": "ウインカーネリアン",
+    "total": 51.97
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 12,
+    "name": "レッドアヴァンティ",
+    "total": 51.62
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 4,
+    "name": "エーティーマクフィ",
+    "total": 50.48
+   },
+   {
     "rank": 9,
     "mark": "",
-    "horse_number": null,
-    "name": "ジョーメッドヴィン",
-    "total": 50.05
+    "horse_number": 16,
+    "name": "ロードフォアエース",
+    "total": 49.68
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": null,
-    "name": "ロードフォアエース",
-    "total": 48.8
-   },
-   {
-    "rank": 11,
-    "mark": "",
-    "horse_number": null,
+    "horse_number": 9,
     "name": "イツモニコニコ",
     "total": 48.46
    },
    {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 6,
+    "name": "ジョーメッドヴィン",
+    "total": 47.65
+   },
+   {
     "rank": 12,
     "mark": "",
-    "horse_number": null,
-    "name": "ダノンマッキンリー",
-    "total": 47.67
+    "horse_number": 1,
+    "name": "ナムラクララ",
+    "total": 47.49
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": null,
-    "name": "ナムラクララ",
-    "total": 47.25
+    "horse_number": 10,
+    "name": "ダノンマッキンリー",
+    "total": 47.44
    },
    {
     "rank": 14,
     "mark": "",
-    "horse_number": null,
+    "horse_number": 14,
     "name": "サウンドモリアーナ",
-    "total": 45.34
+    "total": 47.33
    },
    {
     "rank": 15,
     "mark": "",
-    "horse_number": null,
+    "horse_number": 15,
     "name": "エイシンディード",
-    "total": 42.73
+    "total": 41.74
    },
    {
     "rank": 16,
     "mark": "",
-    "horse_number": null,
+    "horse_number": 7,
     "name": "マイネルジェロディ",
     "total": 34.16
    }
