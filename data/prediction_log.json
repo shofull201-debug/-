@@ -149,126 +149,115 @@
  },
  {
   "race": {
-   "name": "関屋記念",
+   "name": "札幌日経賞",
    "date": "2026-07-26",
-   "course": "新潟",
+   "course": "札幌",
    "surface": "芝",
-   "distance": 1600,
-   "going": "不良",
-   "race_class": "G3"
+   "distance": 2600,
+   "going": "良",
+   "race_class": "L"
   },
   "picks": [
    {
     "rank": 1,
     "mark": "◎",
-    "horse_number": 3,
-    "name": "アンパドゥ",
-    "total": 61.45
+    "horse_number": 8,
+    "name": "レッドテリオス",
+    "total": 58.09
    },
    {
     "rank": 2,
     "mark": "○",
-    "horse_number": 4,
-    "name": "マテンロウスカイ",
-    "total": 58.39
+    "horse_number": 10,
+    "name": "バルナバ",
+    "total": 56.23
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 13,
-    "name": "ブエナオンダ",
-    "total": 53.82
+    "horse_number": 5,
+    "name": "コーチェラバレー",
+    "total": 54.47
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 12,
-    "name": "ランスオブカオス",
-    "total": 53.6
+    "horse_number": 9,
+    "name": "エコロレイズ",
+    "total": 54.41
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": 8,
-    "name": "ダノンセンチュリー",
-    "total": 51.67
+    "horse_number": 2,
+    "name": "ミラージュナイト",
+    "total": 53.93
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 14,
-    "name": "メタルスピード",
-    "total": 49.92
+    "horse_number": 1,
+    "name": "スピードリッチ",
+    "total": 53.06
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 1,
-    "name": "ファーヴェント",
-    "total": 49.86
+    "horse_number": 3,
+    "name": "レクスノヴァス",
+    "total": 52.92
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 10,
-    "name": "クランフォード",
-    "total": 49.55
+    "horse_number": 12,
+    "name": "ラスカンブレス",
+    "total": 51.94
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 5,
-    "name": "レディマリオン",
-    "total": 48.75
+    "horse_number": 11,
+    "name": "アマキヒ",
+    "total": 46.93
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 7,
-    "name": "エルトンバローズ",
-    "total": 47.78
+    "horse_number": 4,
+    "name": "ギャンブルルーム",
+    "total": 46.53
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 2,
-    "name": "ジュタ",
-    "total": 45.05
+    "horse_number": 7,
+    "name": "ブレイヴロッカー",
+    "total": 45.35
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 11,
-    "name": "ドロップオブライト",
-    "total": 44.32
+    "horse_number": 6,
+    "name": "パトリックハンサム",
+    "total": 38.14
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 9,
-    "name": "サンダーストラック",
-    "total": 43.6
-   },
-   {
-    "rank": 14,
-    "mark": "",
-    "horse_number": 6,
-    "name": "シリウスコルト",
-    "total": 42.23
+    "horse_number": 13,
+    "name": "ホールネス",
+    "total": 37.75
    }
   ],
   "result": {
    "order": [
-    "アンパドゥ",
-    "クランフォード",
-    "ファーヴェント"
+    "ミラージュナイト",
+    "ホールネス",
+    "ギャンブルルーム"
    ],
-   "win_pay": 480,
-   "place_pays": {
-    "アンパドゥ": 210,
-    "クランフォード": 310,
-    "ファーヴェント": 300
-   }
+   "win_pay": 210,
+   "place_pays": {}
   }
  },
  {
@@ -393,115 +382,126 @@
  },
  {
   "race": {
-   "name": "札幌日経賞",
+   "name": "関屋記念",
    "date": "2026-07-26",
-   "course": "札幌",
+   "course": "新潟",
    "surface": "芝",
-   "distance": 2600,
-   "going": "良",
-   "race_class": "L"
+   "distance": 1600,
+   "going": "不良",
+   "race_class": "G3"
   },
   "picks": [
    {
     "rank": 1,
     "mark": "◎",
-    "horse_number": 8,
-    "name": "レッドテリオス",
-    "total": 58.09
+    "horse_number": 3,
+    "name": "アンパドゥ",
+    "total": 61.45
    },
    {
     "rank": 2,
     "mark": "○",
-    "horse_number": 10,
-    "name": "バルナバ",
-    "total": 56.23
+    "horse_number": 4,
+    "name": "マテンロウスカイ",
+    "total": 58.39
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 5,
-    "name": "コーチェラバレー",
-    "total": 54.47
+    "horse_number": 13,
+    "name": "ブエナオンダ",
+    "total": 53.82
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 9,
-    "name": "エコロレイズ",
-    "total": 54.41
+    "horse_number": 12,
+    "name": "ランスオブカオス",
+    "total": 53.6
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": 2,
-    "name": "ミラージュナイト",
-    "total": 53.93
+    "horse_number": 8,
+    "name": "ダノンセンチュリー",
+    "total": 51.67
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 1,
-    "name": "スピードリッチ",
-    "total": 53.06
+    "horse_number": 14,
+    "name": "メタルスピード",
+    "total": 49.92
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 3,
-    "name": "レクスノヴァス",
-    "total": 52.92
+    "horse_number": 1,
+    "name": "ファーヴェント",
+    "total": 49.86
    },
    {
     "rank": 8,
     "mark": "",
-    "horse_number": 12,
-    "name": "ラスカンブレス",
-    "total": 51.94
+    "horse_number": 10,
+    "name": "クランフォード",
+    "total": 49.55
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 11,
-    "name": "アマキヒ",
-    "total": 46.93
+    "horse_number": 5,
+    "name": "レディマリオン",
+    "total": 48.75
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 4,
-    "name": "ギャンブルルーム",
-    "total": 46.53
+    "horse_number": 7,
+    "name": "エルトンバローズ",
+    "total": 47.78
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 7,
-    "name": "ブレイヴロッカー",
-    "total": 45.35
+    "horse_number": 2,
+    "name": "ジュタ",
+    "total": 45.05
    },
    {
     "rank": 12,
     "mark": "",
-    "horse_number": 6,
-    "name": "パトリックハンサム",
-    "total": 38.14
+    "horse_number": 11,
+    "name": "ドロップオブライト",
+    "total": 44.32
    },
    {
     "rank": 13,
     "mark": "",
-    "horse_number": 13,
-    "name": "ホールネス",
-    "total": 37.75
+    "horse_number": 9,
+    "name": "サンダーストラック",
+    "total": 43.6
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 6,
+    "name": "シリウスコルト",
+    "total": 42.23
    }
   ],
   "result": {
    "order": [
-    "ミラージュナイト",
-    "ホールネス",
-    "ギャンブルルーム"
+    "アンパドゥ",
+    "クランフォード",
+    "ファーヴェント"
    ],
-   "win_pay": 210,
-   "place_pays": {}
+   "win_pay": 480,
+   "place_pays": {
+    "アンパドゥ": 210,
+    "クランフォード": 310,
+    "ファーヴェント": 300
+   }
   }
  },
  {
@@ -775,6 +775,502 @@
  },
  {
   "race": {
+   "name": "エルムS",
+   "date": "2026-08-08",
+   "course": "札幌",
+   "surface": "ダ",
+   "distance": 1700,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 4,
+    "name": "ナチュラルライズ",
+    "total": 68.15
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 3,
+    "name": "ルクソールカフェ",
+    "total": 55.05
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 5,
+    "name": "テーオーパスワード",
+    "total": 53.85
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 11,
+    "name": "ペリエール",
+    "total": 51.53
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 8,
+    "name": "ウェイワードアクト",
+    "total": 50.27
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 10,
+    "name": "オメガギネス",
+    "total": 49.36
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 6,
+    "name": "ヴァルツァーシャル",
+    "total": 48.45
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ヒルノハンブルク",
+    "total": 46.22
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 1,
+    "name": "アクションプラン",
+    "total": 44.98
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 7,
+    "name": "テーオードレフォン",
+    "total": 41.7
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 2,
+    "name": "レヴォントゥレット",
+    "total": 40.44
+   }
+  ],
+  "result": {
+   "order": [
+    "ルクソールカフェ",
+    "ペリエール",
+    "テーオーパスワード"
+   ],
+   "win_pay": 500,
+   "place_pays": {
+    "ルクソールカフェ": 200,
+    "ペリエール": 190,
+    "テーオーパスワード": 170
+   }
+  }
+ },
+ {
+  "race": {
+   "name": "CBC賞",
+   "date": "2026-08-09",
+   "course": "中京",
+   "surface": "芝",
+   "distance": 1200,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 18,
+    "name": "ペプチドヤマト",
+    "total": 60.3
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 7,
+    "name": "ディアナザール",
+    "total": 59.92
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 6,
+    "name": "レッドエヴァンス",
+    "total": 56.97
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 14,
+    "name": "コウセキ",
+    "total": 56.59
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 15,
+    "name": "アンクルクロス",
+    "total": 54.61
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 3,
+    "name": "レイピア",
+    "total": 53.58
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 4,
+    "name": "プロトポロス",
+    "total": 53.09
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 17,
+    "name": "タマモイカロス",
+    "total": 49.52
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 16,
+    "name": "アブキールベイ",
+    "total": 47.42
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 1,
+    "name": "イツモニコニコ",
+    "total": 46.6
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 9,
+    "name": "クラスペディア",
+    "total": 46.54
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 10,
+    "name": "ナムラローズマリー",
+    "total": 46.4
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": 12,
+    "name": "インビンシブルパパ",
+    "total": 46.27
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 13,
+    "name": "サンアントワーヌ",
+    "total": 45.58
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": 11,
+    "name": "タマモブラックタイ",
+    "total": 45.24
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": 2,
+    "name": "フロムダスク",
+    "total": 44.69
+   },
+   {
+    "rank": 17,
+    "mark": "",
+    "horse_number": 5,
+    "name": "ジェニファー",
+    "total": 44.19
+   },
+   {
+    "rank": 18,
+    "mark": "",
+    "horse_number": 8,
+    "name": "フィオライア",
+    "total": 42.48
+   }
+  ],
+  "result": {
+   "order": [
+    "フロムダスク",
+    "レイピア",
+    "レッドエヴァンス"
+   ],
+   "win_pay": 3510,
+   "place_pays": {
+    "フロムダスク": 640,
+    "レイピア": 190,
+    "レッドエヴァンス": 250
+   }
+  }
+ },
+ {
+  "race": {
+   "name": "レパードS",
+   "date": "2026-08-09",
+   "course": "新潟",
+   "surface": "ダ",
+   "distance": 1800,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 11,
+    "name": "パイロマンサー",
+    "total": 64.21
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 5,
+    "name": "マクリール",
+    "total": 59.66
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 7,
+    "name": "パラダイスフェイス",
+    "total": 54.55
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 8,
+    "name": "テンカムテキ",
+    "total": 50.69
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 6,
+    "name": "ドンエレクトス",
+    "total": 49.96
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 12,
+    "name": "メルカントゥール",
+    "total": 47.92
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 2,
+    "name": "ファイアマン",
+    "total": 47.58
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ショウナンバンライ",
+    "total": 47.55
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 4,
+    "name": "チェリヴェント",
+    "total": 46.47
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 3,
+    "name": "ヒシアムルーズ",
+    "total": 46.05
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 1,
+    "name": "オオツカ",
+    "total": 42.91
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 10,
+    "name": "タガノアバンドーネ",
+    "total": 42.47
+   }
+  ],
+  "result": {
+   "order": [
+    "チェリヴェント",
+    "パイロマンサー",
+    "メルカントゥール"
+   ],
+   "win_pay": 2080,
+   "place_pays": {
+    "チェリヴェント": 400,
+    "パイロマンサー": 190,
+    "メルカントゥール": 130
+   }
+  }
+ },
+ {
+  "race": {
+   "name": "中京記念",
+   "date": "2026-08-16",
+   "course": "中京",
+   "surface": "芝",
+   "distance": 1600,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 9,
+    "name": "リリージョワ",
+    "total": 60.57
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 5,
+    "name": "ミニトランザット",
+    "total": 57.91
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 8,
+    "name": "スイープアワーズ",
+    "total": 54.7
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 13,
+    "name": "ミナデオロ",
+    "total": 54.24
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 4,
+    "name": "カズミクラーシュ",
+    "total": 53.98
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 12,
+    "name": "サトノシャイニング",
+    "total": 52.72
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 15,
+    "name": "カンシン",
+    "total": 50.39
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 1,
+    "name": "ブエナオンダ",
+    "total": 50.29
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 6,
+    "name": "キープカルム",
+    "total": 47.27
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 10,
+    "name": "ナムラコスモス",
+    "total": 47.0
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 2,
+    "name": "ファントムシーフ",
+    "total": 46.71
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 7,
+    "name": "カネラフィーナ",
+    "total": 44.52
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": 3,
+    "name": "ラヴァンダ",
+    "total": 43.81
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 11,
+    "name": "チェルビアット",
+    "total": 43.8
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": 14,
+    "name": "ショウナンアデイブ",
+    "total": 42.11
+   }
+  ],
+  "result": {
+   "order": [
+    "ラヴァンダ",
+    "ミニトランザット",
+    "サトノシャイニング"
+   ],
+   "win_pay": 580,
+   "place_pays": {
+    "ラヴァンダ": 170,
+    "ミニトランザット": 230,
+    "サトノシャイニング": 150
+   }
+  }
+ },
+ {
+  "race": {
    "name": "札幌記念",
    "date": "2026-08-16",
    "course": "札幌",
@@ -897,125 +1393,18 @@
     "total": 37.17
    }
   ],
-  "result": null
- },
- {
-  "race": {
-   "name": "中京記念",
-   "date": "2026-08-16",
-   "course": "中京",
-   "surface": "芝",
-   "distance": 1600,
-   "going": "良",
-   "race_class": "G3"
-  },
-  "picks": [
-   {
-    "rank": 1,
-    "mark": "◎",
-    "horse_number": 9,
-    "name": "リリージョワ",
-    "total": 60.57
-   },
-   {
-    "rank": 2,
-    "mark": "○",
-    "horse_number": 5,
-    "name": "ミニトランザット",
-    "total": 57.91
-   },
-   {
-    "rank": 3,
-    "mark": "▲",
-    "horse_number": 8,
-    "name": "スイープアワーズ",
-    "total": 54.7
-   },
-   {
-    "rank": 4,
-    "mark": "△",
-    "horse_number": 13,
-    "name": "ミナデオロ",
-    "total": 54.24
-   },
-   {
-    "rank": 5,
-    "mark": "△",
-    "horse_number": 4,
-    "name": "カズミクラーシュ",
-    "total": 53.98
-   },
-   {
-    "rank": 6,
-    "mark": "",
-    "horse_number": 12,
-    "name": "サトノシャイニング",
-    "total": 52.72
-   },
-   {
-    "rank": 7,
-    "mark": "",
-    "horse_number": 15,
-    "name": "カンシン",
-    "total": 50.39
-   },
-   {
-    "rank": 8,
-    "mark": "",
-    "horse_number": 1,
-    "name": "ブエナオンダ",
-    "total": 50.29
-   },
-   {
-    "rank": 9,
-    "mark": "",
-    "horse_number": 6,
-    "name": "キープカルム",
-    "total": 47.27
-   },
-   {
-    "rank": 10,
-    "mark": "",
-    "horse_number": 10,
-    "name": "ナムラコスモス",
-    "total": 47.0
-   },
-   {
-    "rank": 11,
-    "mark": "",
-    "horse_number": 2,
-    "name": "ファントムシーフ",
-    "total": 46.71
-   },
-   {
-    "rank": 12,
-    "mark": "",
-    "horse_number": 7,
-    "name": "カネラフィーナ",
-    "total": 44.52
-   },
-   {
-    "rank": 13,
-    "mark": "",
-    "horse_number": 3,
-    "name": "ラヴァンダ",
-    "total": 43.81
-   },
-   {
-    "rank": 14,
-    "mark": "",
-    "horse_number": 11,
-    "name": "チェルビアット",
-    "total": 43.8
-   },
-   {
-    "rank": 15,
-    "mark": "",
-    "horse_number": 14,
-    "name": "ショウナンアデイブ",
-    "total": 42.11
+  "result": {
+   "order": [
+    "シェイクユアハート",
+    "サクラファレル",
+    "レディネス"
+   ],
+   "win_pay": 680,
+   "place_pays": {
+    "シェイクユアハート": 260,
+    "サクラファレル": 320,
+    "レディネス": 970
    }
-  ],
-  "result": null
+  }
  }
 ]
