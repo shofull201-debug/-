@@ -1616,5 +1616,145 @@
    }
   ],
   "result": null
+ },
+ {
+  "race": {
+   "name": "朱鷺S",
+   "date": "2026-08-22",
+   "course": "新潟",
+   "surface": "芝",
+   "distance": 1400,
+   "going": "良",
+   "race_class": "OP"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 18,
+    "name": "タガノアラリア",
+    "total": 60.43
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 9,
+    "name": "クルゼイロドスル",
+    "total": 57.78
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 5,
+    "name": "ガロンヌ",
+    "total": 55.74
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 10,
+    "name": "レッドシュヴェルト",
+    "total": 55.59
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 6,
+    "name": "セフィロ",
+    "total": 55.11
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 1,
+    "name": "ララマセラシオン",
+    "total": 54.73
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 13,
+    "name": "アルテヴェローチェ",
+    "total": 54.09
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 2,
+    "name": "グレイイングリーン",
+    "total": 53.62
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 14,
+    "name": "ランフォーヴァウ",
+    "total": 53.45
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 3,
+    "name": "ヤブサメ",
+    "total": 53.14
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 11,
+    "name": "デイトナモード",
+    "total": 49.26
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 8,
+    "name": "タガノエルピーダ",
+    "total": 47.96
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": 12,
+    "name": "レディマリオン",
+    "total": 46.91
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 16,
+    "name": "ショウナンザナドゥ",
+    "total": 44.13
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": 17,
+    "name": "マサノカナリア",
+    "total": 43.52
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": 15,
+    "name": "スリールミニョン",
+    "total": 39.12
+   },
+   {
+    "rank": 17,
+    "mark": "",
+    "horse_number": 4,
+    "name": "ビーアストニッシド",
+    "total": 38.1
+   },
+   {
+    "rank": 18,
+    "mark": "",
+    "horse_number": 7,
+    "name": "カルチャーデイ",
+    "total": 37.32
+   }
+  ],
+  "result": null
  }
 ]
