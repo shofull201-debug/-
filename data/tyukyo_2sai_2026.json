@@ -11,8 +11,8 @@
  "horses": [
   {
    "name": "ピコキング",
-   "sire": "",
-   "dam_sire": null,
+   "sire": "Nashville",
+   "dam_sire": "War Pass",
    "weight_carried": 55.0,
    "jockey": "田口貫太",
    "trainer": "森秀行",
@@ -243,8 +243,8 @@
   },
   {
    "name": "ジャスパートレノ",
-   "sire": "",
-   "dam_sire": null,
+   "sire": "Mitole",
+   "dam_sire": "Mineshaft",
    "weight_carried": 55.0,
    "jockey": "中井裕二",
    "trainer": "森秀行",
@@ -321,8 +321,8 @@
   },
   {
    "name": "ピコジャック",
-   "sire": "",
-   "dam_sire": null,
+   "sire": "Jack Christopher",
+   "dam_sire": "Practical Joke",
    "weight_carried": 55.0,
    "jockey": "吉村誠之",
    "trainer": "森秀行",
