@@ -1853,5 +1853,82 @@
    }
   ],
   "result": null
+ },
+ {
+  "race": {
+   "name": "中京2歳S",
+   "date": "2026-08-30",
+   "course": "中京",
+   "surface": "芝",
+   "distance": 1400,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 9,
+    "name": "ジーティーマイカ",
+    "total": 64.05
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 4,
+    "name": "シスキンブルーム",
+    "total": 51.14
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 3,
+    "name": "サンタンジェロ",
+    "total": 50.54
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 7,
+    "name": "ビスケットサンド",
+    "total": 49.46
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 2,
+    "name": "バクソウシャチョウ",
+    "total": 46.92
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 5,
+    "name": "マルモリムソウ",
+    "total": 46.42
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 8,
+    "name": "ピコジャック",
+    "total": 45.27
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 6,
+    "name": "ジャスパートレノ",
+    "total": 44.93
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 1,
+    "name": "ピコキング",
+    "total": 38.48
+   }
+  ],
+  "result": null
  }
 ]
