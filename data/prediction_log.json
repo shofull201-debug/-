@@ -1779,77 +1779,77 @@
     "mark": "◎",
     "horse_number": 3,
     "name": "ロデオドライブ",
-    "total": 62.47
+    "total": 60.73
    },
    {
     "rank": 2,
     "mark": "○",
-    "horse_number": 1,
-    "name": "ボーンディスウェイ",
-    "total": 53.09
+    "horse_number": 8,
+    "name": "ダノンシーマ",
+    "total": 52.87
    },
    {
     "rank": 3,
     "mark": "▲",
-    "horse_number": 8,
-    "name": "ダノンシーマ",
-    "total": 53.07
+    "horse_number": 2,
+    "name": "サヴォーナ",
+    "total": 51.87
    },
    {
     "rank": 4,
     "mark": "△",
-    "horse_number": 4,
-    "name": "ドゥレッツァ",
-    "total": 52.94
+    "horse_number": 1,
+    "name": "ボーンディスウェイ",
+    "total": 51.31
    },
    {
     "rank": 5,
     "mark": "△",
-    "horse_number": 2,
-    "name": "サヴォーナ",
-    "total": 52.71
+    "horse_number": 4,
+    "name": "ドゥレッツァ",
+    "total": 51.14
    },
    {
     "rank": 6,
     "mark": "",
-    "horse_number": 7,
-    "name": "ジュンブロッサム",
-    "total": 48.03
+    "horse_number": 5,
+    "name": "ゾロアストロ",
+    "total": 48.34
    },
    {
     "rank": 7,
     "mark": "",
-    "horse_number": 5,
-    "name": "ゾロアストロ",
-    "total": 47.61
+    "horse_number": 9,
+    "name": "アーバンシック",
+    "total": 47.65
    },
    {
     "rank": 8,
     "mark": "",
     "horse_number": 10,
     "name": "バレエマスター",
-    "total": 47.44
+    "total": 47.32
    },
    {
     "rank": 9,
     "mark": "",
-    "horse_number": 6,
-    "name": "チェルヴィニア",
-    "total": 45.47
+    "horse_number": 11,
+    "name": "ステレンボッシュ",
+    "total": 46.54
    },
    {
     "rank": 10,
     "mark": "",
-    "horse_number": 11,
-    "name": "ステレンボッシュ",
-    "total": 44.61
+    "horse_number": 7,
+    "name": "ジュンブロッサム",
+    "total": 46.52
    },
    {
     "rank": 11,
     "mark": "",
-    "horse_number": 9,
-    "name": "アーバンシック",
-    "total": 42.56
+    "horse_number": 6,
+    "name": "チェルヴィニア",
+    "total": 45.71
    }
   ],
   "result": null
