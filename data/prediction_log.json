@@ -1615,7 +1615,13 @@
     "total": 39.94
    }
   ],
-  "result": null
+  "result": {
+   "order": [
+    "レッチュベルク"
+   ],
+   "win_pay": null,
+   "place_pays": {}
+  }
  },
  {
   "race": {
@@ -1753,6 +1759,97 @@
     "horse_number": 7,
     "name": "カルチャーデイ",
     "total": 37.32
+   }
+  ],
+  "result": null
+ },
+ {
+  "race": {
+   "name": "新潟記念",
+   "date": "2026-08-30",
+   "course": "新潟",
+   "surface": "芝",
+   "distance": 2000,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 3,
+    "name": "ロデオドライブ",
+    "total": 62.47
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 1,
+    "name": "ボーンディスウェイ",
+    "total": 53.09
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 8,
+    "name": "ダノンシーマ",
+    "total": 53.07
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 4,
+    "name": "ドゥレッツァ",
+    "total": 52.94
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 2,
+    "name": "サヴォーナ",
+    "total": 52.71
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 7,
+    "name": "ジュンブロッサム",
+    "total": 48.03
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 5,
+    "name": "ゾロアストロ",
+    "total": 47.61
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 10,
+    "name": "バレエマスター",
+    "total": 47.44
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 6,
+    "name": "チェルヴィニア",
+    "total": 45.47
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 11,
+    "name": "ステレンボッシュ",
+    "total": 44.61
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 9,
+    "name": "アーバンシック",
+    "total": 42.56
    }
   ],
   "result": null
