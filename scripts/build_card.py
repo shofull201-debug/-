@@ -81,6 +81,23 @@ def resolve_jockey(name: str, known: set[str]) -> str:
     return name
 
 
+def resolve_trainer(name: str, known: set[str]) -> str:
+    """「中内田充正」→「中内田充」(TARGET短縮形)など、統計キーへの正規化を試みる。
+
+    調教師名はTARGET出力で末尾が欠けることがあり、不一致だと騎手・調教師要素が
+    欠損扱いになる。前方一致が1件に定まるときだけ採用する。
+    """
+    name = unicodedata.normalize("NFKC", name.strip())
+    if not name or name in ("未定", "不明"):
+        return ""
+    norm = {unicodedata.normalize("NFKC", k): k for k in known}
+    if name in norm:
+        return norm[name]
+    matches = [orig for nk, orig in norm.items()
+               if nk.startswith(name) or name.startswith(nk)]
+    return matches[0] if len(matches) == 1 else name
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("entries", help="出走馬リスト(馬名,斤量,騎手,調教師)")
@@ -117,6 +134,7 @@ def main() -> int:
         if trainer in ("未定", "不明"):
             trainer = ""
         trainer = re.sub(r"[((][栗美][))]", "", trainer)
+        trainer = resolve_trainer(trainer, trainers)
 
         runs = histories.get(name, [])
         past = runs[-5:]
