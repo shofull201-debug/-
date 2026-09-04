@@ -108,7 +108,7 @@ def main() -> int:
     ap.add_argument("--distance", type=int, required=True)
     ap.add_argument("--going", default="良")
     ap.add_argument("--race-class", default="G3")
-    ap.add_argument("--dataset", default="data/dataset_2022_2026_full.json.gz")
+    ap.add_argument("--dataset", default="data/dataset_2022_2026_v3.json.gz")
     ap.add_argument("--sire-map", default="data/sire_map.json.gz")
     ap.add_argument("-o", "--output", required=True)
     args = ap.parse_args()

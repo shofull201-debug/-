@@ -28,7 +28,7 @@ KS = [0.0, 0.5, 1.0, 2.0]
 
 
 def main() -> int:
-    ds = load_dataset("data/dataset_2022_2026_full.json.gz")
+    ds = load_dataset("data/dataset_2022_2026_v3.json.gz")
     races = [r for r in ds["races"] if r["race"]["date"] >= "2022-07-01"]
     train = {"races": [r for r in races if r["race"]["date"] < "2025-01-01"]}
     test = {"races": [r for r in races if r["race"]["date"] >= "2025-01-01"]}

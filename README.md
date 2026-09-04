@@ -358,10 +358,27 @@ keiba report        # ライブ成績(◎勝率・回収率)の累計
 
 ### 月1回
 
-- seseki2形式の成績CSVを追加出力 → `scripts/convert_seiseki2.py` でデータセット再構築
-  (過去走の鮮度・馬場指数・騎手統計・種牡馬統計がまとめて更新される)
-- `python scripts/build_connections.py` / `scripts/build_sire_aptitude.py` で統計再構築
-- `bash scripts/run_backtests.sh` で回帰チェック
+TARGETから成績CSVを出力し(全項目出力でよい。274列でも読める)、
+現行データセット `data/dataset_2022_2026_v3.json.gz` を作り直す:
+
+```
+python scripts/convert_seiseki2.py 成績.csv -o data/dataset_2022_2026_v3.json.gz
+#  出力が複数ファイルに分かれた場合は先に横結合する
+#  python scripts/merge_seiseki_parts.py A.csv B.csv C.csv -o merged.csv
+#  年度を継ぎ足すときは --history 旧データセット で過去走を接ぎ木する
+
+python -m keiba build-base-times data/dataset_2022_2026_v3.json.gz \
+    -o src/keiba/data/base_times.json
+python -m keiba build-variants data/dataset_2022_2026_v3.json.gz \
+    -o data/track_variants_2022_2026.json
+python scripts/build_connections.py data/dataset_2022_2026_v3.json.gz
+python scripts/build_sire_aptitude.py --datasets data/dataset_2022_2026_v3.json.gz
+bash scripts/run_backtests.sh          # 回帰チェック
+```
+
+4つのテーブル(基準タイム・馬場指数・騎手厩舎・種牡馬適性)は**まとめて**
+更新すること。基準タイムだけ新しくして種牡馬適性を古いままにすると、
+重賞バックテストで単回収が10pt以上落ちる(2026年9月の更新で確認)。
 
 ## 検証済みの設計判断(変更するときは再検証すること)
 

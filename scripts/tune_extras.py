@@ -5,7 +5,7 @@
 成績だけから構築し、検証期間へ持ち越して評価する(リーク防止)。
 
 使い方:
-    python scripts/tune_extras.py data/dataset_2022_2026_full.json.gz \
+    python scripts/tune_extras.py data/dataset_2022_2026_v3.json.gz \
         --variants data/track_variants_2022_2026.json
 """
 

@@ -7,7 +7,7 @@
 - 複勝回収: 3着内馬の複勝払戻を使用
 
 使い方:
-    python scripts/value_analysis.py data/dataset_2022_2026_full.json.gz \
+    python scripts/value_analysis.py data/dataset_2022_2026_v3.json.gz \
         --variants data/track_variants_2022_2026.json
 """
 

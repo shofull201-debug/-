@@ -92,7 +92,9 @@ def load_pedigree_maps(
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("kettou", help="kettou.txt (馬名 性 齢 父 母 調教師)")
+    ap.add_argument("kettou", nargs="?",
+                    help="kettou.txt (馬名 性 齢 父 母 調教師)。"
+                         "省略時は --sire-map-out の既存マップを読み直す")
     ap.add_argument("--datasets", nargs="*",
                     default=["data/dataset_2022_2025.json.gz", "data/dataset_2026.json.gz"])
     ap.add_argument("-o", "--output", default="src/keiba/data/sire_aptitude.json")
@@ -102,7 +104,13 @@ def main() -> int:
 
     table = json.load(open(args.output, encoding="utf-8"))
     known = set(table["sires"])
-    sire_map, dam_sire_map = load_pedigree_maps(args.kettou, known)
+    if args.kettou:
+        sire_map, dam_sire_map = load_pedigree_maps(args.kettou, known)
+    else:
+        # 血統リストを再出力しなくても、成績データだけ新しくして適性を更新できる
+        maps = load_dataset(args.sire_map_out)
+        sire_map, dam_sire_map = maps["sire_map"], maps["dam_sire_map"]
+        print(f"血統マップを {args.sire_map_out} から読み込み")
     print(f"血統マップ: 父 {len(sire_map)} 頭 / 母父 {len(dam_sire_map)} 頭")
 
     # 産駒の走を父ごと・母父ごとに集計

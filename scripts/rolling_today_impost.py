@@ -101,7 +101,7 @@ def arrays_for_k(raw: list[dict], k: float):
 
 
 def main() -> int:
-    ds = load_dataset("data/dataset_2022_2026_full.json.gz")
+    ds = load_dataset("data/dataset_2022_2026_v3.json.gz")
     cur_base = json.load(open("src/keiba/data/base_times.json", encoding="utf-8"))
     cur_sires = json.load(open("src/keiba/data/sire_aptitude.json", encoding="utf-8"))
     variants = VariantTable(compute_variants(_result_rows_from_dataset(ds)))

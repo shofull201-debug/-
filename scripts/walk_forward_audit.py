@@ -129,7 +129,7 @@ def build_asof_connections(train_races):
 
 
 def main() -> int:
-    ds = load_dataset("data/dataset_2022_2026_full.json.gz")
+    ds = load_dataset("data/dataset_2022_2026_v3.json.gz")
     train = [r for r in ds["races"] if r["race"]["date"] < SPLIT]
     test = [r for r in ds["races"] if r["race"]["date"] >= SPLIT]
     print(f"テーブル構築: {len(train)}レース(〜2024) / 評価: {len(test)}レース(2025-26)")

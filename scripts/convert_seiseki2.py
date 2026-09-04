@@ -11,7 +11,9 @@ seiseki.csv(35列)との違い: 馬番・走破タイム・単複配当・オッ
 - 走破タイムは「1072」= 1分07秒2 の連結数字
 - 単勝配当は勝ち馬のみ払戻円、他馬は「(7.4)」= 単勝オッズ
 - 着順が 止/外/消 の行は除外。クラスを判定できないレースは除外
-  (重賞一覧CSVがあればグレードを優先)
+  (重賞一覧CSVがあればグレードを優先、次いで「クラス名」列)
+- TARGETの全項目出力(274列)も読める。同名列が二重に出るため最初の出現を採用し、
+  「芝1600」形式の距離は馬場種別を剥がす
 - このCSVには種牡馬・母父の列が無いため、kettou2.csv 由来の血統マップ
   (data/sire_map.json.gz、scripts/build_sire_aptitude.py が出力)で結合する
 
@@ -51,6 +53,14 @@ ZEN2HAN = str.maketrans(
     "０１２３４５６７８９",
     "0123456789",
 )
+# TARGETの「クラス名」列 → モデル内のクラス表記
+CLASS_NAME_MAP = {
+    "Ｇ１": "G1", "Ｇ２": "G2", "Ｇ３": "G3",
+    "ＪＧ１": "G1", "ＪＧ２": "G2", "ＪＧ３": "G3",
+    "ｵｰﾌﾟﾝ": "OP", "オープン": "OP", "OP(L)": "L", "OP(Ｌ)": "L",
+    "3勝": "3勝", "2勝": "2勝", "1勝": "1勝",
+    "未勝利": "未勝利", "新馬": "新馬",
+}
 # 丸数字(降着・繰り上がりなどの表記)も通常の着順として扱う
 CIRCLED = {chr(0x2460 + i): str(i + 1) for i in range(20)}        # ①〜⑳
 CIRCLED.update({chr(0x3251 + i): str(i + 21) for i in range(15)})  # ㉑〜㉟
@@ -92,15 +102,41 @@ def parse_course(kaisai: str) -> str | None:
     return None
 
 
-def detect_race_class(race_name: str, date: str, grade_map: dict) -> str | None:
-    """重賞一覧 → レース名の明示表記 の順でクラスを判定する。判定不能は None。"""
+def detect_race_class(
+    race_name: str, date: str, grade_map: dict, class_name: str = ""
+) -> str | None:
+    """重賞一覧 → クラス名列 → レース名の表記 の順で判定する。判定不能は None。
+
+    TARGETの全項目出力には「クラス名」列があり、レース名の略記に頼らずに
+    クラスが確定する(旧来はレース名に条件が出ないレースを取りこぼしていた)。
+    """
     cls = grade_map.get((date.replace("-", ""), race_name))
+    if cls:
+        return cls
+    cls = CLASS_NAME_MAP.get((class_name or "").strip())
     if cls:
         return cls
     norm = unicodedata.normalize("NFKC", race_name)
     if CLASS_PATTERN.search(norm):
         return detect_class(norm)
     return None
+
+
+def read_rows(path: str):
+    """同名列を含むCSVを読む(同名は最初の出現を採用)。
+
+    TARGETの全項目出力は「距離」「走破タイム」などを表示用と数値用で二重に
+    出力する。csv.DictReader は後勝ちのため「芝1600」「1.33.6」のような
+    表示用の値を拾ってしまい、全行が変換対象外になる。
+    """
+    with open(path, encoding="cp932", errors="replace", newline="") as f:
+        reader = csv.reader(f)
+        header = next(reader, [])
+        first: dict[str, int] = {}
+        for i, col in enumerate(header):
+            first.setdefault(col, i)
+        for row in reader:
+            yield {c: (row[i] if i < len(row) else "") for c, i in first.items()}
 
 
 def load_pedigree(path: str | None) -> tuple[dict, dict]:
@@ -122,86 +158,91 @@ def convert(
     races: dict[tuple, dict] = {}
     skipped_class = skipped = 0
 
-    with open(path, encoding="cp932", newline="") as f:
-        for row in csv.DictReader(f):
-            name = (row.get("馬名") or "").strip()
-            finish = to_int(row.get("着順"))
-            time_sec = parse_time(row.get("走破タイム"))
-            course = parse_course(row.get("開催") or "")
-            surface = (row.get("芝・ダ") or "").strip()
-            distance = to_int(row.get("距離"))
-            if not name or finish is None or time_sec is None or course is None \
-                    or surface not in ("芝", "ダ") or not distance:
-                skipped += 1
-                continue
-            date_raw = (row.get("日付") or "").strip()
-            date = f"20{date_raw[0:2]}-{date_raw[2:4]}-{date_raw[4:6]}"
-            race_name = (row.get("レース名") or "").strip()
-            cls = detect_race_class(race_name, date, grade_map)
-            if cls is None:
-                skipped_class += 1
-                continue
+    for row in read_rows(path):
+        name = (row.get("馬名") or "").strip()
+        finish = to_int(row.get("着順"))
+        time_sec = parse_time(row.get("走破タイム"))
+        course = parse_course(row.get("開催") or "")
+        surface = (row.get("芝・ダ") or "").strip()
+        # 「芝1600」形式で出力されることがあるため馬場種別を剥がす
+        dist_raw = (row.get("距離") or "").strip()
+        m_dist = re.match(r"^([芝ダ障])\s*(\d+)$", dist_raw)
+        if m_dist:
+            surface = surface or m_dist.group(1)
+            dist_raw = m_dist.group(2)
+        distance = to_int(dist_raw)
+        if not name or finish is None or time_sec is None or course is None \
+                or surface not in ("芝", "ダ") or not distance:
+            skipped += 1
+            continue
+        date_raw = (row.get("日付") or "").strip()
+        date = f"20{date_raw[0:2]}-{date_raw[2:4]}-{date_raw[4:6]}"
+        race_name = (row.get("レース名") or "").strip()
+        cls = detect_race_class(race_name, date, grade_map, row.get("クラス名", ""))
+        if cls is None:
+            skipped_class += 1
+            continue
 
-            key = (date, row["開催"].strip(), row["Ｒ"].strip())
-            race = races.setdefault(key, {
-                "race": {
-                    "race_id": f"{date}|{row['開催'].strip()}|{row['Ｒ'].strip()}",
-                    "name": unicodedata.normalize("NFKC", race_name),
-                    "date": date, "course": course, "surface": surface,
-                    "distance": distance,
-                    "going": GOING_ABBR.get((row.get("馬場状態") or "").strip(), "良"),
-                    "race_class": cls,
-                },
-                "horses": [],
-                "payouts": {"win": {}, "place": {}},
-            })
+        key = (date, row["開催"].strip(), row["Ｒ"].strip())
+        race = races.setdefault(key, {
+            "race": {
+                "race_id": f"{date}|{row['開催'].strip()}|{row['Ｒ'].strip()}",
+                "name": unicodedata.normalize("NFKC", race_name),
+                "date": date, "course": course, "surface": surface,
+                "distance": distance,
+                "going": GOING_ABBR.get((row.get("馬場状態") or "").strip(), "良"),
+                "race_class": cls,
+            },
+            "horses": [],
+            "payouts": {"win": {}, "place": {}},
+        })
 
-            number = to_int(row.get("馬番"))
-            # 単勝配当: 勝ち馬は払戻円、それ以外は "(オッズ)"
-            tansho = (row.get("単勝配当") or "").strip()
-            odds = None
-            if tansho.startswith("("):
-                try:
-                    odds = float(tansho.strip("()"))
-                except ValueError:
-                    pass
-            elif tansho.isdigit():
-                odds = int(tansho) / 100
-                if number is not None:
-                    race["payouts"]["win"][number] = int(tansho)
-            fukusho = (row.get("複勝配当") or "").strip()
-            if fukusho.isdigit() and number is not None:
-                race["payouts"]["place"][number] = int(fukusho)
-            # 連系配当は的中馬の行に同じ値が載る(馬連=1-2着行、3連複=1-3着行)
-            for col, key in (("馬連", "quinella"), ("馬単", "exacta"),
-                             ("３連複", "trio"), ("３連単", "trifecta")):
-                v = (row.get(col) or "").strip().replace(",", "")
-                if v.isdigit() and key not in race["payouts"]:
-                    race["payouts"][key] = int(v)
+        number = to_int(row.get("馬番"))
+        # 単勝配当: 勝ち馬は払戻円、それ以外は "(オッズ)"
+        tansho = (row.get("単勝配当") or "").strip()
+        odds = None
+        if tansho.startswith("("):
+            try:
+                odds = float(tansho.strip("()"))
+            except ValueError:
+                pass
+        elif tansho.isdigit():
+            odds = int(tansho) / 100
+            if number is not None:
+                race["payouts"]["win"][number] = int(tansho)
+        fukusho = (row.get("複勝配当") or "").strip()
+        if fukusho.isdigit() and number is not None:
+            race["payouts"]["place"][number] = int(fukusho)
+        # 連系配当は的中馬の行に同じ値が載る(馬連=1-2着行、3連複=1-3着行)
+        for col, key in (("馬連", "quinella"), ("馬単", "exacta"),
+                         ("３連複", "trio"), ("３連単", "trifecta")):
+            v = (row.get(col) or "").strip().replace(",", "")
+            if v.isdigit() and key not in race["payouts"]:
+                race["payouts"][key] = int(v)
 
-            race["horses"].append({
-                "name": name,
-                "horse_number": number,
-                "sire": sire_map.get(name, ""),
-                "dam_sire": dam_sire_map.get(name),
-                "weight_carried": parse_weight(row.get("斤量")),
-                "jockey": (row.get("騎手") or "").strip(),
-                "trainer": re.sub(r"^[((][栗美地外][))]", "", (row.get("調教師") or "").strip()),
-                "past_races": [],
-                "workouts": [],
-                "result": {
-                    "finish_position": finish,
-                    "time_sec": time_sec,
-                    "odds": odds,
-                    "popularity": to_int(row.get("人気")),
-                    "body_weight": to_int(row.get("馬体重")),
-                    "weight_diff": to_int(row.get("馬体重増減")),
-                    "pci": to_float(row.get("PCI")),
-                },
-                "_position_4c": to_int(row.get("4角")) or to_int(row.get("3角")),
-                "_field_size": to_int(row.get("頭数")),
-                "_last_3f": to_float(row.get("上り3F")),
-            })
+        race["horses"].append({
+            "name": name,
+            "horse_number": number,
+            "sire": sire_map.get(name, ""),
+            "dam_sire": dam_sire_map.get(name),
+            "weight_carried": parse_weight(row.get("斤量")),
+            "jockey": (row.get("騎手") or "").strip(),
+            "trainer": re.sub(r"^[((][栗美地外][))]", "", (row.get("調教師") or "").strip()),
+            "past_races": [],
+            "workouts": [],
+            "result": {
+                "finish_position": finish,
+                "time_sec": time_sec,
+                "odds": odds,
+                "popularity": to_int(row.get("人気")),
+                "body_weight": to_int(row.get("馬体重")),
+                "weight_diff": to_int(row.get("馬体重増減")),
+                "pci": to_float(row.get("PCI")),
+            },
+            "_position_4c": to_int(row.get("4角")) or to_int(row.get("3角")),
+            "_field_size": to_int(row.get("頭数")),
+            "_last_3f": to_float(row.get("上り3F")),
+        })
 
     # 頭数下限で足切りして日付順に
     out = [r for r in races.values() if len(r["horses"]) >= min_field]

@@ -1,7 +1,7 @@
 """データセットから騎手・調教師の複勝統計を構築する。
 
 使い方:
-    python scripts/build_connections.py data/dataset_2022_2026_full.json.gz
+    python scripts/build_connections.py data/dataset_2022_2026_v3.json.gz
 """
 
 from __future__ import annotations

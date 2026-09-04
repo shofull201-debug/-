@@ -85,9 +85,14 @@ def evaluate(arrays, weights) -> dict:
 
 
 def main() -> int:
+    import argparse
     import json
 
-    ds = load_dataset("data/dataset_2022_2026_full.json.gz")
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--dataset", default="data/dataset_2022_2026_v3.json.gz")
+    args = ap.parse_args()
+
+    ds = load_dataset(args.dataset)
     cur_base = json.load(open("src/keiba/data/base_times.json", encoding="utf-8"))
     cur_sires = json.load(open("src/keiba/data/sire_aptitude.json", encoding="utf-8"))
 

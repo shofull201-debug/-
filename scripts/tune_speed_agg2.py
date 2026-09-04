@@ -4,7 +4,7 @@
 学習(2022-07〜2024-12)と検証(2025-01〜)で一貫するかを見る。
 
 使い方:
-    python scripts/tune_speed_agg2.py data/dataset_2022_2026_full.json.gz \
+    python scripts/tune_speed_agg2.py data/dataset_2022_2026_v3.json.gz \
         --variants data/track_variants_2022_2026.json
 """
 

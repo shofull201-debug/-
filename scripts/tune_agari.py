@@ -4,7 +4,7 @@
 (平均より1秒速い上がり → +係数ポイント)。
 
 使い方:
-    python scripts/tune_agari.py data/dataset_2022_2026_full.json.gz \
+    python scripts/tune_agari.py data/dataset_2022_2026_v3.json.gz \
         --variants data/track_variants_2022_2026.json
 """
 

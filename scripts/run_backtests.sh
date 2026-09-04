@@ -5,7 +5,7 @@
 set -uo pipefail
 cd "$(dirname "$0")/.."
 
-DATASET=data/dataset_2022_2026_full.json.gz
+DATASET=data/dataset_2022_2026_v3.json.gz
 VARIANTS=data/track_variants_2022_2026.json
 OUT=${1:-reports/$(date +%F)}
 mkdir -p "$OUT"

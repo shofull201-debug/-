@@ -9,7 +9,7 @@
 「時計ベースで直近を重視するか、期間内ベストを重視するか」の比較。
 
 使い方:
-    python scripts/tune_workout_blend.py data/dataset_2022_2026_full.json.gz \
+    python scripts/tune_workout_blend.py data/dataset_2022_2026_v3.json.gz \
         --variants data/track_variants_2022_2026.json
 """
 

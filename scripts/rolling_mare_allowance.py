@@ -131,7 +131,7 @@ def main() -> int:
     sex_map = build_sex_map()
     print(f"性別マップ: {len(sex_map)}頭 (牝 {sum(1 for s in sex_map.values() if s=='牝')})")
 
-    ds = load_dataset("data/dataset_2022_2026_full.json.gz")
+    ds = load_dataset("data/dataset_2022_2026_v3.json.gz")
     all_names = {h["name"] for r in ds["races"] for h in r["horses"]}
     cov = sum(1 for n in all_names if n in sex_map) / len(all_names) * 100
     print(f"データセット出走馬のカバー率: {cov:.1f}%")
