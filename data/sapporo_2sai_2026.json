@@ -1,0 +1,326 @@
+{
+ "race": {
+  "name": "札幌2歳S",
+  "date": "2026-09-05",
+  "course": "札幌",
+  "surface": "芝",
+  "distance": 1800,
+  "going": "良",
+  "race_class": "G3"
+ },
+ "horses": [
+  {
+   "name": "テングカゼ",
+   "sire": "カデナ",
+   "dam_sire": "Tiznow",
+   "weight_carried": 55.0,
+   "jockey": "的場勇人",
+   "trainer": "的場均",
+   "past_races": [],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 68.5,
+     "last_1f": 11.9,
+     "intensity": "馬なり",
+     "partner_result": "先着"
+    }
+   ],
+   "horse_number": 1
+  },
+  {
+   "name": "ショウナンガレオン",
+   "sire": "スペシャルウィーク",
+   "dam_sire": "クロフネ",
+   "weight_carried": 55.0,
+   "jockey": "鮫島克駿",
+   "trainer": "加藤士津",
+   "past_races": [
+    {
+     "date": "2026-07-05",
+     "course": "函館",
+     "surface": "芝",
+     "distance": 1800,
+     "going": "良",
+     "time_sec": 107.6,
+     "weight_carried": 55.0,
+     "finish_position": 1,
+     "field_size": 5,
+     "race_class": "新馬",
+     "position_4c": 2,
+     "last_3f": 34.5,
+     "last_3f_rel": -0.96
+    }
+   ],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 64.3,
+     "last_1f": 11.3,
+     "intensity": "馬なり",
+     "partner_result": "同入"
+    },
+    {
+     "date": "2026-08-26",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 63.5,
+     "last_1f": 11.6,
+     "intensity": "一杯"
+    }
+   ],
+   "horse_number": 2
+  },
+  {
+   "name": "デザートスピリット",
+   "sire": "イスラボニータ",
+   "dam_sire": "Oasis Dream",
+   "weight_carried": 55.0,
+   "jockey": "横山和生",
+   "trainer": "平岩大典",
+   "past_races": [
+    {
+     "date": "2026-06-13",
+     "course": "東京",
+     "surface": "芝",
+     "distance": 1400,
+     "going": "良",
+     "time_sec": 83.0,
+     "weight_carried": 55.0,
+     "finish_position": 2,
+     "field_size": 9,
+     "race_class": "新馬",
+     "position_4c": 1,
+     "last_3f": 34.1,
+     "last_3f_rel": -0.61
+    }
+   ],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 66.4,
+     "last_1f": 12.2,
+     "intensity": "馬なり",
+     "partner_result": "同入"
+    }
+   ],
+   "horse_number": 3
+  },
+  {
+   "name": "コスモハナミズキ",
+   "sire": "ウインブライト",
+   "dam_sire": "ロージズインメイ",
+   "weight_carried": 55.0,
+   "jockey": "佐々木大",
+   "trainer": "菊川正達",
+   "past_races": [
+    {
+     "date": "2026-07-04",
+     "course": "福島",
+     "surface": "芝",
+     "distance": 1800,
+     "going": "稍重",
+     "time_sec": 108.1,
+     "weight_carried": 55.0,
+     "finish_position": 1,
+     "field_size": 8,
+     "race_class": "未勝利",
+     "position_4c": 1,
+     "last_3f": 35.6,
+     "last_3f_rel": -0.24
+    },
+    {
+     "date": "2026-06-13",
+     "course": "東京",
+     "surface": "芝",
+     "distance": 1600,
+     "going": "良",
+     "time_sec": 99.1,
+     "weight_carried": 55.0,
+     "finish_position": 3,
+     "field_size": 7,
+     "race_class": "新馬",
+     "position_4c": 6,
+     "last_3f": 33.8,
+     "last_3f_rel": -0.57
+    }
+   ],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 65.0,
+     "last_1f": 11.7,
+     "intensity": "馬なり",
+     "partner_result": "同入"
+    },
+    {
+     "date": "2026-08-26",
+     "facility": "札幌",
+     "course": "ダ",
+     "furlongs": 4,
+     "total_time": 53.2,
+     "last_1f": 12.0,
+     "intensity": "馬なり"
+    }
+   ],
+   "horse_number": 4
+  },
+  {
+   "name": "ランダムナンバー",
+   "sire": "サリオス",
+   "dam_sire": "クロフネ",
+   "weight_carried": 55.0,
+   "jockey": "古川吉洋",
+   "trainer": "橋田宜長",
+   "past_races": [
+    {
+     "date": "2026-06-07",
+     "course": "阪神",
+     "surface": "芝",
+     "distance": 1400,
+     "going": "稍重",
+     "time_sec": 83.4,
+     "weight_carried": 53.0,
+     "finish_position": 9,
+     "field_size": 11,
+     "race_class": "新馬",
+     "position_4c": 10,
+     "last_3f": 35.1,
+     "last_3f_rel": -0.21
+    }
+   ],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "芝",
+     "furlongs": 5,
+     "total_time": 69.3,
+     "last_1f": 11.8,
+     "intensity": "馬なり"
+    }
+   ],
+   "horse_number": 5
+  },
+  {
+   "name": "ハヤブサカツオー",
+   "sire": "サートゥルナーリア",
+   "dam_sire": "ハービンジャー",
+   "weight_carried": 55.0,
+   "jockey": "吉田隼人",
+   "trainer": "岡田稲男",
+   "past_races": [],
+   "workouts": [
+    {
+     "date": "2026-09-01",
+     "facility": "札幌",
+     "course": "ダ",
+     "furlongs": 5,
+     "total_time": 72.2,
+     "last_1f": 13.0,
+     "intensity": "馬なり",
+     "partner_result": "同入"
+    }
+   ],
+   "horse_number": 6
+  },
+  {
+   "name": "イドム",
+   "sire": "",
+   "dam_sire": null,
+   "weight_carried": 55.0,
+   "jockey": "松本大輝",
+   "trainer": "高橋康之",
+   "past_races": [],
+   "workouts": [],
+   "horse_number": 7
+  },
+  {
+   "name": "テンカタイヘイ",
+   "sire": "トーセンレーヴ",
+   "dam_sire": "ダイワメジャー",
+   "weight_carried": 55.0,
+   "jockey": "丹内祐次",
+   "trainer": "小野次郎",
+   "past_races": [],
+   "workouts": [
+    {
+     "date": "2026-09-02",
+     "facility": "札幌",
+     "course": "ダ",
+     "furlongs": 6,
+     "total_time": 86.2,
+     "last_1f": 12.0,
+     "intensity": "馬なり",
+     "partner_result": "同入"
+    },
+    {
+     "date": "2026-08-25",
+     "facility": "函館",
+     "course": "W",
+     "furlongs": 5,
+     "total_time": 67.6,
+     "last_1f": 12.2,
+     "intensity": "G前仕掛け",
+     "partner_result": "同入"
+    }
+   ],
+   "horse_number": 8
+  },
+  {
+   "name": "ロゼハイスクール",
+   "sire": "ミスチヴィアスアレックス",
+   "dam_sire": "ワークフォース",
+   "weight_carried": 55.0,
+   "jockey": "古川奈穂",
+   "trainer": "小崎憲",
+   "past_races": [
+    {
+     "date": "2026-07-11",
+     "course": "函館",
+     "surface": "ダ",
+     "distance": 1000,
+     "going": "稍重",
+     "time_sec": 61.8,
+     "weight_carried": 53.0,
+     "finish_position": 9,
+     "field_size": 10,
+     "race_class": "未勝利",
+     "position_4c": 8,
+     "last_3f": 37.2,
+     "last_3f_rel": 0.62
+    },
+    {
+     "date": "2026-07-04",
+     "course": "函館",
+     "surface": "ダ",
+     "distance": 1000,
+     "going": "良",
+     "time_sec": 63.4,
+     "weight_carried": 53.0,
+     "finish_position": 5,
+     "field_size": 5,
+     "race_class": "新馬",
+     "position_4c": 4,
+     "last_3f": 37.8,
+     "last_3f_rel": 0.6
+    }
+   ],
+   "workouts": [],
+   "horse_number": 9
+  }
+ ]
+}

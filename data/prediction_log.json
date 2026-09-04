@@ -1978,5 +1978,208 @@
     "ビスケットサンド": 120
    }
   }
+ },
+ {
+  "race": {
+   "name": "京成杯AH",
+   "date": "2026-09-05",
+   "course": "中山",
+   "surface": "芝",
+   "distance": 1600,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 10,
+    "name": "ヴァルキリーバース",
+    "total": 58.91
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 9,
+    "name": "レザベーション",
+    "total": 57.4
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 12,
+    "name": "ディールメーカー",
+    "total": 57.15
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 4,
+    "name": "フォルテアンジェロ",
+    "total": 56.26
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 7,
+    "name": "エコロブルーム",
+    "total": 55.23
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 2,
+    "name": "ミナデオロ",
+    "total": 53.41
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 6,
+    "name": "ファンダム",
+    "total": 51.89
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 8,
+    "name": "ピコローズ",
+    "total": 50.9
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 5,
+    "name": "サイルーン",
+    "total": 50.68
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 1,
+    "name": "クルゼイロドスル",
+    "total": 49.92
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 13,
+    "name": "メタルスピード",
+    "total": 49.24
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 11,
+    "name": "クランフォード",
+    "total": 45.84
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": 15,
+    "name": "テレサ",
+    "total": 43.38
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 3,
+    "name": "ドロップオブライト",
+    "total": 43.33
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": 14,
+    "name": "リラボニート",
+    "total": 39.34
+   },
+   {
+    "rank": 16,
+    "mark": "",
+    "horse_number": 16,
+    "name": "ラケマーダ",
+    "total": 37.13
+   }
+  ],
+  "result": null
+ },
+ {
+  "race": {
+   "name": "札幌2歳S",
+   "date": "2026-09-05",
+   "course": "札幌",
+   "surface": "芝",
+   "distance": 1800,
+   "going": "良",
+   "race_class": "G3"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 2,
+    "name": "ショウナンガレオン",
+    "total": 60.43
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 3,
+    "name": "デザートスピリット",
+    "total": 54.49
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 8,
+    "name": "テンカタイヘイ",
+    "total": 52.49
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 4,
+    "name": "コスモハナミズキ",
+    "total": 52.29
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 6,
+    "name": "ハヤブサカツオー",
+    "total": 51.38
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 5,
+    "name": "ランダムナンバー",
+    "total": 47.07
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 7,
+    "name": "イドム",
+    "total": 43.33
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ロゼハイスクール",
+    "total": 38.57
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 1,
+    "name": "テングカゼ",
+    "total": 38.53
+   }
+  ],
+  "result": null
  }
 ]
