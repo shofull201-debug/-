@@ -2300,5 +2300,96 @@
    }
   ],
   "result": null
+ },
+ {
+  "race": {
+   "name": "紫苑S",
+   "date": "2026-09-06",
+   "course": "中山",
+   "surface": "芝",
+   "distance": 2000,
+   "going": "良",
+   "race_class": "G2"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 3,
+    "name": "リアライズルミナス",
+    "total": 57.72
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 6,
+    "name": "アストリル",
+    "total": 56.25
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 8,
+    "name": "ナイスプレーアスク",
+    "total": 55.68
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 10,
+    "name": "ジッピーチューン",
+    "total": 53.61
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 9,
+    "name": "ドリームコア",
+    "total": 52.94
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 4,
+    "name": "マスターソアラ",
+    "total": 49.99
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 2,
+    "name": "サムシングスイート",
+    "total": 48.04
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 7,
+    "name": "ロングトールサリー",
+    "total": 46.08
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 5,
+    "name": "ファムクラジューズ",
+    "total": 44.56
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 11,
+    "name": "ベンヴェヌータ",
+    "total": 44.33
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 1,
+    "name": "ジワタネホ",
+    "total": 40.81
+   }
+  ],
+  "result": null
  }
 ]
