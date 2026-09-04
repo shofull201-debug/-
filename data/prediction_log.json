@@ -2181,5 +2181,124 @@
    }
   ],
   "result": null
+ },
+ {
+  "race": {
+   "name": "セントウルS",
+   "date": "2026-09-06",
+   "course": "阪神",
+   "surface": "芝",
+   "distance": 1200,
+   "going": "良",
+   "race_class": "G2"
+  },
+  "picks": [
+   {
+    "rank": 1,
+    "mark": "◎",
+    "horse_number": 3,
+    "name": "フリッカージャブ",
+    "total": 62.45
+   },
+   {
+    "rank": 2,
+    "mark": "○",
+    "horse_number": 11,
+    "name": "レッドモンレーヴ",
+    "total": 59.75
+   },
+   {
+    "rank": 3,
+    "mark": "▲",
+    "horse_number": 5,
+    "name": "ダイヤモンドノット",
+    "total": 58.94
+   },
+   {
+    "rank": 4,
+    "mark": "△",
+    "horse_number": 10,
+    "name": "ヨシノイースター",
+    "total": 55.69
+   },
+   {
+    "rank": 5,
+    "mark": "△",
+    "horse_number": 1,
+    "name": "ママコチャ",
+    "total": 54.14
+   },
+   {
+    "rank": 6,
+    "mark": "",
+    "horse_number": 14,
+    "name": "ビッグシーザー",
+    "total": 51.49
+   },
+   {
+    "rank": 7,
+    "mark": "",
+    "horse_number": 15,
+    "name": "タマモイカロス",
+    "total": 50.73
+   },
+   {
+    "rank": 8,
+    "mark": "",
+    "horse_number": 8,
+    "name": "ピューロマジック",
+    "total": 47.84
+   },
+   {
+    "rank": 9,
+    "mark": "",
+    "horse_number": 7,
+    "name": "メイショウヨゾラ",
+    "total": 46.61
+   },
+   {
+    "rank": 10,
+    "mark": "",
+    "horse_number": 9,
+    "name": "ヤブサメ",
+    "total": 46.39
+   },
+   {
+    "rank": 11,
+    "mark": "",
+    "horse_number": 4,
+    "name": "ティニア",
+    "total": 45.8
+   },
+   {
+    "rank": 12,
+    "mark": "",
+    "horse_number": 6,
+    "name": "プロトポロス",
+    "total": 44.39
+   },
+   {
+    "rank": 13,
+    "mark": "",
+    "horse_number": 13,
+    "name": "タマモブラックタイ",
+    "total": 44.17
+   },
+   {
+    "rank": 14,
+    "mark": "",
+    "horse_number": 2,
+    "name": "クラスペディア",
+    "total": 41.58
+   },
+   {
+    "rank": 15,
+    "mark": "",
+    "horse_number": 12,
+    "name": "カルプスペルシュ",
+    "total": 40.03
+   }
+  ],
+  "result": null
  }
 ]
