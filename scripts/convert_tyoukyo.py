@@ -71,7 +71,8 @@ def main() -> int:
             return None
 
     for path in args.csvs:
-        with open(path, encoding="cp932", newline="") as f:
+        # 未登録の外国産馬など、まれに文字化けした行があるため replace で読み飛ばす
+        with open(path, encoding="cp932", errors="replace", newline="") as f:
             first = f.readline()
             f.seek(0)
             if "馬名" in first:  # 坂路(ヘッダあり)

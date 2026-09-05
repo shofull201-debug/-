@@ -38,12 +38,21 @@ from walk_forward_audit import (  # noqa: E402
     build_asof_sires,
 )
 
-FACTORS = ("speed", "pedigree", "connections", "style", "going")
+FACTORS = ("speed", "pedigree", "connections", "style", "going", "workout")
 GRID = [
-    {"speed": 0.5, "pedigree": p, "connections": c, "style": s, "going": g}
+    {"speed": 0.5, "pedigree": p, "connections": c, "style": s, "going": g,
+     "workout": 0.0}
     for p, c, s, g in product((0, .1, .2, .3), (0, .1, .2), (0, .1), (0, .1, .2))
 ]
-BASELINE = {"speed": .5, "pedigree": .2, "connections": .1, "style": 0, "going": .1}
+# --workouts 指定時は追切も探索軸に加える(調教索引を張った場合のみ意味を持つ)
+GRID_WORK = [
+    dict(w, workout=k) for w in GRID for k in (0, .1, .2, .3)
+]
+BASELINE = {"speed": .5, "pedigree": .2, "connections": .1, "style": 0,
+            "going": .1, "workout": 0.0}
+# 現行の運用重み(追切0.2は坂路1年分の実測値で、ローリング検証は未実施だった)
+CURRENT = {"speed": .5, "pedigree": .1, "connections": .2, "style": 0,
+           "going": .1, "workout": .2}
 FOLDS = [("2022", "2023"), ("2023", "2024"), ("2024", "2025"), ("2025", "2026")]
 
 
@@ -90,9 +99,20 @@ def main() -> int:
 
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--dataset", default="data/dataset_2022_2026_v3.json.gz")
+    ap.add_argument("--workouts", nargs="?", const="data/workout_index.json.gz",
+                    help="調教索引を各走に張り、追切も重み探索の対象にする")
     args = ap.parse_args()
 
     ds = load_dataset(args.dataset)
+    grid = GRID
+    if args.workouts:
+        from keiba.workout_attach import attach_to_card
+
+        index = load_dataset(args.workouts)["workouts"]
+        applied = sum(attach_to_card(r, index) for r in ds["races"])
+        runs = sum(len(r["horses"]) for r in ds["races"])
+        print(f"調教索引を {applied}/{runs} 走 ({applied/runs:.1%}) に適用")
+        grid = GRID_WORK
     cur_base = json.load(open("src/keiba/data/base_times.json", encoding="utf-8"))
     cur_sires = json.load(open("src/keiba/data/sire_aptitude.json", encoding="utf-8"))
 
@@ -117,13 +137,13 @@ def main() -> int:
         arr_test = to_arrays(precompute({"races": test}, variants))
 
         best_w, best_key = None, (-1.0, -1.0)
-        for w in GRID:
+        for w in grid:
             m = evaluate(arr_train, w)
             key = (m["place"], m["win"])
             if key > best_key:
                 best_key, best_w = key, w
         m_best = evaluate(arr_test, best_w)
-        m_base = evaluate(arr_test, BASELINE)
+        m_base = evaluate(arr_test, CURRENT if args.workouts else BASELINE)
         chosen_seq.append((train_end, test_year, best_w, m_best, m_base))
         pooled_best.append(m_best)
         pooled_base.append(m_base)
