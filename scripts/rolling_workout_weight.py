@@ -42,11 +42,53 @@ BASE = {"speed": .5, "pedigree": .1, "connections": .2, "style": 0, "going": .1}
 WORKOUT_WEIGHTS = (0.0, 0.1, 0.2, 0.3, 0.4)
 
 
+def fast_only(index: dict, quantile: float) -> dict:
+    """その日・その施設で速い方から quantile までの追切だけを残す。
+
+    旧索引はTARGETの「坂路好タイム」抽出で、載っていること自体が
+    「速い時計を出した」という情報だった(中央値でその日の上位20.6%)。
+    全量に置き換えるとこの含意が消えるため、旧来の母集団を近似して
+    どちらの regime で評価しているのかを切り分ける。
+    """
+    import bisect
+    from collections import defaultdict
+
+    byday: dict = defaultdict(list)
+    for works in index.values():
+        for e in works:
+            byday[(e[0], e[1], e[4] if len(e) > 4 else "坂路")].append(e[2])
+    for v in byday.values():
+        v.sort()
+    out: dict = {}
+    for name, works in index.items():
+        keep = []
+        for e in works:
+            arr = byday[(e[0], e[1], e[4] if len(e) > 4 else "坂路")]
+            if bisect.bisect_left(arr, e[2]) / len(arr) <= quantile:
+                keep.append(e)
+        if keep:
+            out[name] = keep
+    return out
+
+
 def main() -> int:
+    import argparse
+
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--fast-quantile", type=float,
+                    help="その日その施設で速い方から指定割合の追切だけを使う"
+                         "(旧「坂路好タイム」索引の母集団を近似する)")
+    args = ap.parse_args()
+
     ds = load_dataset("data/dataset_2022_2026_v3.json.gz")
     from keiba.workout_attach import attach_to_card
 
     index = load_dataset("data/workout_index.json.gz")["workouts"]
+    if args.fast_quantile:
+        before = sum(len(v) for v in index.values())
+        index = fast_only(index, args.fast_quantile)
+        after = sum(len(v) for v in index.values())
+        print(f"速い方 {args.fast_quantile:.0%} に限定: {before} → {after} 本")
     applied = sum(attach_to_card(r, index) for r in ds["races"])
     runs = sum(len(r["horses"]) for r in ds["races"])
     print(f"調教索引を {applied}/{runs} 走 ({applied/runs:.1%}) に適用")
