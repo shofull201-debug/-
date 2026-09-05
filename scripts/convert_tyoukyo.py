@@ -39,6 +39,10 @@ def main() -> int:
     ap.add_argument("-o", "--output", default="data/workout_index.json.gz")
     ap.add_argument("--merge", action="store_true",
                     help="出力先の既存索引に追記する(重複は除去)")
+    ap.add_argument("--fast-quantile", type=float, default=None,
+                    help="その日・その施設で速い方から指定割合だけ残す"
+                         "(例 0.2)。全量の調教一覧から「好タイム」相当の"
+                         "母集団を作るために使う")
     args = ap.parse_args()
 
     index: dict[str, list] = defaultdict(list)
@@ -112,6 +116,30 @@ def main() -> int:
         normed = [w if len(w) >= 6 else w + ["坂路", 4] for w in works]
         index[name] = sorted({tuple(w) for w in normed})
         index[name] = [list(w) for w in index[name]]
+
+    if args.fast_quantile:
+        # 全量の一覧にはキャンター相当の遅い時計が大量に含まれる。予想側の
+        # 追切評価は「好タイムのみ」の母集団(載らない馬は欠損扱い)を前提に
+        # 作られているため、その日・その施設の速い順で足切りして揃える。
+        import bisect
+
+        byday: dict = defaultdict(list)
+        for works in index.values():
+            for w in works:
+                byday[(w[0], w[1], w[4])].append(w[2])
+        for v in byday.values():
+            v.sort()
+        before = sum(len(v) for v in index.values())
+        for name in list(index):
+            keep = [w for w in index[name]
+                    if bisect.bisect_left(byday[(w[0], w[1], w[4])], w[2])
+                    / len(byday[(w[0], w[1], w[4])]) <= args.fast_quantile]
+            if keep:
+                index[name] = keep
+            else:
+                del index[name]
+        after = sum(len(v) for v in index.values())
+        print(f"速い方 {args.fast_quantile:.0%} に限定: {before} → {after} 本")
     dates = sorted(w[0] for works in index.values() for w in works)
     print(f"取り込み {kept} 本 / 除外 {skipped} 本 / {len(index)} 頭"
           f" ({dates[0]} 〜 {dates[-1]})")
